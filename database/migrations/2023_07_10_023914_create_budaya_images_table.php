@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kinerjas', function (Blueprint $table) {
+        Schema::create('budaya_images', function (Blueprint $table) {
             $table->id();
-            $table->string('filename');
-            $table->date('tanggal');
+            $table->foreignId('budaya_id')->constrained('budayas')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('image_id')->constrained('images')->onUpdate('cascade')->onDelete('cascade');   
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kinerjas');
+        Schema::dropIfExists('budaya_images');
     }
 };

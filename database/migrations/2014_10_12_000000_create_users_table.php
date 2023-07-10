@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->boolean('verified')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('admin',['TRUE','FALSE'])->default('FALSE');
+            $table->string('profilepic')->nullable()->default('default.png');
+            $table->date('tanggal_lahir');
             $table->rememberToken();
             $table->timestamps();
         });

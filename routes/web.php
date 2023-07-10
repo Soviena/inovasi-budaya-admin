@@ -16,3 +16,5 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [UserController::class, 'index'])->name('index');
 Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/csv', [UserController::class, 'csv'])->name('csv');
+

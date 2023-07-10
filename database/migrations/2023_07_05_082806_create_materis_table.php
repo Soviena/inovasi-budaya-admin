@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('materis', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('fileName');
             $table->timestamps();
         });
     }

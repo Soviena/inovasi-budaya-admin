@@ -62,62 +62,66 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
-              <span class="app-brand-logo demo">
-                <svg
-                  width="25"
-                  viewBox="0 0 25 42"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs>
-                    <path
-                      d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
-                      id="path-1"
-                    ></path>
-                    <path
-                      d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
-                      id="path-3"
-                    ></path>
-                    <path
-                      d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
-                      id="path-4"
-                    ></path>
-                    <path
-                      d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
-                      id="path-5"
-                    ></path>
-                  </defs>
-                  <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
-                      <g id="Icon" transform="translate(27.000000, 15.000000)">
-                        <g id="Mask" transform="translate(0.000000, 8.000000)">
-                          <mask id="mask-2" fill="white">
-                            <use xlink:href="#path-1"></use>
-                          </mask>
-                          <use fill="#696cff" xlink:href="#path-1"></use>
-                          <g id="Path-3" mask="url(#mask-2)">
-                            <use fill="#696cff" xlink:href="#path-3"></use>
-                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
-                          </g>
-                          <g id="Path-4" mask="url(#mask-2)">
-                            <use fill="#696cff" xlink:href="#path-4"></use>
-                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
-                          </g>
-                        </g>
-                        <g
-                          id="Triangle"
-                          transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) "
-                        >
-                          <use fill="#696cff" xlink:href="#path-5"></use>
-                          <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
-                        </g>
-                      </g>
+              <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -25 950 450" width="200" height="50">
+                <title>Logo-Sucofindo-ai</title>
+                <style>
+                  .s0 { fill: #0767aa } 
+                  .s1 { fill: #0086c4 } 
+                  .s2 { fill: #009ad8 } 
+                </style>
+                <g id="Layer 1">
+                  <g id="&lt;Group&gt;">
+                    <g id="&lt;Group&gt;">
+                      <path id="&lt;Path&gt;" class="s0" d="m112.7 276.6c-2.8 1.4-5.6 0.7-8.3 0.7-23.8 0-47.5-0.3-71.2-0.1-5.8 0-9-1.8-11.7-7-12.3-23.2-19.2-47.9-21.3-74.1-0.6-7.6-0.5-7.8 7.5-7.8q38.9 0 77.8 0c7.5 0 7.5 0.2 8.1 7.7 1.9 24.1 7.4 47.4 16.1 70 1.3 3.3 3.6 6.6 3 10.6z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m529.5 277.1c-1-3.1 1-5.5 2-8 9.4-23.6 15-48.1 16.3-73.6 0.3-7.2 0.4-7.4 7.4-7.4q39.3-0.1 78.6 0c7.5 0 7.8 0.3 7.3 7.2-2 27.7-9.4 53.9-23.1 78.2-1.7 3-3.6 4.6-7.3 4.6-26.2-0.2-52.4-0.2-78.6-0.4-0.9 0-1.8-0.4-2.6-0.6z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m715 277c-1.1-3.2 0.9-5.6 1.9-8 9.6-23.7 14.7-48.3 16.4-73.7 0.4-6.9 0.4-7.1 6.7-7.1q39.8-0.1 79.6 0c6.7 0 7.3 0.7 6.9 6.8-2 26.8-9 52.1-21.6 75.9-2.9 5.5-6.3 7.4-12.4 7.3-22.2-0.4-44.4-0.1-66.5-0.2-3.7 0-7.5 0.6-11-1z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m254.1 278c2.4-6.4 4.4-11.3 6.1-16.2 7.6-21.3 12.6-43.1 13.6-65.7 0.3-7.2 0.4-7.4 7.3-7.4q39.8-0.1 79.6 0c6.7 0 7 0.3 6.5 6.9-2.2 27.5-9.6 53.3-22.9 77.5-1.9 3.3-4 5-8.1 5-26.8-0.2-53.6-0.1-82.1-0.1z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m110.6 95.9c-6.3 17.6-11.6 33.2-14.2 49.6-1.4 9.2-3 18.5-2.9 27.9 0 4.1-1.6 5.4-5.6 5.4-27.4-0.1-54.9-0.2-82.4 0-4.8 0-5.8-2.1-5.5-6.3 2.1-25.1 8.2-49.1 19.7-71.7 1.6-3 3.3-4.9 7.1-4.9 27.4 0.1 54.8 0 83.8 0z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m780 178.8c-13.7 0-27.5-0.1-41.2 0-3.8 0.1-5.4-1.1-5.7-5.3-1.3-22.8-6-45-14.3-66.4q-0.9-2.2-1.5-4.5c-1.5-5-1-5.7 4.5-6.1 0.9-0.1 1.9-0.1 2.8 0 24.3 2.2 48.7 0.8 73 0.9 5.9 0.1 8.8 2.2 11.3 7.4 10 21.5 15.7 44 17.6 67.6 0.4 5.6-0.1 6.3-6.2 6.4-13.4 0.1-26.9 0-40.3 0z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m530.6 98.1c3.4-2 6.3-1.9 9-1.6 23.7 2.1 47.5 0.9 71.2 0.8 7.1 0 10.6 2.5 13.4 8.7 9.4 20.7 14.9 42.4 16.9 65 0.6 7.2 0.2 7.7-6.6 7.7-26.9 0.1-53.8 0-80.7 0.1-3.4 0-6-0.3-6.1-4.9-0.8-24.9-7.1-48.7-15.9-71.9-0.5-1.1-0.7-2.3-1.2-3.9z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m257.3 98.2c2.1-1.8 4.7-1 7.1-1 25 0.1 50 0.3 75 0.2 4.6 0 7.2 1.4 9.3 5.6 10.7 21.6 16.5 44.5 18.4 68.3 0.6 7.2 0.4 7.4-6.8 7.4-26.6 0.1-53.2 0-79.7 0.1-4.4 0-6.8-0.6-7-6-1-23.6-6.6-46.3-14.8-68.3-0.8-2-2.3-3.9-1.5-6.3z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m188.6 233.2c0-12.5-0.1-25 0-37.5 0-7.2 0.1-7.3 7.1-7.4q30.4-0.1 60.8 0c8 0.1 8.2 0.2 7.7 8.6-1.1 20.4-5.4 40.1-12.2 59.3-1.9 5.6-4.4 11-6.4 16.6-1.4 3.7-3.7 5.2-7.7 5.1q-22-0.3-44 0c-4.2 0.1-5.4-1.5-5.4-5.4 0.2-13.1 0.1-26.2 0.1-39.3z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m177.6 277.8c-16.4 0-32.9 0-49.5 0.1-3.4 0-5-1.9-6.2-4.7-10.7-24.9-17.5-50.7-18.8-77.9-0.4-6.7-0.1-6.9 6.5-7 20.9 0 41.8 0.1 62.8 0 4.1-0.1 6.3 0.7 6.3 5.5-0.2 26.9-0.1 53.8-0.2 80.7 0 0.9-0.5 1.8-0.9 3.3z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m453.3 233.2c0 12.1 0.1 24.3 0 36.5-0.1 7.9-0.1 8.1-7.5 8.1-13.7 0.1-27.4-0.2-41.2-0.2-3.9 0-6.2-1.3-7.8-5-10.8-24.5-17.7-49.9-19.6-76.6-0.6-7.7-0.3-7.9 7.3-7.9q30.4-0.1 60.8 0c7.9 0 8 0.1 8 8.6 0 12.1 0 24.3 0 36.5z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m462.9 233.1c0-12.5-0.1-24.9 0-37.4 0-7.4 0.1-7.6 6.9-7.6q30.9-0.1 61.8 0c6.8 0.1 7.1 0.3 6.8 6.7-1.3 27.1-8 52.9-18.6 77.7-1.5 3.5-3.4 5.5-7.6 5.5q-21.5-0.4-43-0.1c-4.9 0.1-6.5-1.6-6.4-6.5 0.2-12.7 0.1-25.5 0.1-38.3z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m340.6 88c-9 0-15.8 0-22.5 0-20-0.1-40-0.2-60-0.1-4.2 0-6.9-1.1-8.8-5.2-13.4-28-30.9-53.4-50.8-77.2-0.9-1.2-2.3-2.2-1.8-5 61.2 5.8 108.5 34.4 143.9 87.5z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m686.1 188.1c10.3 0 20.6 0 30.9 0.1 6.8 0 7.2 0.3 6.8 6.6-1.6 27-8 53-18.7 77.8-1.5 3.5-3.5 5.4-7.7 5.4-14.3-0.3-28.7-0.3-43-0.1-4.4 0-6.1-1.5-6-6 0.1-25.9 0.1-51.8 0-77.7-0.1-5.2 2.2-6.2 6.8-6.1 10.3 0.2 20.6 0 30.9 0z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m797.5 87.4c-0.9 0.3-1.7 0.6-2.6 0.6-25.6 0-51.2-0.2-76.9-0.2-4.4 0-7.5-0.8-9.7-5.3-13.4-28.5-31.1-54.2-51.4-78.1-0.5-0.7-0.7-1.6-1.1-2.5 54.9-1 121.3 42.3 141.7 85.5z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m470 1.1c58.4 3.4 119.9 40.5 142.4 85.4-0.4 1.7-1.7 1.5-2.9 1.5-25.6-0.1-51.2-0.3-76.8-0.3-4.3 0-7.5-0.7-9.6-5.3-13.5-28.3-31.2-53.9-51.3-77.9-0.5-0.7-0.8-1.6-1.8-3.4z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m29.4 87.1c4.2-12.4 25.5-36.3 44.1-50.1 28.9-21.7 63-34.3 96-35.7 1.4 2.8-1.2 3.9-2.4 5.4-19.4 23.4-36.9 48-50 75.6-1.3 2.6-2.4 4.9-6 4.9-27.1-0.1-54.2-0.1-81.7-0.1z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m453.3 138.4c0 11.3-0.2 22.5 0.1 33.8 0.1 4.6-1.2 6.7-6.3 6.7-21.2-0.3-42.5-0.1-63.7-0.2-6.2 0-6.8-0.6-6.5-6.2 1.4-24.6 7-48.1 16.1-70.9 1.5-3.8 3.6-5.5 7.6-5.4q23.5 0.2 46.9 0.3c4.3 0 6 1.9 5.9 6.3-0.3 11.9-0.1 23.8-0.1 35.6z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m188.7 138.3c0-11.8 0.1-23.7-0.1-35.6 0-3.8 1-5.7 5.3-5.6 15.6 0.2 31.2 0.1 46.8 0 3.3 0 5.3 1 6.5 4.1 8.8 22.8 15.2 46.3 16.8 70.8 0.4 6.5 0.2 6.7-6.5 6.7q-31 0.1-61.9 0c-6.7 0-6.8-0.2-6.9-6.6-0.1-11.3 0-22.5 0-33.8z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m463 137.5c0-11.2 0.2-22.4 0-33.7-0.1-4.5 0.8-6.8 6.1-6.7 14.9 0.3 29.9 0.2 44.9 0.1 4.1-0.1 6.1 1.6 7.6 5.3q13.5 33.2 16.4 68.9c0.6 6.8 0.4 7.1-6.1 7.1-20.9 0.2-41.8-0.1-62.7 0.2-5 0-6.4-1.8-6.3-6.5 0.3-11.6 0.1-23.1 0.1-34.7z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m178.5 138.9c0 11 0.1 21.9 0 32.8 0 6.8-0.1 7-6.5 7q-31.4 0.1-62.8 0c-6.2 0-6.4-0.2-5.9-6.4 1.7-24.5 7.9-47.9 16.7-70.8 1.4-3.5 3.6-4.4 7.1-4.4 15 0.1 30 0.2 45 0 4.7-0.1 6.7 1.2 6.5 6.2-0.3 11.9-0.1 23.8-0.1 35.6z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m648.4 137.6c0-11.2 0.1-22.5 0-33.7-0.1-4.4 0.7-6.8 6.1-6.7 14.9 0.3 29.9 0.2 44.9 0 4.2-0.1 6.1 1.8 7.6 5.3 9.1 22.8 14.5 46.4 16.6 70.7 0.3 4.3-1.4 5.5-5.3 5.4-21.5-0.1-43-0.1-64.6 0.1-4.1 0-5.4-1.6-5.3-5.6 0.1-11.8 0-23.7 0-35.5z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m172.7 367.3c-60.3-5.6-106-32-140.2-79 1.9-3.1 4.3-1.8 6.3-1.8 24 0.1 48.1 0.5 72.1 0.2 5.8 0 8.9 1.6 11.5 6.8 12.1 23.8 27.3 45.5 44.2 66 1.6 1.9 3 3.9 6.1 7.8z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m195.2 366.9c6.2-7.7 11-13.4 15.6-19.3 13.4-16.9 25.4-34.8 35.3-54 1.9-3.8 3.7-6.6 8.9-6.5 25.9 0.2 51.8 0.1 77.9 0.1-2.2 9.4-19.4 28.6-38.1 42.7-28.9 21.7-61.1 34.4-99.6 37z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m471.1 365.6c0.4-2.7 2.6-4.1 4.1-5.9 17.4-20.6 32.9-42.5 45.2-66.5 2-3.9 4.1-6.3 9.1-6.2 25.6 0.2 51.2 0.1 76.9 0.1-7.2 33.8-92.4 82.8-135.3 78.5z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m794.1 288.3c-35.1 47.4-80.1 73.1-137 78.7-1.1-3.7 1.3-4.8 2.6-6.3 17.6-20.8 33.4-42.8 45.7-67.1 2.5-4.9 5.4-6.7 10.9-6.6 24 0.4 48 0.4 72 0.6 1.2 0 2.4 0.3 5.8 0.7z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m445.1 1.9c-2.5 3.1-4.3 5.5-6.3 7.8-18.2 21.8-34.4 45.1-46.7 70.8-2.2 4.6-4.6 6.7-9.9 6.4-8.4-0.4-16.8-0.3-25.2 0-4.7 0.2-7.5-1.8-9.8-5.7-4.5-7.8-9.9-15.2-16-21.8-3.4-3.6-3-5.8 0.5-9.1 25.9-23.7 55.8-39.7 90.3-46.5 7.2-1.4 14.4-3 23.1-1.9z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m445 366.9c-44.1-3.4-81.3-20.3-113.3-49.5-3.5-3.2-3.8-5.4-0.5-9.1 4.5-5.1 8.4-10.8 12.4-16.4 2.2-2.9 4.6-5 8.5-5 12.1 0.1 24.3 0.1 36.5 0 3.3-0.1 5.1 1.5 6.5 4.2 13.3 26.4 30.2 50.3 49 72.9 0.3 0.4 0.3 1.1 0.9 2.9z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m453.3 10.8q0 35.9 0 71.8c0 2.8-0.8 5-4 5-16.1-0.2-32.3-0.4-49.8-0.5 14-29.4 31.7-54.1 51.7-77.3q1.1 0.5 2.1 1z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m240.9 87.5c-9.2 0-16.9 0-24.6 0-6.9 0-13.7 0.1-20.6 0-7-0.1-7.1-0.1-7.1-7.4-0.1-17.5 0-35 0-52.5q0-8.3 0-16.6c21.2 22.7 38.5 47.4 52.3 76.5z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m126.3 87.5c14-29 31-53.7 50.6-76.8 2.8 1.7 1.7 4.2 1.7 6.1q0.1 31.3 0 62.7c0 7.9-0.1 8-8.3 8-14 0.1-28 0-44 0z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m649.8 10.9c19.7 23.2 36.6 47.9 49.6 74.9-2.1 2.7-4.4 1.8-6.4 1.9-12.8 0-25.6-0.1-38.4 0-3.8 0-6.8-0.3-6.7-5.3 0.1-23.1 0.1-46.1 0.2-69.2 0-0.5 0.7-1 1.7-2.3z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m515.1 87.6c-17.2 0-32.4 0-47.6 0-3.8 0-4.7-2.1-4.7-5.4 0.2-5.3 0.1-10.6 0.1-15.9 0-15.6-0.1-31.2 0-46.8 0-2.7-0.8-5.5 1.4-9 19.7 23.5 36.7 48 50.8 77.1z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m403.5 286.6c8.7 0 16.1 0 23.5 0 7.2 0.1 14.4 0.4 21.6 0.4 3 0.1 4.7 1.1 4.7 4.3 0 21.8 0 43.5-0.9 65.7-19.4-20.9-35.3-43.8-48.9-70.4z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m189.9 358.5c-1.7-8.5-1.8-62.4-0.3-71.1 15.8 0 31.5 0 49 0-13.4 26.3-30.2 48.8-48.7 71.1z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m648.2 357.5c0-8.7 0-15.8 0-22.9 0-13.5-0.1-26.9 0.1-40.3 0-6.8 0.2-7 6.5-7 13.6-0.1 27.2 0 41 0-2 12.3-32.1 56.9-47.6 70.2z"/>
+                      <path id="&lt;Path&gt;" class="s0" d="m178.2 359c-19.2-23-34.5-45.8-48.3-71 4.8-1.4 8.5-0.9 12.1-0.9 10.3-0.1 20.6-0.1 30.9-0.1 2.5 0 5.4-0.3 5.4 3.4 0.4 22.1 1.5 44.2-0.1 68.6z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m463.8 356.6c-1.7-1.5-0.9-3.5-0.9-5.2q-0.1-28.1 0-56.1c0-8 0.1-8 8.3-8.1 13.1 0 26.1 0 39.3 0-1.3 11.5-33.4 59-46.7 69.4z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m639.4 11.1c0 24 0 47.4 0.1 70.7 0 4.5-1.6 5.8-6 6-6.8 0.5-11.5-1-15-7.8-3.6-6.8-9-12.7-13.6-18.9-1.5-2-3.5-3.6-1.4-6.5 10.6-14.6 20.4-29.9 33.1-42.8 0.4-0.4 1.1-0.3 2.8-0.7z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m638.1 358.2c-12.9-14.4-23.6-29.3-33.5-44.9-1.6-2.4-1.7-4.3 0.4-6.6 4.7-5 8.8-10.5 12.4-16.4 1.2-2 2.9-2.8 5.3-3.1 16.1-1.8 16.7-1.3 16.7 14.7 0 16 0.1 31.9 0 47.8 0 2.4 0.7 4.9-1.3 8.5z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m595.9 50.1c-6.6-5.8-12.1-10.9-17.9-15.6-5.5-4.4-11.4-8.5-18.1-13.5 23-11.9 46.5-18.1 73.7-20.1-14.6 16.5-26.5 32.3-37.7 49.2z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m560.2 346.3c12.7-8.7 24.4-17.5 35.3-28.9 11.6 16.7 23 32.9 36.5 47.5-12 3.8-51.5-6.3-71.8-18.6z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m352.8 277.2c9.1-15.6 13.7-30.9 19.3-48.1 4.5 17.2 9.6 32 15.6 47.5-11.6 1.1-22.2 0.3-34.9 0.6z"/>
+                      <path id="&lt;Path&gt;" class="s1" d="m384.2 97.3c-4.6 12.7-8.7 24.4-12.2 38.7-5.3-13.7-8.8-26.1-15.5-38.3 9.4-2 17.9-1.5 27.7-0.4z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m626.3 276.5c3.9-8.6 7.9-17.2 11.9-25.9q0.6 0.1 1.2 0.1c0 7.3-0.1 14.6 0.1 21.9 0.1 4.2-1.7 5.7-5.6 5.3-2.3-0.3-4.9 0.7-7.6-1.4z"/>
+                      <path id="&lt;Path&gt;" class="s2" d="m638.2 117.4c-2.9-6.3-5.7-12.7-8.7-19.1 9.8-1.7 9.8-1.7 9.9 6.3 0.1 4.1 0 8.1 0 12.2q-0.6 0.3-1.2 0.6z"/>
                     </g>
                   </g>
-                </svg>
-              </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+                </g>
+              </svg>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -136,316 +140,75 @@
               </a>
             </li>
 
-            <!-- Layouts -->
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Program Budaya</span>
+            </li>
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
+              <a href="icons-boxicons.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">Jadwal Budaya</div>
               </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
-                    <div data-i18n="Without menu">Without menu</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
-                    <div data-i18n="Without navbar">Without navbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
-                    <div data-i18n="Container">Container</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
-                    <div data-i18n="Fluid">Fluid</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-blank.html" class="menu-link">
-                    <div data-i18n="Blank">Blank</div>
-                  </a>
-                </li>
-              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="icons-boxicons.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">Aktivitas</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="icons-boxicons.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">Rewards</div>
+              </a>
             </li>
 
             <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Pages</span>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-notifications.html" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                <div data-i18n="Authentications">Authentications</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Login</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Register</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Forgot Password</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                <div data-i18n="Misc">Misc</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-misc-error.html" class="menu-link">
-                    <div data-i18n="Error">Error</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-misc-under-maintenance.html" class="menu-link">
-                    <div data-i18n="Under Maintenance">Under Maintenance</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!-- Components -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-            <!-- Cards -->
-            <li class="menu-item">
-              <a href="cards-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Cards</div>
-              </a>
-            </li>
-            <!-- User interface -->
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="User interface">User interface</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="ui-accordion.html" class="menu-link">
-                    <div data-i18n="Accordion">Accordion</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-alerts.html" class="menu-link">
-                    <div data-i18n="Alerts">Alerts</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-badges.html" class="menu-link">
-                    <div data-i18n="Badges">Badges</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-buttons.html" class="menu-link">
-                    <div data-i18n="Buttons">Buttons</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-carousel.html" class="menu-link">
-                    <div data-i18n="Carousel">Carousel</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-collapse.html" class="menu-link">
-                    <div data-i18n="Collapse">Collapse</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-dropdowns.html" class="menu-link">
-                    <div data-i18n="Dropdowns">Dropdowns</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-footer.html" class="menu-link">
-                    <div data-i18n="Footer">Footer</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-list-groups.html" class="menu-link">
-                    <div data-i18n="List Groups">List groups</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-modals.html" class="menu-link">
-                    <div data-i18n="Modals">Modals</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-navbar.html" class="menu-link">
-                    <div data-i18n="Navbar">Navbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-offcanvas.html" class="menu-link">
-                    <div data-i18n="Offcanvas">Offcanvas</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-pagination-breadcrumbs.html" class="menu-link">
-                    <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-progress.html" class="menu-link">
-                    <div data-i18n="Progress">Progress</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-spinners.html" class="menu-link">
-                    <div data-i18n="Spinners">Spinners</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-tabs-pills.html" class="menu-link">
-                    <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-toasts.html" class="menu-link">
-                    <div data-i18n="Toasts">Toasts</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-tooltips-popovers.html" class="menu-link">
-                    <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-typography.html" class="menu-link">
-                    <div data-i18n="Typography">Typography</div>
-                  </a>
-                </li>
-              </ul>
+              <span class="menu-header-text">Pengguna</span>
             </li>
 
-            <!-- Extended components -->
             <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-copy"></i>
-                <div data-i18n="Extended UI">Extended UI</div>
+              <a href="index.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Manajemen Pengguna</div>
               </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                    <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="extended-ui-text-divider.html" class="menu-link">
-                    <div data-i18n="Text Divider">Text Divider</div>
-                  </a>
-                </li>
-              </ul>
             </li>
 
             <li class="menu-item">
               <a href="icons-boxicons.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Boxicons">Boxicons</div>
+                <div data-i18n="Boxicons">Feedback</div>
               </a>
             </li>
 
-            <!-- Forms & Tables -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
-            <!-- Forms -->
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Form Elements</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="forms-basic-inputs.html" class="menu-link">
-                    <div data-i18n="Basic Inputs">Basic Inputs</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="forms-input-groups.html" class="menu-link">
-                    <div data-i18n="Input groups">Input groups</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Layouts">Form Layouts</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="form-layouts-vertical.html" class="menu-link">
-                    <div data-i18n="Vertical Form">Vertical Form</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="form-layouts-horizontal.html" class="menu-link">
-                    <div data-i18n="Horizontal Form">Horizontal Form</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!-- Tables -->
-            <li class="menu-item">
-              <a href="tables-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-table"></i>
-                <div data-i18n="Tables">Tables</div>
+              <a href="icons-boxicons.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">Notifikasi</div>
               </a>
             </li>
-            <!-- Misc -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">File</span>
+            </li>
+
             <li class="menu-item">
-              <a
-                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                target="_blank"
-                class="menu-link"
-              >
-                <i class="menu-icon tf-icons bx bx-support"></i>
-                <div data-i18n="Support">Support</div>
+              <a href="index.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Materi</div>
               </a>
             </li>
+
             <li class="menu-item">
-              <a
-                href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                target="_blank"
-                class="menu-link"
-              >
-                <i class="menu-icon tf-icons bx bx-file"></i>
-                <div data-i18n="Documentation">Documentation</div>
+              <a href="icons-boxicons.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">Safety Moment</div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="icons-boxicons.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">Kinerja Bulanan</div>
               </a>
             </li>
           </ul>
