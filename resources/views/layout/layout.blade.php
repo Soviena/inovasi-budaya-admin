@@ -146,7 +146,7 @@
             <li class="menu-item">
               <a href="icons-boxicons.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Boxicons">Jadwal Budaya</div>
+                <div data-i18n="Boxicons">Daftar Budaya</div>
               </a>
             </li>
             <li class="menu-item">

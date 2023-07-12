@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="card" style="border:2px solid #FA830F !important">
+        <div class="card py-4" style="border:2px solid #FA830F !important">
             <div class="container">
                 <h2>Halaman Konfigurasi</h2>
                 <div class="d-flex flex-wrap">
