@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('safety_moments_images', function (Blueprint $table) {
+        Schema::create('aktivitas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('safety_moment_id')->constrained('safety_moments')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('image_id')->constrained('images')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('budaya_id')->constrained('budayas')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('judul');
+            $table->string('deskripsi')->nullable()->default('');
+            $table->string('fileName');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('safety_moments_images');
+        Schema::dropIfExists('aktivitas');
     }
 };

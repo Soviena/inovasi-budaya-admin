@@ -29,6 +29,9 @@ Route::get('/budaya/add',[BudayaController::class, 'addBudaya'])->name("addBuday
 Route::post('/budaya/new', [BudayaController::class, 'newBudaya'])->name('newBudaya');
 
 Route::get('/aktivitas',[AktivitasController::class, 'index'])->name("indexAktivitas");
+Route::get('/budaya/{idBudaya}/aktivitas/add',[AktivitasController::class, 'addAktivitas'])->name("addAktivitas");
+Route::post('/aktivitas/new', [AktivitasController::class, 'newAktivitas'])->name('newAktivitas');
+
 
 
 

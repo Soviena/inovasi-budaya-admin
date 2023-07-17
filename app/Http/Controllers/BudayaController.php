@@ -23,7 +23,7 @@ class BudayaController extends Controller
         $budaya->deskripsi = $request->deskripsi;
         $budaya->tanggal = $request->bulan;
         $budaya->save();
-        return redirect()->route('index');
+        return redirect()->route('budayaIndex');
     }
 
 }

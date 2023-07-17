@@ -5,11 +5,20 @@
   @php
     $dataYearMonth = date('Y-m', strtotime($data->tanggal));
     $currentYearMonth = date('Y-m');
-    if($dataYearMonth == $currentYearMonth){
+    $title = "Tidak ada budaya yang sedang berlangsung";
+    $deskripsi = "Silahkan tambahkan budaya dulu untuk bulan ini";
+    $blnIni = false;
+  @endphp
+  @if ($dataYearMonth == $currentYearMonth)
+    @php
       $title = $data->judul;
       $deskripsi = $data->deskripsi;
-    }
-  @endphp
+      $idbudaya = $data->id;
+      $blnIni = true;    
+    @endphp
+    @break
+  @endif
+
 @endforeach
   <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card mb-5">
@@ -19,7 +28,9 @@
         <p class="card-text">
           {{$deskripsi}}
         </p>
-        <a href="javascript:void(0)" class="btn btn-primary">Tambah Aktivitas</a>
+        <a href="{{route('addAktivitas',$idbudaya)}}" class="btn btn-primary @if (!$blnIni)
+          disabled
+        @endif">Tambah Aktivitas</a>
       </div>
     </div>
     <div class="nav-align-top mb-4">
@@ -78,7 +89,7 @@
                   <td></td>
                   <td></td>              
                   <td>
-                    <a href="javascript:void(0)" class="btn btn-outline-primary">Tambah</a>
+                    <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
                   </td>
                 </tr>
               </tbody>
@@ -126,7 +137,7 @@
                 <td></td>
                 <td></td>              
                 <td>
-                  <a href="javascript:void(0)" class="btn btn-outline-primary">Tambah</a>
+                  <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
                 </td>
               </tr>
             </tbody>
@@ -173,7 +184,7 @@
                 <td></td>
                 <td></td>              
                 <td>
-                  <a href="javascript:void(0)" class="btn btn-outline-primary">Tambah</a>
+                  <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
                 </td>
               </tr>
             </tbody>
