@@ -145,13 +145,13 @@
             </li>
             <li class="menu-item">
               <a href="{{route('budayaIndex')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
+              <i class='menu-icon tf-icons bx bxs-book-content'></i>
                 <div data-i18n="Boxicons">Daftar Budaya</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="{{route('indexAktivitas')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <i class="menu-icon tf-icons bx bx-photo-album"></i>
                 <div data-i18n="Boxicons">Aktivitas</div>
               </a>
             </li>
@@ -168,21 +168,21 @@
 
             <li class="menu-item">
               <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Analytics">Manajemen Pengguna</div>
               </a>
             </li>
 
             <li class="menu-item">
               <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <i class="menu-icon tf-icons bx bx-envelope"></i>
                 <div data-i18n="Boxicons">Feedback</div>
               </a>
             </li>
 
             <li class="menu-item">
               <a href="{{route('notification')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <i class="menu-icon tf-icons bx bx-bell"></i>
                 <div data-i18n="Boxicons">Notifikasi</div>
               </a>
             </li>
@@ -193,21 +193,21 @@
 
             <li class="menu-item">
               <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bx-book"></i>
                 <div data-i18n="Analytics">Materi</div>
               </a>
             </li>
 
             <li class="menu-item">
               <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <i class="menu-icon tf-icons bx bx-shield"></i>
                 <div data-i18n="Boxicons">Safety Moment</div>
               </a>
             </li>
 
             <li class="menu-item">
               <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <i class="menu-icon tf-icons bx bx-bar-chart-alt-2"></i>
                 <div data-i18n="Boxicons">Kinerja Bulanan</div>
               </a>
             </li>

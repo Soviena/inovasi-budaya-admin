@@ -27,17 +27,59 @@
         <div class="card py-4" style="border:2px solid #FA830F !important">
             <div class="container">
                 <h2>Halaman Konfigurasi</h2>
-                <div class="d-flex flex-wrap">
+                <div class="d-flex flex-wrap" id="icons-container">
                     <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
                         <div class="card-body">
-                          <i class="bx bxl-adobe mb-2"></i>
-                          <p class="icon-name text-capitalize text-truncate mb-0">adobe</p>
+                          <i class="bx bxs-book-content mb-2"></i>
+                          <p class="icon-name text-capitalize text-truncate mb-0">Daftar Budaya</p>
                         </div>
                     </div>
                     <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
                         <div class="card-body">
-                          <i class="bx bxl-adobe mb-2"></i>
-                          <p class="icon-name text-capitalize text-truncate mb-0">adobe</p>
+                          <i class="bx bx-photo-album mb-2"></i>
+                          <p class="icon-name text-capitalize text-truncate mb-0">Aktivitas</p>
+                        </div>
+                    </div>
+                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                        <div class="card-body">
+                          <i class="bx bx-crown mb-2"></i>
+                          <p class="icon-name text-capitalize text-truncate mb-0">Reward</p>
+                        </div>
+                    </div>
+                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                        <div class="card-body">
+                          <i class="bx bx-user mb-2"></i>
+                          <p class="icon-name text-capitalize text-truncate mb-0">Manage User</p>
+                        </div>
+                    </div>
+                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                        <div class="card-body">
+                          <i class="bx bx-envelope mb-2"></i>
+                          <p class="icon-name text-capitalize text-truncate mb-0">Feedback</p>
+                        </div>
+                    </div>
+                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                        <div class="card-body">
+                          <i class="bx bx-bell mb-2"></i>
+                          <p class="icon-name text-capitalize text-truncate mb-0">Notifikasi</p>
+                        </div>
+                    </div>
+                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                        <div class="card-body">
+                          <i class="bx bx-book mb-2"></i>
+                          <p class="icon-name text-capitalize text-truncate mb-0">Materi</p>
+                        </div>
+                    </div>
+                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                        <div class="card-body">
+                          <i class="bx bx-shield mb-2"></i>
+                          <p class="icon-name text-capitalize text-truncate mb-0">Safety Moment</p>
+                        </div>
+                    </div>
+                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                        <div class="card-body">
+                          <i class="bx bx-bar-chart-alt-2 mb-2"></i>
+                          <p class="icon-name text-capitalize text-truncate mb-0">Kinerja Bulanan</p>
                         </div>
                     </div>
                 </div>
