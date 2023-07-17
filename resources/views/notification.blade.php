@@ -11,12 +11,12 @@
                     @csrf
                     <div class="mb-3">
                         <label for="defaultInput" class="form-label">Judul</label>
-                        <input id="defaultInput" class="form-control" type="text" placeholder="Notifikasi Peregangan Pegawai">
+                        <input id="defaultInput" class="form-control" type="text" placeholder="contoh: Notifikasi peregangan pegawai">
                       </div>
                     
                       <div class="mb-3">
                         <label for="defaultInput" class="form-label">Isi</label>
-                        <input id="defaultInput" class="form-control" type="text" placeholder="Jangan Lupa Istirahat">
+                        <input id="defaultInput" class="form-control" type="text" placeholder="contoh: Jangan lupa peregangan setiap 15 menit ya!">
                       </div>
                     
                     <button type="button" class="btn btn-primary">Kirim</button>

@@ -15,6 +15,12 @@ class UserController extends Controller
     public function login(){
         return view('login');
     }
+    public function reward(){
+        return view('reward');
+    }
+    public function manage(){
+        return view('manage');
+    }
     public function csv(){
         $filePath = storage_path('temp/csv.csv');
         // $content = File::get($filePath);
@@ -31,4 +37,5 @@ class UserController extends Controller
         }
         return view('kinerja',compact('array'));
     }
+
 }
