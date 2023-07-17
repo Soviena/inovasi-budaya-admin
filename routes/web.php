@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\BudayaController;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::get('/csv', [UserController::class, 'csv'])->name('csv');
 
 Route::get('/notification', [NotificationController::class, 'index'])->name('notification');
 Route::post('/notification/send', [NotificationController::class, 'send'])->name('sendNotif');
+
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 
 Route::get('/budaya',[BudayaController::class, 'index'])->name("budayaIndex");
 Route::get('/budaya/add',[BudayaController::class, 'addBudaya'])->name("addBudaya");
