@@ -156,7 +156,7 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="#" class="menu-link">
+              <a href="{{route('rewardUser')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Boxicons">Rewards</div>
               </a>
@@ -167,7 +167,7 @@
             </li>
 
             <li class="menu-item">
-              <a href="#" class="menu-link">
+              <a href="{{route('manageUser')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Analytics">Manajemen Pengguna</div>
               </a>

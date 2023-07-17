@@ -32,6 +32,9 @@ Route::get('/budaya/add',[BudayaController::class, 'addBudaya'])->name("addBuday
 Route::post('/budaya/new', [BudayaController::class, 'newBudaya'])->name('newBudaya');
 Route::get('/budaya/delete/{idBudaya}',[BudayaController::class, 'deleteBudaya'])->name("deleteBudaya");
 
+Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
+
+Route::get('/reward',[UserController::class, 'reward'])->name("rewardUser");
 
 Route::get('/aktivitas',[AktivitasController::class, 'index'])->name("indexAktivitas");
 Route::get('/aktivitas/{idBudaya}',[AktivitasController::class, 'aktivitas'])->name("aktivitas");
