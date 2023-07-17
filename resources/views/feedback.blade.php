@@ -2,7 +2,7 @@
 @section('content')
 <div class="content-wrapper">
     <div class="card">
-      <h5 class="card-header text-center">Feedback User</h5>
+      <h2 class="card-header text-center">Feedback User</h2>
       <div class="table-responsive text-nowrap">
         <table class="table">
           <thead>
