@@ -61,7 +61,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="{{route('index')}}" class="app-brand-link">
               <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -25 950 450" width="200" height="50">
                 <title>Logo-Sucofindo-ai</title>
                 <style>

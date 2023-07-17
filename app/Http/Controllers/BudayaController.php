@@ -26,4 +26,10 @@ class BudayaController extends Controller
         return redirect()->route('budayaIndex');
     }
 
+    public function deleteBudaya(Request $request, $id){
+        $budaya = Budaya::find($id);
+        $budaya->delete();
+        return redirect()->route('budayaIndex');
+    }    
+
 }

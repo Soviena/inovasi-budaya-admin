@@ -1,13 +1,16 @@
 @extends('layout.layout')
 @section('content')
 <div class="content-wrapper">
+@php
+  $title = "Tidak ada budaya yang sedang berlangsung";
+  $deskripsi = "Silahkan tambahkan budaya dulu untuk bulan ini";
+  $blnIni = false;
+  $idbudaya = -1;
+@endphp
 @foreach($budaya as $data)
   @php
     $dataYearMonth = date('Y-m', strtotime($data->tanggal));
     $currentYearMonth = date('Y-m');
-    $title = "Tidak ada budaya yang sedang berlangsung";
-    $deskripsi = "Silahkan tambahkan budaya dulu untuk bulan ini";
-    $blnIni = false;
   @endphp
   @if ($dataYearMonth == $currentYearMonth)
     @php
@@ -28,7 +31,8 @@
         <p class="card-text">
           {{$deskripsi}}
         </p>
-        <a href="{{route('addAktivitas',$idbudaya)}}" class="btn btn-primary @if (!$blnIni)
+        <a href="{{route('addAktivitas',$idbudaya)}}" class="btn btn-primary 
+        @if (!$blnIni)
           disabled
         @endif">Tambah Aktivitas</a>
       </div>
@@ -54,47 +58,47 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
-          <div class="table-responsive text-nowrap">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Nama budaya</th>
-                  <th>Deskripsi</th>
-                  <th>Tanggal</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody class="table-border-bottom-0">
-                @foreach($budaya as $b)
-                <tr>
-                  <td>{{$b->judul}}</td>
-                  <td>{{$b->deskripsi}}</td>
-                  <td>{{$b->tanggal}}</td>
-                  <td>
-                    <div class="dropdown">
-                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                        <i class="bx bx-dots-vertical-rounded"></i>
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Aktivitas</a>
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                      </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nama budaya</th>
+                <th>Deskripsi</th>
+                <th>Tanggal</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+              @foreach($budaya as $b)
+              <tr>
+                <td>{{$b->judul}}</td>
+                <td>{{$b->deskripsi}}</td>
+                <td>{{$b->tanggal}}</td>
+                <td>
+                  <div class="dropdown">
+                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                      <i class="bx bx-dots-vertical-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{{route('aktivitas',$b->id)}}"><i class="bx bx-trash me-1"></i> Aktivitas</a>
+                      <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                      <a class="dropdown-item" href="{{route('deleteBudaya',$b->id)}}"><i class="bx bx-trash me-1"></i> Delete</a>
                     </div>
-                  </td>
-                </tr>
-                @endforeach
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>              
-                  <td>
-                    <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                  </div>
+                </td>
+              </tr>
+              @endforeach                
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>              
+                <td>
+                  <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
         <div class="tab-pane fade" id="navs-justified-profile" role="tabpanel">
           <table class="table">
@@ -123,15 +127,17 @@
                         <i class="bx bx-dots-vertical-rounded"></i>
                       </button>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Aktivitas</a>
+                        <a class="dropdown-item" href="{{route('aktivitas',$b->id)}}"><i class="bx bx-trash me-1"></i> Aktivitas</a>
                         <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                        <a class="dropdown-item" href="{{route('deleteBudaya',$b->id)}}"><i class="bx bx-trash me-1"></i> Delete</a>
                       </div>
                     </div>
                   </td>
                 </tr>
                 @endif
               @endforeach
+            </tbody>
+            <tfoot>
               <tr>
                 <td></td>
                 <td></td>
@@ -140,7 +146,7 @@
                   <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
                 </td>
               </tr>
-            </tbody>
+            </tfoot>
           </table>
         </div>
         <div class="tab-pane fade" id="navs-justified-messages" role="tabpanel">
@@ -170,15 +176,17 @@
                         <i class="bx bx-dots-vertical-rounded"></i>
                       </button>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Aktivitas</a>
+                        <a class="dropdown-item" href="{{route('aktivitas',$b->id)}}"><i class="bx bx-trash me-1"></i> Aktivitas</a>
                         <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                        <a class="dropdown-item" href="{{route('deleteBudaya',$b->id)}}"><i class="bx bx-trash me-1"></i> Delete</a>
                       </div>
                     </div>
                   </td>
                 </tr>
                 @endif
               @endforeach
+            </tbody>
+            <tfoot>
               <tr>
                 <td></td>
                 <td></td>
@@ -187,7 +195,7 @@
                   <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
                 </td>
               </tr>
-            </tbody>
+            </tfoot>
           </table>
         </div>
       </div>

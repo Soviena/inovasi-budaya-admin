@@ -12,7 +12,7 @@
         <h4 class="fw-bold py-3 mb-4" style="display: flex; align-items: center;">
           <span class="text-muted fw-light">{{$b->tanggal}} /</span>
           <span style="flex-grow: 1;">{{$b->judul}}</span>
-          <a href="" class="btn btn-outline-primary" style="margin-left: auto;">Tambah Aktivitas</a>
+          <a href="{{route('addAktivitas',$b->id)}}" class="btn btn-outline-primary" style="margin-left: auto;">Tambah Aktivitas</a>
         </h4>
         <div class="row" data-masonry='{"percentPosition": true }'>
           @foreach ($b->aktivitas as $a)
@@ -25,7 +25,7 @@
                     {{$a->deskripsi}}
                   </p>
                   <a href="javascript:void(0);" class="card-link">Edit</a>
-                  <a href="javascript:void(0);" class="card-link">Hapus</a>
+                  <a href="{{route('deleteAktivitas',$a->id)}}" class="card-link">Hapus</a>
                 </div>
               </div>
             </div>

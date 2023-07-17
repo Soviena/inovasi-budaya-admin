@@ -16,6 +16,10 @@ class AktivitasController extends Controller
         $budaya = Budaya::with('aktivitas')->orderBy('tanggal','DESC')->get();
         return view('aktivitas',compact('budaya'));
     }
+    public function aktivitas($id){
+        $b = Budaya::with('aktivitas')->find($id);
+        return view('aktiv',compact('b'));
+    }
 
     public function addAktivitas($bid){
         return view('addAktivitas', ["budayaId"=>$bid]);
@@ -34,5 +38,15 @@ class AktivitasController extends Controller
         $aktivitas->save();        
         return redirect()->route('indexAktivitas');
     }
+
+
+    public function deleteAktivitas(Request $request, $id){
+        $aktivitas = Aktivitas::find($id);
+        Storage::delete('public/uploaded/aktivitas/'.$aktivitas->fileName);
+        $aktivitas->delete();
+        return redirect()->route('indexAktivitas');
+    }
+
+    
 
 }
