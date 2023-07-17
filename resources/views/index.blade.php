@@ -28,55 +28,61 @@
             <div class="container">
                 <h2>Halaman Konfigurasi</h2>
                 <div class="d-flex flex-wrap" id="icons-container">
-                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <a href="{{route('budayaIndex')}}" class="btn">   
                         <div class="card-body">
                           <i class="bx bxs-book-content mb-2"></i>
                           <p class="icon-name text-capitalize text-truncate mb-0">Daftar Budaya</p>
                         </div>
+                    </a>
                     </div>
-                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <a href="{{route('indexAktivitas')}}" class="btn">   
                         <div class="card-body">
                           <i class="bx bx-photo-album mb-2"></i>
                           <p class="icon-name text-capitalize text-truncate mb-0">Aktivitas</p>
                         </div>
+                    </a>
                     </div>
-                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
                         <div class="card-body">
                           <i class="bx bx-crown mb-2"></i>
                           <p class="icon-name text-capitalize text-truncate mb-0">Reward</p>
                         </div>
                     </div>
-                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
                         <div class="card-body">
                           <i class="bx bx-user mb-2"></i>
                           <p class="icon-name text-capitalize text-truncate mb-0">Manage User</p>
                         </div>
                     </div>
-                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
                         <div class="card-body">
                           <i class="bx bx-envelope mb-2"></i>
                           <p class="icon-name text-capitalize text-truncate mb-0">Feedback</p>
                         </div>
                     </div>
-                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <a href="{{route('notification')}}" class="btn">   
                         <div class="card-body">
                           <i class="bx bx-bell mb-2"></i>
                           <p class="icon-name text-capitalize text-truncate mb-0">Notifikasi</p>
                         </div>
+                    </a>
                     </div>
-                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
                         <div class="card-body">
                           <i class="bx bx-book mb-2"></i>
                           <p class="icon-name text-capitalize text-truncate mb-0">Materi</p>
                         </div>
                     </div>
-                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
                         <div class="card-body">
                           <i class="bx bx-shield mb-2"></i>
                           <p class="icon-name text-capitalize text-truncate mb-0">Safety Moment</p>
                         </div>
                     </div>
-                    <div class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                    <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
                         <div class="card-body">
                           <i class="bx bx-bar-chart-alt-2 mb-2"></i>
                           <p class="icon-name text-capitalize text-truncate mb-0">Kinerja Bulanan</p>
