@@ -11,6 +11,7 @@
               <th>Nama User</th>
               <th>Judul Feedback</th>
               <th>Deskripsi Feedback</th>
+              <th>Tanggal</th>
             </tr>
           </thead>
           <tbody>
