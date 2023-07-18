@@ -199,7 +199,7 @@
             </li>
 
             <li class="menu-item">
-              <a href="#" class="menu-link">
+              <a href="{{route('safetyMoment')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-shield"></i>
                 <div data-i18n="Boxicons">Safety Moment</div>
               </a>
