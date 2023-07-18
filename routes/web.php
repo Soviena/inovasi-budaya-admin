@@ -7,6 +7,8 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\BudayaController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\SafetyController;
+use App\Http\Controllers\KinerjaBulController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +39,8 @@ Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
 Route::get('/reward',[UserController::class, 'reward'])->name("rewardUser");
 
 Route::get('/safety',[SafetyController::class, 'safety'])->name("safetyMoment");
+
+Route::get('/kinerjaBulanan',[KinerjaBulController::class, 'kinerjaBulanan'])->name("kinerjaBulan");
 
 Route::get('/aktivitas',[AktivitasController::class, 'index'])->name("indexAktivitas");
 Route::get('/aktivitas/{idBudaya}',[AktivitasController::class, 'aktivitas'])->name("aktivitas");
