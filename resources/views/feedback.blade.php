@@ -1,32 +1,72 @@
 @extends('layout.layout')
 @section('content')
 <div class="content-wrapper">
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h3 class="fw-bold py-3 mb-4 text-center">Feedback User</h3>
+    
     <div class="card">
-      <h2 class="card-header text-center">Feedback User</h2>
-      <div class="table-responsive text-nowrap">
+      <div class="table">
         <table class="table">
           <thead>
-            <tr class="text-nowrap">
-              <th>ID User</th>
+            <tr>
+              <th>No</th>
               <th>Nama User</th>
               <th>Judul Feedback</th>
               <th>Deskripsi Feedback</th>
-              <th>Tanggal</th>
+              <th>Actions</th>
             </tr>
           </thead>
-          <tbody>
-            @foreach ($feedbacks as $feedback)
-            <tr>
-                <td>{{ $feedback->user_id }}</td> 
-                <td>{{ $feedback->name }}</td>                    
-                <td>{{ $feedback->judul }}</td> 
-                <td>{{ $feedback->deskripsi }}</td> 
-                <td>{{ $feedback->created_at }}</td> 
+          <tbody class="table-border-bottom-0">
+            <tr>            
+              <td>1</td>
+              <td>Harry</td>
+              <td>Keluh-Kesah</td>
+              <td>Terjadi error di bagian homepage pada aplikasi, lalu pada bagian kinerja terkadang tidak menampilkan tabel dan juga saat ingin mengakses web, terkadang button yang me-refer ke web sucofindo sulit untuk ditekan</td>
+              <td>
+                <div class="dropdown">
+                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                    <i class="bx bx-dots-vertical-rounded"></i>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#basicModal">
+                      <i class="bx bx-edit-alt me-1"></i> View
+                    </a>                    
+                    <a class="dropdown-item delete-item" href="#">
+                      <i class="bx bx-trash me-1"></i> Delete
+                    </a>
+                  </div>                  
+                </div>
+              </td>
+              <div class="col-lg-4 col-md-3">
+                <small class="text-light fw-semibold">Feedback Pengguna</small>
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="basicModalLabel">Deskripsi Feedback</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          KADJAan aksajwkawkaj a,djakdjaijdia akwawhabmbna kawhdnakwh jawajwhajebah jawyajebsaj
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- Add any other buttons if needed -->
+      </div>
+    </div>
+  </div>
+</div>
+
+              </div>
             </tr>
-            @endforeach
-        </tbody>
+          </tbody>
         </table>
       </div>
-    </div>          
+    </div>
+  </div>
+  <div class="content-backdrop fade"></div>
+  
 </div>
 @endsection
