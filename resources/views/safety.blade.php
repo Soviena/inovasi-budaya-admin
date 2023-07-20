@@ -13,7 +13,6 @@
                       <tr>
                         <th>Judul</th>
                         <th>Deskripsi</th>
-                        <th>Nama File</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -21,7 +20,6 @@
                       <tr>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
                         <td>Albert Cook</td>
-                        <td>Ini testing tanggal</td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -50,7 +48,6 @@
                       <tr>
                         <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>React Project</strong></td>
                         <td>Barry Hunter</td>
-                        <td>Ini testing tanggal</td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -79,7 +76,6 @@
                       <tr>
                         <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>VueJs Project</strong></td>
                         <td>Trevor Baker</td>
-                        <td>Ini testing tanggal</td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -110,7 +106,6 @@
                           <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Bootstrap Project</strong>
                         </td>
                         <td>Jerry Milton</td>
-                        <td>Ini testing tanggal</td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -192,7 +187,7 @@
         </div>
         <div class="mb-3">
           <label for="defaultInput" class="form-label">ubah deskripsi</label>
-          <input id="defaultInput" class="form-control" type="text">
+          <textarea id="basic-default-message" class="form-control"  aria-describedby="basic-icon-default-message2" rows="3"></textarea>
         </div>
         <div class="mb-3">
           <label for="formFile" class="form-label">Pilih file</label>
