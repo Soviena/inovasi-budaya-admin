@@ -77,10 +77,12 @@
                         </a>
                     </div>
                     <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
+                        <a href="{{route('materi')}}" class="btn">
                         <div class="card-body">
                             <i class="bx bx-book mb-2"></i>
                             <p class="icon-name text-capitalize text-truncate mb-0">Materi</p>
                         </div>
+                        </a>
                     </div>
                     <div style="width:30%;" class="card icon-card cursor-pointer text-center mb-4 mx-2">
                         <a href="{{route('safetyMoment')}}" class="btn">

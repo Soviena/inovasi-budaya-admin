@@ -35,6 +35,8 @@ Route::post('/materi/store', [MateriController::class, 'store'])->name('materi.s
 Route::get('/materi', [MateriController::class, 'index'])->name('materi');
 Route::get('/materi/delete/{idMateri}',[MateriController::class, 'deleteMateri'])->name("deleteMateri");
 Route::get('/materi/download/{idMateri}', [MateriController::class, 'downloadMateri'])->name('downloadMateri');
+Route::get('/materi/edit/{idMateri}', [MateriController::class, 'editMateri'])->name('editMateri');
+Route::post('/materi/update/{idMateri}', [MateriController::class, 'updateMateri'])->name('updateMateri');
 
 Route::get('/budaya',[BudayaController::class, 'index'])->name("budayaIndex");
 Route::get('/budaya/add',[BudayaController::class, 'addBudaya'])->name("addBudaya");
