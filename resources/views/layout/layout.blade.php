@@ -199,14 +199,14 @@
             </li>
 
             <li class="menu-item">
-              <a href="#" class="menu-link">
+              <a href="{{route('safetyMoment')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-shield"></i>
                 <div data-i18n="Boxicons">Safety Moment</div>
               </a>
             </li>
 
             <li class="menu-item">
-              <a href="#" class="menu-link">
+              <a href="{{route('kinerjaBulan')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-bar-chart-alt-2"></i>
                 <div data-i18n="Boxicons">Kinerja Bulanan</div>
               </a>
