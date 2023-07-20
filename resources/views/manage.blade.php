@@ -25,91 +25,51 @@
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
-              
-                  <div class="dropdown">
-                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                      <i class="bx bx-dots-vertical-rounded"></i>
-                    </button>
-                    
-                  </div>
-                </td>
-              </tr>
+                <td>tes</td>
+                <td>test</td>
+                <td>testing</td>
+                <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#editUser"
+                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#deleteUser"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
                           
             </tbody>
             <tfoot>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>              
+                <td>tes</td>
+                <td>test</td>
+                <td>testing</td>              
                 <td>
-                  <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-        <div class="tab-pane fade" id="navs-justified-profile" role="tabpanel">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Nama budaya</th>
-                <th>Deskripsi</th>
-                <th>Tanggal</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody class="table-border-bottom-0">
-            
-                    <div class="dropdown">
+                  <div class="dropdown">
                       <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                         <i class="bx bx-dots-vertical-rounded"></i>
                       </button>
-                     
-                  </td>
-                </tr>
-               
-            </tbody>
-            <tfoot>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>              
-                <td>
-                  
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-        <div class="tab-pane fade" id="navs-justified-messages" role="tabpanel">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Nama budaya</th>
-                <th>Deskripsi</th>
-                <th>Tanggal</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody class="table-border-bottom-0">
-              
-                    <div class="dropdown">
-                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                        <i class="bx bx-dots-vertical-rounded"></i>
-                      </button>
-                     
-                    </div>
-                  </td>
-                </tr>
-                
-            </tbody>
-            <tfoot>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>              
-                <td>
-                  
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editUser"
+                          ><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              data-bs-toggle="modal"
+                              data-bs-target="#deleteUser"
+                            ><i class="bx bx-trash me-1"></i> Delete</a>
+                      </div>
+                  </div>
                 </td>
               </tr>
             </tfoot>

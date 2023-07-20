@@ -2,123 +2,39 @@
 @section('content')
 <div class="content-wrapper">
 
-    <div class="container-xxl flex-grow-1 container-p-y">
-    <div class="nav-align-top mb-4">
-      <ul class="nav nav-tabs nav-fill" role="tablist">
-        <li class="nav-item">
-          <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-justified-home" aria-controls="navs-justified-home" aria-selected="true">
-            <i class="tf-icons bx bx-user"></i> Top User
-            <span class="badge rounded-pill badge-center h-px-20 w-px-20 bg-label-danger">3</span>
-          </button>
-        </li>
-        
-      </ul>
-      <div class="tab-content">
-        <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Nama Panjang</th>
-                <th>Tanggal Lahir</th>
-                <th>Email</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody class="table-border-bottom-0">
-              
-                  <div class="dropdown">
-                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                      <i class="bx bx-dots-vertical-rounded"></i>
-                    </button>
-                    
-                  </div>
-                </td>
-              </tr>
-                          
-            </tbody>
-            <tfoot>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>              
-                <td>
-                  <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-        <div class="tab-pane fade" id="navs-justified-profile" role="tabpanel">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Nama budaya</th>
-                <th>Deskripsi</th>
-                <th>Tanggal</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody class="table-border-bottom-0">
-            
-                    <div class="dropdown">
-                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                        <i class="bx bx-dots-vertical-rounded"></i>
-                      </button>
-                     
-                  </td>
-                </tr>
-               
-            </tbody>
-            <tfoot>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>              
-                <td>
-                  
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-        <div class="tab-pane fade" id="navs-justified-messages" role="tabpanel">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Nama budaya</th>
-                <th>Deskripsi</th>
-                <th>Tanggal</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody class="table-border-bottom-0">
-              
-                    <div class="dropdown">
-                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                        <i class="bx bx-dots-vertical-rounded"></i>
-                      </button>
-                     
-                    </div>
-                  </td>
-                </tr>
-                
-            </tbody>
-            <tfoot>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>              
-                <td>
-                  
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-      </div>
-  </div>
-</div>
+  <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4" style="display: flex; align-items: center;">
+          <span class="text-muted fw-light">Bulan/</span>
+          <span style="flex-grow: 1;">Tahun</span>
+        </h4>
+        <div class="d-flex flex-wrap">
+              <div class="card" style="height:250px; width:250px;">
+                <div class="card-body" style="justify-content: center; align-items: center; height: 20%; overflow-y: auto;">
+                    <img src="https://th.bing.com/th/id/OIP.3VTIvnXIT61CfqI9ucdR7gAAAA?pid=ImgDet&rs=1" class="img-fluid rounded-circle mx-5" alt="Circular Image" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; overflow: hidden;">
+                  <p class="card-text mb-3 w-100 mx-0" style="max-width: 120%; text-align: justify;">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel nisi id justo ultricies
+                  fringilla. Sed vehicula luctus urna, eu pulvinar tortor feugiat a. Sed vitae laoreet nulla, in
+                    ultricies felis.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <a href="javascript:void(0);" class="card-link">Edit</a>
+                  <a href="javascript:void(0);" class="card-link">Hapus</a>
+                </div>
+              </div>
 
+
+              <div class="card icon-card cursor-pointer text-center mx-3" style="height:250px; width:250px">
+                <a href="#" class="btn">
+                  <div class="card-body pt-5">
+                    <i class='bx bx-plus' style="font-size: 6rem " ></i>
+                    <p class="icon-name text-capitalize text-truncate" style="font-size: 1.2rem " >Tambah</p>
+                  </div>
+                </a>
+              </div>
+          
+        </div>
+  </div>
   <div class="content-backdrop fade"></div>
 </div>
 @endsection
