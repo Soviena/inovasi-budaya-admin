@@ -14,7 +14,6 @@
           <table class="table">
             <thead>
               <tr>
-                <th>No</th>
                 <th>Judul File</th>
                 <th>Actions</th>
               </tr>
@@ -23,7 +22,6 @@
               <!-- Loop through the list of PDF files from the database -->
               @foreach ($materis as $materi)
               <tr>
-                <td>{{ $materi->id }}</td>
                 <td>{{ $materi->title }}</td>
                 <td>
                   <div class="dropdown">
@@ -31,6 +29,7 @@
                       <i class="bx bx-dots-vertical-rounded"></i>
                     </button>
                     <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{{ route('downloadMateri', $materi->id) }}"><i class="bx bx-download me-1"></i> Download</a>
                       <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
                       <a class="dropdown-item" href="{{ route('deleteMateri', $materi->id) }}"><i class="bx bx-trash me-1"></i> Delete</a>
                     </div>

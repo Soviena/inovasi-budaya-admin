@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Materi;
+use Illuminate\Support\Facades\Storage;
 
 class MateriController extends Controller 
 {
@@ -38,4 +39,10 @@ class MateriController extends Controller
         $materi->delete();
         return redirect()->route('materi');
     }    
+
+    public function downloadMateri($id)
+    {
+        $materi = Materi::findOrFail($id);
+        return Storage::download("public/".$materi->fileName, $materi->title . '.pdf');
+    }
 }
