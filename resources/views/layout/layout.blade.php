@@ -169,7 +169,7 @@
             <li class="menu-item">
               <a href="{{route('manageUser')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Analytics">Manajemen Pengguna</div>
+                <div data-i18n="Analytics">Managemen Pengguna</div>
               </a>
             </li>
 
