@@ -23,7 +23,7 @@ class MateriController extends Controller
         ]);
 
         // Upload the PDF file and store its path in the database
-        $filePdfPath = $request->file('file_pdf')->store('pdfs', 'public');
+        $filePdfPath = $request->file('file_pdf')->store('uploaded/materi', 'public');
 
         $materi = new Materi([
             'title' => $request->input('title'),
@@ -36,9 +36,35 @@ class MateriController extends Controller
     }
     public function deleteMateri(Request $request, $id){
         $materi = Materi::find($id);
+        Storage::delete('public/'.$materi->fileName);
         $materi->delete();
+        
         return redirect()->route('materi');
-    }    
+    } 
+    
+    public function editMateri($id)
+{
+    $materi = Materi::findOrFail($id);
+    return view('editMateri', compact('materi'));
+}
+
+    public function updateMateri(Request $request, $id)
+{
+    $materi = Materi::findOrFail($id);
+    $materi->title = $request->input('title');
+
+    if ($request->hasFile('file_pdf')) {
+        Storage::delete('public/'.$materi->fileName);
+        $filePdf = $request->file('file_pdf');
+        $path = $filePdf->store('uploaded/materi', 'public');
+        $materi->fileName = $path;
+    }
+    
+    $materi->save();
+
+    return redirect()->route('materi')->with('');
+}
+
 
     public function downloadMateri($id)
     {
