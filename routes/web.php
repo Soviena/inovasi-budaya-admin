@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\BudayaController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\MateriController;
+use App\Models\Materi;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,10 @@ Route::get('/notification', [NotificationController::class, 'index'])->name('not
 Route::post('/notification/send', [NotificationController::class, 'send'])->name('sendNotif');
 
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+
+Route::post('/materi/store', [MateriController::class, 'store'])->name('materi.store');
+Route::get('/materi', [MateriController::class, 'index'])->name('materi');
+Route::get('/materi/delete/{idMateri}',[MateriController::class, 'deleteMateri'])->name("deleteMateri");
 
 Route::get('/budaya',[BudayaController::class, 'index'])->name("budayaIndex");
 Route::get('/budaya/add',[BudayaController::class, 'addBudaya'])->name("addBudaya");
