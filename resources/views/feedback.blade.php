@@ -9,11 +9,11 @@
         <table class="table">
           <thead>
             <tr>
-              <th>No</th>
-              <th>Nama User</th>
-              <th>Judul Feedback</th>
-              <th>Deskripsi Feedback</th>
-              <th>Actions</th>
+              <th class="text-center" style="vertical-align: middle">No</th>
+              <th class="text-center" style="vertical-align: middle">Nama User</th>
+              <th class="text-center" style="vertical-align: middle">Judul Feedback</th>
+              <th class="text-center" style="vertical-align: middle">Deskripsi Feedback</th>
+              <th class="text-center" style="vertical-align: middle">Actions</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
@@ -37,9 +37,36 @@
                   </div>                  
                 </div>
               </td>
-              <div class="col-lg-4 col-md-3">
-                <small class="text-light fw-semibold">Feedback Pengguna</small>
-<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModalLabel" aria-hidden="true">
+            </tr>
+            <tr>            
+              <td>1</td>
+              <td>Harry</td>
+              <td>Keluh-Kesah</td>
+              <td>Terjadi error di bagian homepage pada aplikasi, lalu pada bagian kinerja terkadang tidak menampilkan tabel dan juga saat ingin mengakses web, terkadang button yang me-refer ke web sucofindo sulit untuk ditekan</td>
+              <td>
+                <div class="dropdown">
+                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                    <i class="bx bx-dots-vertical-rounded"></i>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#basicModal">
+                      <i class="bx bx-edit-alt me-1"></i> View
+                    </a>                    
+                    <a class="dropdown-item delete-item" href="#">
+                      <i class="bx bx-trash me-1"></i> Delete
+                    </a>
+                  </div>                  
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="content-backdrop fade"></div>
+
+  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -57,16 +84,6 @@
       </div>
     </div>
   </div>
-</div>
-
-              </div>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
   </div>
-  <div class="content-backdrop fade"></div>
-  
 </div>
 @endsection

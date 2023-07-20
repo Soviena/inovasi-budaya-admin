@@ -186,9 +186,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                Close
+                Tutup
                 </button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>

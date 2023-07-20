@@ -9,14 +9,15 @@
         </h4>
         <div class="d-flex flex-wrap">
               <div class="card" style="height:250px; width:250px;">
-                <div class="card-body" style="justify-content: center; align-items: center; height: 20%; overflow-y: auto;">
+                  <div class="card-body text-center" style=" align-items: center; height: 20%; overflow-y: auto;">
                     <img src="https://th.bing.com/th/id/OIP.3VTIvnXIT61CfqI9ucdR7gAAAA?pid=ImgDet&rs=1" class="img-fluid rounded-circle mx-5" alt="Circular Image" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; overflow: hidden;">
-                  <p class="card-text mb-3 w-100 mx-0" style="max-width: 120%; text-align: justify;">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel nisi id justo ultricies
-                  fringilla. Sed vehicula luctus urna, eu pulvinar tortor feugiat a. Sed vitae laoreet nulla, in
-                    ultricies felis.
-                  </p>
-                </div>
+                      <p class="mx-auto" style="font-weight: bold;">Nama Pemenang</p>
+                      <p class="card-text mb-3 w-100 mx-0" style="max-width: 120%; text-align: left;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel nisi id justo ultricies
+                        fringilla. Sed vehicula luctus urna, eu pulvinar tortor feugiat a. Sed vitae laoreet nulla, in
+                        ultricies felis.
+                      </p>  
+                  </div>
                 <div class="card-footer">
                   <a href="javascript:void(0);" class="card-link">Edit</a>
                   <a href="javascript:void(0);" class="card-link">Hapus</a>
