@@ -16,7 +16,6 @@
               <tr>
                 <th>No</th>
                 <th>Judul File</th>
-                <th>Path File</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -26,7 +25,6 @@
               <tr>
                 <td>{{ $materi->id }}</td>
                 <td>{{ $materi->title }}</td>
-                <td>{{ $materi->fileName }}</td>
                 <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
