@@ -2,6 +2,7 @@
 @section('content')
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
+      <h3 class="fw-bold py-3 mb-4 text-center">Daftar Materi</h3>
     <div class="nav-align-top mb-4">
       <ul class="nav nav-tabs nav-fill" role="tablist">
         <li class="nav-item">
