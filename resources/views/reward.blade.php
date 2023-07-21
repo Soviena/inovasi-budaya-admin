@@ -19,7 +19,9 @@
         </p>
       </div>  
       <div class="card-footer">
-        <a href="javascript:void(0);" class="card-link">Edit</a>
+        <a href="javascript:void(0);" class="card-link" data-bs-toggle="modal"
+      data-bs-target="#editReward">
+      Edit</a>
         <a href="javascript:void(0);" class="card-link">Hapus</a>
       </div>
     </div>
@@ -73,6 +75,42 @@
       </div>
     </div>
   </div>
+  <div class="modal fade" id="editReward" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Edit Profile</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">Ubah nama</label>
+          <input id="defaultInput" class="form-control" type="text">
+        </div>
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">ubah deskripsi</label>
+          <textarea id="basic-default-message" class="form-control"  aria-describedby="basic-icon-default-message2" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Ubah Profil</label>
+          <input class="form-control" type="file" id="formFile">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
+          Tutup
+        </button>
+      </button>
+      <button type="button" class="btn btn-primary">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
   
 <div class="content-backdrop fade"></div>
 </div>
