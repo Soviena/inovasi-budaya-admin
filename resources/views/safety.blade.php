@@ -122,7 +122,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <img src="{{ asset('storage/' . $safety->fileName) }}" alt="Deskripsi Gambar" class="img-fluid" style="width:auto; height: auto">
+        <img src="{{ asset('storage/' . $safety->fileName) }}"  class="img-fluid" style="width:auto; height: auto">
           <p class="mx-0" style="width: 15rem; font-weight: bold;">{{ $safety->judul }}</p>
           <p class="w-100 mx-0" style="max-width: 120%;">{{ $safety->deskripsi }}</p>
         </div>
