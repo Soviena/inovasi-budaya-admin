@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Storage;
 
 class MateriController extends Controller 
 {
-
     public function index()
     {
         $materis = Materi::all(); 

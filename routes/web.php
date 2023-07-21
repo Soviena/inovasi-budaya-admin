@@ -47,7 +47,12 @@ Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
 
 Route::get('/reward',[UserController::class, 'reward'])->name("rewardUser");
 
-Route::get('/safety',[SafetyController::class, 'safety'])->name("safetyMoment");
+Route::get('/safety', [SafetyController::class, 'index'])->name('safety');
+Route::post('/safety/add', [SafetyController::class, 'addSafety'])->name('addSafety');
+Route::get('/safety/preview/{id}', [SafetyController::class, 'previewSafety'])->name('previewSafety');
+Route::get('/safety/delete/{id}',[SafetyController::class, 'deleteSafety'])->name("deleteSafety");
+Route::get('/safety/edit/{id}', [SafetyController::class, 'editSafety'])->name('editSafety');
+Route::post('/safety/update/{id}', [SafetyController::class, 'updateSafety'])->name('updateSafety');
 
 Route::get('/kinerjaBulanan',[KinerjaBulController::class, 'kinerjaBulanan'])->name("kinerjaBulan");
 
