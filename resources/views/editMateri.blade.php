@@ -9,13 +9,13 @@
         <form action="{{ route('updateMateri', $materi->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="mb-3 row">
-            <label for="text-input" class="col-md-2 col-form-label">Judul</label>
+            <label for="text-input" class="col-md-2 col-form-label">Judul :</label>
             <div class="col-md-10">
               <input class="form-control" type="text" value="{{ $materi->title }}" name="title" id="title">
             </div>
           </div>
           <div class="mb-3 row">
-            <label for="Deskripsi" class="col-md-2 col-form-label">File PDF</label>
+            <label for="Deskripsi" class="col-md-2 col-form-label">File PDF :</label>
             <div class="col-md-10">
             <input class="form-control" type="file" name="file_pdf" id="file_pdf" accept=".pdf" />
             </div>
