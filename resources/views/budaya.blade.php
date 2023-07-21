@@ -237,7 +237,7 @@
           </div>
           <div class="mb-3">
             <label for="html5-month-input" class="col-md-2 col-form-label">Bulan</label>
-            <input class="form-control" name="bulan" type="month" id="html5-month-input">
+            <input class="form-control" name="bulan" type="month"  id="html5-month-input">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">

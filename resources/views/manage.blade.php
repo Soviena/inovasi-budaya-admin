@@ -97,7 +97,7 @@
         </div>
         <div class="mb-3">
           <label for="defaultInput" class="form-label">Ubah tanggal lahir</label>
-          <input class="form-control" type="date" value="2021-06-18" id="html5-date-input">
+          <input class="form-control" type="date" value="" id="html5-date-input">
         </div>
         <div class="mb-3">
           <label for="defaultInput" class="form-label">Ubah email</label>
