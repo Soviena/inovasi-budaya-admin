@@ -78,6 +78,68 @@
       </div>
   </div>
 </div>
+<div class="modal fade" id="editUser" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Edit Poster</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">Ubah judul</label>
+          <input id="defaultInput" class="form-control" type="text">
+        </div>
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">Ubah tanggal lahir</label>
+          <input class="form-control" type="date" value="2021-06-18" id="html5-date-input">
+        </div>
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">Ubah email</label>
+          <input id="defaultInput" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
+          Tutup
+        </button>
+      </button>
+      <button type="button" class="btn btn-primary">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteUser" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Hapus User</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Apakah anda yakin?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color: #1A4980;">
+          Tidak
+        </button>
+      </button>
+      <button type="button" class="btn btn-danger">Ya</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div class="content-backdrop fade"></div>
 </div>
