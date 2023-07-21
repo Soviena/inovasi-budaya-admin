@@ -243,7 +243,6 @@
           <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
             Tutup
           </button>
-        </button>
         <button type="button" class="btn btn-primary">Simpan</button>
         </div>
         </div>

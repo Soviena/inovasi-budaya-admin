@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class SafetyMoment extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'judul',
+        'deskripsi',
+        'fileName',
+    ];
 }
+
