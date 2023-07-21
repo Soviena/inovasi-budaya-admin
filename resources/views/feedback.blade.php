@@ -29,7 +29,7 @@
                   </button>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#basicModal">
-                      <i class="bx bx-edit-alt me-1"></i> View
+                      <i class="bx bx-book-open"></i> Preview
                     </a>                    
                     <a class="dropdown-item delete-item" href="#">
                       <i class="bx bx-trash me-1"></i> Delete
@@ -50,7 +50,7 @@
                   </button>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#basicModal">
-                      <i class="bx bx-edit-alt me-1"></i> View
+                      <i class="bx bx-book-open"></i> Preview
                     </a>                    
                     <a class="dropdown-item delete-item" href="#">
                       <i class="bx bx-trash me-1"></i> Delete
