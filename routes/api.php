@@ -17,4 +17,7 @@ use App\Http\Controllers\ApiController;
 
 Route::post('/register', [ApiController::class, 'register']);
 Route::post('/login', [ApiController::class, 'login']);
+Route::post('/feedback/new', [ApiController::class, 'feedback']);
+
+
 
