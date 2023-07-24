@@ -6,6 +6,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\BudayaController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\SafetyController;
+use App\Http\Controllers\KinerjaBulController;
+use App\Http\Controllers\MateriController;
+use App\Models\Materi;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +31,13 @@ Route::post('/notification/send', [NotificationController::class, 'send'])->name
 
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 
+Route::post('/materi/store', [MateriController::class, 'store'])->name('materi.store');
+Route::get('/materi', [MateriController::class, 'index'])->name('materi');
+Route::get('/materi/delete/{idMateri}',[MateriController::class, 'deleteMateri'])->name("deleteMateri");
+Route::get('/materi/download/{idMateri}', [MateriController::class, 'downloadMateri'])->name('downloadMateri');
+Route::get('/materi/edit/{idMateri}', [MateriController::class, 'editMateri'])->name('editMateri');
+Route::post('/materi/update/{idMateri}', [MateriController::class, 'updateMateri'])->name('updateMateri');
+
 Route::get('/budaya',[BudayaController::class, 'index'])->name("budayaIndex");
 Route::get('/budaya/add',[BudayaController::class, 'addBudaya'])->name("addBudaya");
 Route::post('/budaya/new', [BudayaController::class, 'newBudaya'])->name('newBudaya');
@@ -35,6 +46,15 @@ Route::get('/budaya/delete/{idBudaya}',[BudayaController::class, 'deleteBudaya']
 Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
 
 Route::get('/reward',[UserController::class, 'reward'])->name("rewardUser");
+
+Route::get('/safety', [SafetyController::class, 'index'])->name('safety');
+Route::post('/safety/add', [SafetyController::class, 'addSafety'])->name('addSafety');
+Route::get('/safety/preview/{id}', [SafetyController::class, 'previewSafety'])->name('previewSafety');
+Route::get('/safety/delete/{id}',[SafetyController::class, 'deleteSafety'])->name("deleteSafety");
+Route::get('/safety/edit/{id}', [SafetyController::class, 'editSafety'])->name('editSafety');
+Route::post('/safety/update/{id}', [SafetyController::class, 'updateSafety'])->name('updateSafety');
+
+Route::get('/kinerjaBulanan',[KinerjaBulController::class, 'kinerjaBulanan'])->name("kinerjaBulan");
 
 Route::get('/aktivitas',[AktivitasController::class, 'index'])->name("indexAktivitas");
 Route::get('/aktivitas/{idBudaya}',[AktivitasController::class, 'aktivitas'])->name("aktivitas");

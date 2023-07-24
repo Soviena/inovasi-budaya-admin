@@ -25,97 +25,119 @@
               </tr>
             </thead>
             <tbody class="table-border-bottom-0">
-              
-                  <div class="dropdown">
-                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                      <i class="bx bx-dots-vertical-rounded"></i>
-                    </button>
-                    
-                  </div>
-                </td>
-              </tr>
+                <td>tes</td>
+                <td>test</td>
+                <td>testing</td>
+                <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#editUser"
+                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#deleteUser"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
                           
             </tbody>
             <tfoot>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>              
+                <td>tes</td>
+                <td>test</td>
+                <td>testing</td>              
                 <td>
-                  <a href="{{route('addBudaya')}}" class="btn btn-outline-primary">Tambah</a>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-        <div class="tab-pane fade" id="navs-justified-profile" role="tabpanel">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Nama budaya</th>
-                <th>Deskripsi</th>
-                <th>Tanggal</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody class="table-border-bottom-0">
-            
-                    <div class="dropdown">
+                  <div class="dropdown">
                       <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                         <i class="bx bx-dots-vertical-rounded"></i>
                       </button>
-                     
-                  </td>
-                </tr>
-               
-            </tbody>
-            <tfoot>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>              
-                <td>
-                  
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-        <div class="tab-pane fade" id="navs-justified-messages" role="tabpanel">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Nama budaya</th>
-                <th>Deskripsi</th>
-                <th>Tanggal</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody class="table-border-bottom-0">
-              
-                    <div class="dropdown">
-                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                        <i class="bx bx-dots-vertical-rounded"></i>
-                      </button>
-                     
-                    </div>
-                  </td>
-                </tr>
-                
-            </tbody>
-            <tfoot>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>              
-                <td>
-                  
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editUser"
+                          ><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              data-bs-toggle="modal"
+                              data-bs-target="#deleteUser"
+                            ><i class="bx bx-trash me-1"></i> Delete</a>
+                      </div>
+                  </div>
                 </td>
               </tr>
             </tfoot>
           </table>
         </div>
       </div>
+  </div>
+</div>
+<div class="modal fade" id="editUser" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Edit User</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">Ubah judul</label>
+          <input id="defaultInput" class="form-control" type="text">
+        </div>
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">Ubah tanggal lahir</label>
+          <input class="form-control" type="date" value="" id="html5-date-input">
+        </div>
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">Ubah email</label>
+          <input id="defaultInput" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
+          Tutup
+        </button>
+      </button>
+      <button type="button" class="btn btn-primary">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteUser" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Hapus User</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Apakah anda yakin?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color: #1A4980;">
+          Tidak
+        </button>
+      </button>
+      <button type="button" class="btn btn-danger">Ya</button>
+      </div>
+    </div>
   </div>
 </div>
 
