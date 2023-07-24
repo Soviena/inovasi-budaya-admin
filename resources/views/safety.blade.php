@@ -90,8 +90,8 @@
           </div>
           <div class="row g-2">
             <div class="mb-3">
-              <label for="file_safety" class="form-label">Masukan file gambar/PDF</label>
-              <input class="form-control" type="file" name="file_safety" id="file_safety" accept=".jpg,.png,.jpeg,.pdf" />
+              <label for="file_safety" class="form-label">Masukan file gambar</label>
+              <input class="form-control" type="file" name="file_safety" id="file_safety" accept=".jpg,.png,.jpeg" />
             </div>
           </div>
         </div>
