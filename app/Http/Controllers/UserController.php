@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-
+use App\Models\Rewards;
+use App\Models\User;
 
 
 class UserController extends Controller
@@ -16,8 +17,11 @@ class UserController extends Controller
         return view('login');
     }
     public function reward(){
-        return view('reward');
+        $reward = Rewards::all();
+        $users = User::all();
+        return view('reward',compact('reward','users'));
     }
+
     public function manage(){
         return view('manage');
     }

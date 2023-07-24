@@ -8,10 +8,11 @@
     <span style="flex-grow: 1;">Tahun</span>
   </h4>
   <div class="d-flex flex-wrap">
-    <div class="card" style="height: 58vh; width:250px;">
+    <div class="card" style="height: 63vh; width:250px;">
       <div class="card-body text-center" style=" align-items: center; height: 20%; overflow-y: auto;">
         <img src="https://3.bp.blogspot.com/-XbsKf2Hu778/UxVtx1PXe2I/AAAAAAAAKtI/WewtyZGqKaA/s1600/Alam04.jpg" class="img-fluid rounded-circle mx-5" alt="Circular Image" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; overflow: hidden;">
         <p class="mx-auto" style="font-weight: bold;">Nama Pemenang</p>
+        <p class="mx-auto" style="font-weight: bold;">Tanggal Lahir</p>
         <p class="card-text mb-3 w-100 mx-0" style="max-width: 120%; text-align: left;">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel nisi id justo ultricies
           fringilla. Sed vehicula luctus urna, eu pulvinar tortor feugiat a. Sed vitae laoreet nulla, in
@@ -25,12 +26,12 @@
         <a href="javascript:void(0);" class="card-link">Hapus</a>
       </div>
     </div>
-    <div class="card icon-card text-center mx-5" style="height:58vh; width:250px">
+    <div class="card icon-card text-center mx-5" style="height:63vh; width:250px">
     <a data-bs-toggle="modal"
       data-bs-target="#addReward" class="btn">
-      <div class="card-body my-3">
+      <div class="card-body my-4">
       <div class="border border-0">
-      </div>
+      </div>  
       </div>
         <div class="card-body pt-5">
           <i class='bx bx-plus' style="font-size: 6rem " ></i>
@@ -56,28 +57,27 @@
               <thead>
                 <tr>
                   <th>Nama Panjang</th>
-                  <th>Tanggal Lahir</th>
-                  <th>Email</th>
+                  <th>Nama Penghargaan</th>
+                  <th>Deskripsi</th>
                   <th>Actions</th>
                 </tr>
               </thead>
+              @foreach($users as $u) 
               <tbody class="table-border-bottom-0">
-                  <td>tes</td>
-                  <td>test</td>
-                  <td>testing</td>
+                @foreach($reward as $r)
+                <tr> 
+                  <td>{{$u->name}}</td>
+                  <td>{{$r->rewardsName}}</td>
+                  <td>{{$r->deskripsi}}</td>
                   <td>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                      <i class="fas fa-plus"></i> Tambah
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                      <i class="fas fa-plus"></i>Tambah
                     </button>
                   </td>
+                  </tr>
+                @endforeach
                 </tbody>
-                <tbody class="table-border-bottom-0">
-                  <td>tes</td>
-                  <td>test</td>
-                  <td>testing</td>
-                  <div class="dropdown">
-                    </div>
-              </tbody>
+              @endforeach
           </table>
         </div>
         <div class="modal-footer">
