@@ -20,7 +20,7 @@ class SafetyController extends Controller
     $request->validate([
         'judul' => 'required|string|max:255',
         'deskripsi' => 'required|string',
-        'file_safety' => 'required|file|mimes:jpg,jpeg,png,pdf|max:10240',
+        'file_safety' => 'required|file|mimes:jpg,jpeg,png|max:10240',
     ]);
 
     $filesafetyPath = $request->file('file_safety')->store('uploaded/safety', 'public');
