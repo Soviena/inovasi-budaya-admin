@@ -9,81 +9,61 @@
         <table class="table">
           <thead>
             <tr>
-              <th class="text-center" style="vertical-align: middle">No</th>
-              <th class="text-center" style="vertical-align: middle">Nama User</th>
-              <th class="text-center" style="vertical-align: middle">Judul Feedback</th>
-              <th class="text-center" style="vertical-align: middle">Deskripsi Feedback</th>
-              <th class="text-center" style="vertical-align: middle">Actions</th>
+              <th >User ID</th>
+              <th >Judul Feedback</th>
+              <th >Deskripsi Feedback</th>
+              <th >Actions</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
-            <tr>            
-              <td>1</td>
-              <td>Harry</td>
-              <td>Keluh-Kesah</td>
-              <td>Terjadi error di bagian homepage pada aplikasi, lalu pada bagian kinerja terkadang tidak menampilkan tabel dan juga saat ingin mengakses web, terkadang button yang me-refer ke web sucofindo sulit untuk ditekan</td>
+          @foreach ($feedback as $feedbacks)
+            <tr>  
+              <td>{{ $feedbacks->user_id }}</td>
+              <td>{{ $feedbacks->judul }}</td>
+              <td>{{ $feedbacks->deskripsi }}</td>
               <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                    <i class="bx bx-dots-vertical-rounded"></i>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#basicModal">
-                      <i class="bx bx-book-open"></i> Preview
-                    </a>                    
-                    <a class="dropdown-item delete-item" href="#">
-                      <i class="bx bx-trash me-1"></i> Delete
-                    </a>
-                  </div>                  
+              <div class="dropdown">
+                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                  <i class="bx bx-dots-vertical-rounded"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{{ route('previewFeedback', $feedbacks->id) }}" data-bs-toggle="modal" data-bs-target="#previewForm{{ $feedbacks->id }}">
+                    <i class='bx bx-book-open'></i> Preview
+                </a>
+                  <a class="dropdown-item" href="{{ route('deleteFeedback', $feedbacks->id) }}"><i class="bx bx-trash me-1"></i> Delete</a>
                 </div>
-              </td>
-            </tr>
-            <tr>            
-              <td>1</td>
-              <td>Harry</td>
-              <td>Keluh-Kesah</td>
-              <td>Terjadi error di bagian homepage pada aplikasi, lalu pada bagian kinerja terkadang tidak menampilkan tabel dan juga saat ingin mengakses web, terkadang button yang me-refer ke web sucofindo sulit untuk ditekan</td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                    <i class="bx bx-dots-vertical-rounded"></i>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#basicModal">
-                      <i class="bx bx-book-open"></i> Preview
-                    </a>                    
-                    <a class="dropdown-item delete-item" href="#">
-                      <i class="bx bx-trash me-1"></i> Delete
-                    </a>
-                  </div>                  
-                </div>
-              </td>
-            </tr>
+              </div>   
+            </td>       
+          </tr>
+          @endforeach
           </tbody>
         </table>
       </div>
     </div>
   </div>
   <div class="content-backdrop fade"></div>
+</div>
 
-  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModalLabel" aria-hidden="true">
+  @foreach ($feedback as $feedbacks)
+  <div class="modal fade" id="previewForm{{ $feedbacks->id }}" tabindex="-1" role="dialog" aria-labelledby="previewFeedback" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="basicModalLabel">Deskripsi Feedback</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Preview Feedback</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>
-          KADJAan aksajwkawkaj a,djakdjaijdia akwawhabmbna kawhdnakwh jawajwhajebah jawyajebsaj
-        </p>
+        <p class="mx-0" style="width: 15rem; font-weight: bold;">{{ $feedbacks->judul }}</p>
+          <p class="w-100 mx-0" style="max-width: 120%;">{{ $feedbacks->deskripsi }}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <!-- Add any other buttons if needed -->
       </div>
     </div>
   </div>
   </div>
-</div>
+  @endforeach
+
+  <div class="content-backdrop fade"></div>
+
 @endsection

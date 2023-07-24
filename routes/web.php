@@ -9,6 +9,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\SafetyController;
 use App\Http\Controllers\KinerjaBulController;
 use App\Http\Controllers\MateriController;
+use App\Models\Feedback;
 use App\Models\Materi;
 
 /*
@@ -30,6 +31,8 @@ Route::get('/notification', [NotificationController::class, 'index'])->name('not
 Route::post('/notification/send', [NotificationController::class, 'send'])->name('sendNotif');
 
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::get('/feedback/preview/{id}', [FeedbackController::class, 'previewFeedback'])->name('previewFeedback');
+Route::get('/feedback/delete/{id}',[FeedbackController::class, 'deleteFeedback'])->name("deleteFeedback");
 
 Route::post('/materi/store', [MateriController::class, 'store'])->name('materi.store');
 Route::get('/materi', [MateriController::class, 'index'])->name('materi');
@@ -42,6 +45,7 @@ Route::get('/budaya',[BudayaController::class, 'index'])->name("budayaIndex");
 Route::get('/budaya/add',[BudayaController::class, 'addBudaya'])->name("addBudaya");
 Route::post('/budaya/new', [BudayaController::class, 'newBudaya'])->name('newBudaya');
 Route::get('/budaya/delete/{idBudaya}',[BudayaController::class, 'deleteBudaya'])->name("deleteBudaya");
+Route::post('/budaya/update/{idBudaya}', [BudayaController::class, 'updateBudaya'])->name('updateBudaya');
 
 Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
 

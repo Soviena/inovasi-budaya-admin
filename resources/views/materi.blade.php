@@ -83,13 +83,13 @@
           <div class="row">
             <div class="col mb-3">
               <label for="title" class="form-label">Judul</label>
-              <input type="text" name="title" id="title" class="form-control" placeholder="Masukan Judul Materi" />
+              <input type="text" name="title" id="title" class="form-control" placeholder="Masukan Judul Materi" required />
             </div>
           </div>
           <div class="row g-2">
             <div class="mb-3">
               <label for="file_pdf" class="form-label">Masukan file PDF</label>
-              <input class="form-control" type="file" name="file_pdf" id="file_pdf" accept=".pdf" />
+              <input class="form-control" type="file" name="file_pdf" id="file_pdf" accept=".pdf" required />
             </div>
           </div>
         </div>

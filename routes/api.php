@@ -17,6 +17,7 @@ use App\Http\Controllers\ApiController;
 
 Route::post('/register', [ApiController::class, 'register']);
 Route::post('/login', [ApiController::class, 'login']);
+Route::post('/feedback/new', [ApiController::class, 'feedback']);
 Route::get('/budaya/all', [ApiController::class, 'budayaAll']);
 Route::get('/aktivitas/{idBudaya}',[ApiController::class, 'aktivitasBudaya']);
 

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Budaya;
+use App\Models\Feedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
-
 
 
 class ApiController extends Controller
@@ -83,4 +83,17 @@ class ApiController extends Controller
         $b = Budaya::with('aktivitas')->find($id);
         return response()->json($b);
     }
+
+    public function feedback(Request $request)
+{
+    $feedback = new Feedback;
+    $feedback->user_id= $request->user_id;
+    $feedback->judul= $request->judul;
+    $feedback->deskripsi= $request->deskripsi;
+
+    $feedback->save();
+
+    return response()->json(['message' => 'Feedback added successfully'], 200);
+}
+
 }
