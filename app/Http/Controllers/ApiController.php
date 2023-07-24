@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Budaya;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -28,7 +29,6 @@ class ApiController extends Controller
             ];
             return response()->json($data,400);
         }
-        
         $user = new User;
         $user->name = $request->name;
         $user->email = $email;
@@ -72,6 +72,16 @@ class ApiController extends Controller
             ];            
             return response()->json($data,400);
         }
+    }
+
+    public function budayaAll(){
+        $budaya = Budaya::orderBy('tanggal','DESC')->get();
+        return response()->json($budaya);
+    }
+
+    public function aktivitasBudaya($id){
+        $b = Budaya::with('aktivitas')->find($id);
+        return response()->json($b);
     }
 
     public function feedback(Request $request)
