@@ -11,19 +11,19 @@
           <div class="mb-3 row">
             <label for="text-input" class="col-md-2 col-form-label">Nama Budaya</label>
             <div class="col-md-10">
-              <input class="form-control" type="text" value="" name="judul" id="text-input">
+              <input class="form-control" type="text" value="" name="judul" id="text-input" required >
             </div>
           </div>
           <div class="mb-3 row">
             <label for="Deskripsi" class="col-md-2 col-form-label">Deskripsi</label>
             <div class="col-md-10">
-              <textarea class="form-control" name="deskripsi" id="Deskripsi"></textarea>
+              <textarea class="form-control" name="deskripsi" id="Deskripsi" required ></textarea>
             </div>
           </div>
           <div class="mb-3 row">
             <label for="html5-month-input" class="col-md-2 col-form-label">Bulan</label>
             <div class="col-md-10">
-              <input class="form-control" name="bulan" type="month" id="html5-month-input">
+              <input class="form-control" name="bulan" type="month" id="html5-month-input" required >
             </div>
           </div>
           <div class="row justify-content-end">

@@ -45,6 +45,7 @@ Route::get('/budaya',[BudayaController::class, 'index'])->name("budayaIndex");
 Route::get('/budaya/add',[BudayaController::class, 'addBudaya'])->name("addBudaya");
 Route::post('/budaya/new', [BudayaController::class, 'newBudaya'])->name('newBudaya');
 Route::get('/budaya/delete/{idBudaya}',[BudayaController::class, 'deleteBudaya'])->name("deleteBudaya");
+Route::post('/budaya/update/{idBudaya}', [BudayaController::class, 'updateBudaya'])->name('updateBudaya');
 
 Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
 

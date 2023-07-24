@@ -28,6 +28,18 @@ class BudayaController extends Controller
         $budaya = Budaya::find($id);
         $budaya->delete();
         return redirect()->route('budayaIndex');
-    }    
+    }   
+    
+    public function updateBudaya(Request $request, $id)
+{
+    $budaya = Budaya::findOrFail($id);
+    $budaya->judul = $request->input('judul');
+    $budaya->deskripsi = $request->input('deskripsi');
+    $budaya->tanggal = $request->input('tanggal');
+
+    $budaya->save();
+
+    return redirect()->route('budayaIndex')->with('');
+}
 
 }
