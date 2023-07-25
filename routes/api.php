@@ -17,7 +17,15 @@ use App\Http\Controllers\ApiController;
 
 Route::post('/register', [ApiController::class, 'register']);
 Route::post('/login', [ApiController::class, 'login']);
+Route::post('/user/{idUser}/edit', [ApiController::class, 'editUser']);
+
 Route::get('/budaya/all', [ApiController::class, 'budayaAll']);
+Route::get('/budaya/now', [ApiController::class, 'getBudayaNow']);
+Route::get('/budaya/year/now', [ApiController::class, 'getBudayaYearNow']);
+
+
 Route::get('/aktivitas/{idBudaya}',[ApiController::class, 'aktivitasBudaya']);
+Route::get('/safety',[ApiController::class, 'safetyMoment']);
+
 
 
