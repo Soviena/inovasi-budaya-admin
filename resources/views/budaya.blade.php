@@ -79,17 +79,13 @@
                       <i class="bx bx-dots-vertical-rounded"></i>
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="{{route('aktivitas',$b->id)}}"><i class='bx bx-photo-album me-1' ></i> Aktivitas</a>
-                      <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#editBudaya"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
+                      <a class="dropdown-item" href="{{route('aktivitas',$b->id)}}"><i class="bx bx-photo-album me-1"></i> Aktivitas</a>
+                      <a class="dropdown-item" href="{{route('editBudaya', $b->id)}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
                       <a class="dropdown-item" href="{{route('deleteBudaya',$b->id)}}"><i class="bx bx-trash me-1"></i> Delete</a>
                     </div>
                   </div>
                 </td>
-              </tr>
+              </tr>    
               @endforeach                
             </tbody>
             <tfoot>
@@ -132,57 +128,12 @@
                       </button>
                       <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{route('aktivitas',$b->id)}}"><i class="bx bx-photo-album me-1"></i> Aktivitas</a>
-                        <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#editBudaya-this-{{$b->id}}"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
+                        <a class="dropdown-item" href="{{route('editBudaya', $b->id)}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
                         <a class="dropdown-item" href="{{route('deleteBudaya',$b->id)}}"><i class="bx bx-trash me-1"></i> Delete</a>
                       </div>
                     </div>
                   </td>
                 </tr>
-                <div class="modal" id="editBudaya-this-{{$b->id}}" tabindex="-1" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel1">Edit Budaya</h5>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">
-                        <form action="{{ route('updateBudaya', $b->id) }}" method="POST" enctype="multipart/form-data">
-                          @csrf
-                        <div class="mb-3">
-                          <label for="defaultInput" class="form-label">Ubah Nama Budaya</label>
-                          <input class="form-control" type="text" value="{{ $b->judul }}" name="judul" id="judul">
-                        </div>
-                        <div class="mb-3">
-                          <label for="defaultInput" class="form-label">Ubah Deskripsi</label>
-                          <input class="form-control" type="text" value="{{ $b->deskripsi }}" name="deskripsi" id="deskripsi">
-                        </div>
-                        <div class="mb-3">
-                          <label for="html5-month-input" class="col-md-2 col-form-label">Bulan</label>
-                          <input class="form-control" name="tanggal" type="month" value="{{ $b->tanggal }}"  id="tanggal">
-                      </div>
-                      <div class="modal-footer">
-                        <div class="row justify-content-end">
-                          <div class="col-md-4 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                              Batal
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 @endif
               @endforeach
             </tbody>
@@ -226,11 +177,7 @@
                       </button>
                       <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{route('aktivitas',$b->id)}}"><i class="bx bx-photo-album me-1"></i> Aktivitas</a>
-                        <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#editBudaya"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
+                        <a class="dropdown-item" href="{{route('editBudaya', $b->id)}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
                         <a class="dropdown-item" href="{{route('deleteBudaya',$b->id)}}"><i class="bx bx-trash me-1"></i> Delete</a>
                       </div>
                     </div>
