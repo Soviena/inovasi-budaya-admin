@@ -79,19 +79,19 @@
           <div class="row">
             <div class="col mb-3">
               <label for="judul" class="form-label">Judul</label>
-              <input type="text" name="judul" id="judul" class="form-control" placeholder="Judul Safety" />
+              <input type="text" name="judul" id="judul" class="form-control" placeholder="Judul Safety" required />
             </div>
           </div>
           <div class="row">
             <div class="col mb-3">
               <label for="deskripsi" class="form-label">Deskripsi</label>
-              <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsi Safety" />
+              <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsi Safety" required />
             </div>
           </div>
           <div class="row g-2">
             <div class="mb-3">
               <label for="file_safety" class="form-label">Masukan file gambar</label>
-              <input class="form-control" type="file" name="file_safety" id="file_safety" accept=".jpg,.png,.jpeg" />
+              <input class="form-control" type="file" name="file_safety" id="file_safety" accept=".jpg,.png,.jpeg" required />
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="modal-body">
         <img src="{{ asset('storage/' . $safety->fileName) }}"  class="img-fluid" style="width:auto; height: auto">
-          <p class="mx-0" style="width: 15rem; font-weight: bold;">{{ $safety->judul }}</p>
+          <p class="mx-0" style="width: 15rem; font-weight: bold; font-size: 20px; margin-top: 20px;">{{ $safety->judul }}</p>
           <p class="w-100 mx-0" style="max-width: 120%;">{{ $safety->deskripsi }}</p>
         </div>
         <div class="modal-footer">
