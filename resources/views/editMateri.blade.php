@@ -17,7 +17,7 @@
           <div class="mb-3 row">
             <label for="Deskripsi" class="col-md-2 col-form-label">File PDF :</label>
             <div class="col-md-10">
-            <input class="form-control" type="file" name="file_pdf" id="file_pdf" accept=".pdf" />
+            <input class="form-control" type="file" name="file_pdf" id="file_pdf" accept=".pdf" required />
             </div>
           </div>
           <div class="container">

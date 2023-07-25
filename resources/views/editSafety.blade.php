@@ -23,7 +23,7 @@
           <div class="mb-3 row">
             <label for="Deskripsi" class="col-md-2 col-form-label">File Poster :</label>
             <div class="col-md-10">
-            <input class="form-control" type="file" name="file_safety" id="file_safety" accept=".jpg,.png,.jpeg" />
+            <input class="form-control" type="file" name="file_safety" id="file_safety" accept=".jpg,.png,.jpeg" required />
             </div>
           </div>
           <div class="container">

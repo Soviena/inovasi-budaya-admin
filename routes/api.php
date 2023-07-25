@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 
@@ -19,6 +18,7 @@ Route::post('/register', [ApiController::class, 'register']);
 Route::post('/login', [ApiController::class, 'login']);
 Route::post('/user/{idUser}/edit', [ApiController::class, 'editUser']);
 
+Route::post('/feedback/new', [ApiController::class, 'feedback']);
 Route::get('/budaya/all', [ApiController::class, 'budayaAll']);
 Route::get('/budaya/now', [ApiController::class, 'getBudayaNow']);
 Route::get('/budaya/year/now', [ApiController::class, 'getBudayaYearNow']);
