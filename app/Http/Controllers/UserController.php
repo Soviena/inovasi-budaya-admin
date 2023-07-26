@@ -13,8 +13,10 @@ class UserController extends Controller
         return view('login');
     }
 
-    public function manage(){
-        return view('manage');
+    public function manage()
+    {
+        $manage = User::all(); 
+        return view('manage', compact('manage'));
     }
     public function csv(){
         $filePath = storage_path('temp/csv.csv');
