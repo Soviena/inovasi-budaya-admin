@@ -19,8 +19,8 @@
             <thead>
               <tr>
                 <th>Nama Panjang</th>
-                <th>Tanggal Lahir</th>
                 <th>Email</th>
+                <th>Tanggal Lahir</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -28,8 +28,8 @@
               @foreach($manage as $m)
               <tr>
                 <td>{{$m->name}}</td>
-                <td>{{$m->tanggal_lahir}}</td>
                 <td>{{$m->email}}</td>
+                <td>{{$m->tanggal_lahir}}</td>
                 <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -37,14 +37,22 @@
                     </button>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="javascript:void(0);"
-                          data-bs-toggle="modal"
-                          data-bs-target="#editUser"
-                        ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                      >
+                      data-bs-toggle="modal"
+                      data-bs-target="#editUser-{{$m->id}}"
+                      data-user-name="{{ $m->name }}"
+                      data-user-email="{{ $m->email }}"
+                      data-user-tanggal-lahir="{{ $m->tanggal_lahir }}"
+                      data-user-password="{{ $m->password }}"
+                   ><i class="bx bx-edit-alt me-1"></i> Edit</a>
                       <a class="dropdown-item" href="javascript:void(0);"
                           data-bs-toggle="modal"
                           data-bs-target="#deleteUser"
-                        ><i class="bx bx-trash me-1"></i> Delete</a
+                        ><i class="bx bx-trash me-1"></i> Delete</a                      
+                      >
+                      <a class="dropdown-item" href="javascript:void(0);"
+                          data-bs-toggle="modal"
+                          data-bs-target="#ubahAdmin-{{$m->id}}"
+                        ><i class="tf-icons bx bx-user me-1"></i> Jadikan Admin</a                      
                       >
                     </div>
                   </div>
@@ -74,42 +82,65 @@
   </div>
 </div>
 </div>
-<div class="modal fade" id="editUser" tabindex="-1" aria-hidden="true">
+
+@foreach($manage as $m)
+<div class="modal fade" id="editUser-{{$m->id}}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel1">Edit User</h5>
-        <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-        ></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
       </div>
-      <div class="modal-body">
-        <div class="mb-3">
-          <label for="defaultInput" class="form-label">Ubah judul</label>
-          <input id="defaultInput" class="form-control" type="text">
-        </div>
-        <div class="mb-3">
-          <label for="defaultInput" class="form-label">Ubah tanggal lahir</label>
-          <input class="form-control" type="date" value="" id="html5-date-input">
-        </div>
-        <div class="mb-3">
-          <label for="defaultInput" class="form-label">Ubah email</label>
-          <input id="defaultInput" class="form-control" type="text">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
-          Tutup
-        </button>
-      </button>
-      <button type="button" class="btn btn-primary">Simpan</button>
-    </div>
+        <form action="{{ route('editUser', $m->id) }}" method="POST" enctype="multipart/form-data">
+          @csrf
+            <div class="modal-body">
+              <div class="row">
+                <div class="col mb-3">
+                  <label for="name" class="form-label">Ubah nama user</label>
+                  <input type="text" value="{{ $m->name }}" name="name" id="name" class="form-control"/>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col mb-3">
+                  <label for="email" class="form-label">Ubah Email</label>
+                  <input type="text" value="{{ $m->email }}" name="email" id="email" class="form-control"/>
+                </div>
+              </div>
+
+              <div class="row g-2">
+                <div class="mb-3">
+                  <label for="html5-date-input" class="form-label">Ubah Tanggal Lahir</label>
+                  <input class="form-control" value="{{ $m->tanggal_lahir }}" name="tanggal_lahir" name="tanggal_lahir" type="date" id="html5-date-input" required  >
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col mb-3">
+                  <label for="password" class="form-label">Ubah Password</label>
+                  <input type="text" value="" name="password" id="password" class="form-control"/>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                Batal
+              </button>
+              <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+
+        </form>
+    </div>    
   </div>
 </div>
-</div>
+@endforeach
 
 <div class="modal fade" id="deleteUser" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -137,6 +168,38 @@
 </div>
 </div>
 
+@foreach($manage as $m)
+<div class="modal fade" id="ubahAdmin-{{$m->id}}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Ubah User</h5>
+        <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        ></button>
+      </div>
+      <form action="{{ route('ubahAdmin', $m->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+      <div class="modal-body">
+        <p>Apakah anda yakin ingin mengubah user ini menjadi admin?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color: #1A4980;">
+          Tidak
+        </button>
+      </button>
+      <input type="submit" class="btn btn-danger">
+    </div>
+      </form>
+  </div>
+</div>
+</div>
+@endforeach
+
 <div class="content-backdrop fade"></div>
 </div>
+
 @endsection

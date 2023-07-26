@@ -54,7 +54,9 @@ Route::group(['middleware' => 'admin'],function () {
     Route::post('/budaya/update/{idBudaya}', [BudayaController::class, 'updateBudaya'])->name('updateBudaya');
     
     Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
-    
+    Route::post('/manage/edit/{idUser}', [UserController::class, 'editUser'])->name('editUser');
+Route::post('/manage/ubahA/{idUser}', [UserController::class, 'ubahAdmin'])->name('ubahAdmin');
+
     Route::get('/reward',[RewardsController::class, 'index'])->name("rewardUser");
     Route::post('/reward/add/{uid}/{pid}',[RewardsController::class, 'addReward'])->name("addReward");
     Route::post('/periode/add/',[RewardsController::class, 'addPeriode'])->name("addPeriode");
