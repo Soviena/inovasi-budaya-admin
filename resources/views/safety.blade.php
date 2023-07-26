@@ -49,7 +49,7 @@
                           data-bs-toggle="modal"
                           data-bs-target="#tambahSafety"
                         >
-                          Tambah
+                        Tambah
                         </button>
                         </td>
                       </tr>
