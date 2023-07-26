@@ -35,8 +35,41 @@
                 </p>
               </div>  
               <div class="card-footer">
-                <a href="javascript:void(0);" class="card-link" data-bs-toggle="modal" data-bs-target="#editReward">Edit</a>
-                <a href="javascript:void(0);" class="card-link">Hapus</a>
+                <a href="javascript:void(0);" class="card-link" data-bs-toggle="modal" data-bs-target="#editReward-{{$pr->id}}-{{$u->id}}">Edit</a>
+                <a href="{{route('deleteReward',[$u->id,$pr->id])}}" class="card-link">Hapus</a>
+              </div>
+            </div>
+            <div class="modal fade" id="editReward-{{$pr->id}}-{{$u->id}}" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Edit Profile</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <form action="" method="post">
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="defaultInput" class="form-label">Ubah Judul Reward</label>
+                      <input id="defaultInput" class="form-control" name="rewardsName" type="text" value="{{$u->pivot->rewardsName}}">
+                    </div>
+                    <div class="mb-3">
+                      <label for="defaultInput" class="form-label">Ubah Deskripsi</label>
+                      <textarea id="basic-default-message" class="form-control" name="deskripsi" aria-describedby="basic-icon-default-message2" rows="3">{{$u->pivot->deskripsi}}</textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
+                      Tutup
+                    </button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
+                  </div>
+                </form>
+                </div>
               </div>
             </div>
             @endforeach
@@ -52,7 +85,6 @@
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -123,6 +155,47 @@
     <div class="content-backdrop fade"></div>
   </div>
 </div>
+<div class="modal fade" id="tambahPeriode" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form action="{{route('addPeriode')}}" method="post">
+        @csrf
+      <div class="modal-header">
+        <h5 class="modal-title" id="newPeiode">Tambah periode Reward</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <label for="html5-month-input" class="col-md-6 col-form-label">Dari bulan sampai bulan ..</label>
+        <div class="mb-3 row">
+          <div class="col-md-6">
+            <input class="form-control" type="month" placeholder="Dari bulan .." id="awalBulan" onchange="changePeiodeAwal(this, document.getElementById('periodeText'))">
+          </div>
+          <div class="col-md-6">
+            <input class="form-control" type="month" placeholder="Sampai bulan .." id="akhirBulan" onchange="changePeiodeAkhir(this,document.getElementById('periodeText'))">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">Periode</label>
+          <input id="periodeText" name="periode" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
+          Tutup
+        </button>
+        <input type="submit" class="btn btn-primary" value="Tambahkan">
+        </button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <script>
   function changeInput(thisText,destinationId) {
     textDestination = document.getElementsByClassName(destinationId);
@@ -175,80 +248,3 @@
 </script>
 @endsection
 
-<div class="modal fade" id="editReward" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Edit Profile</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <div class="mb-3">
-          <label for="defaultInput" class="form-label">Ubah nama</label>
-          <input id="defaultInput" class="form-control" type="text">
-        </div>
-        <div class="mb-3">
-          <label for="defaultInput" class="form-label">ubah deskripsi</label>
-          <textarea id="basic-default-message" class="form-control"  aria-describedby="basic-icon-default-message2" rows="3"></textarea>
-        </div>
-        <div class="mb-3">
-          <label for="formFile" class="form-label">Ubah Profil</label>
-          <input class="form-control" type="file" id="formFile">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
-          Tutup
-        </button>
-      </button>
-      <button type="button" class="btn btn-primary">Simpan</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="tambahPeriode" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <form action="{{route('addPeriode')}}" method="post">
-        @csrf
-      <div class="modal-header">
-        <h5 class="modal-title" id="newPeiode">Tambah periode Reward</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <label for="html5-month-input" class="col-md-6 col-form-label">Dari bulan sampai bulan ..</label>
-        <div class="mb-3 row">
-          <div class="col-md-6">
-            <input class="form-control" type="month" placeholder="Dari bulan .." id="awalBulan" onchange="changePeiodeAwal(this, document.getElementById('periodeText'))">
-          </div>
-          <div class="col-md-6">
-            <input class="form-control" type="month" placeholder="Sampai bulan .." id="akhirBulan" onchange="changePeiodeAkhir(this,document.getElementById('periodeText'))">
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="defaultInput" class="form-label">Periode</label>
-          <input id="periodeText" name="periode" class="form-control" type="text">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
-          Tutup
-        </button>
-        <input type="submit" class="btn btn-primary" value="Tambahkan">
-        </button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>

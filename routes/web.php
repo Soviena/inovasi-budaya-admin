@@ -55,6 +55,8 @@ Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
 Route::get('/reward',[RewardsController::class, 'index'])->name("rewardUser");
 Route::post('/reward/add/{uid}/{pid}',[RewardsController::class, 'addReward'])->name("addReward");
 Route::post('/periode/add/',[RewardsController::class, 'addPeriode'])->name("addPeriode");
+Route::get('/reward/delete/{uid}/{pid}',[RewardsController::class, 'deleteReward'])->name("deleteReward");
+
 
 
 Route::get('/safety', [SafetyController::class, 'index'])->name('safety');

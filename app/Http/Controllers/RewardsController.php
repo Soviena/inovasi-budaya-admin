@@ -31,4 +31,11 @@ class RewardsController extends Controller
         return redirect()->route('rewardUser');
     }
 
+    public function deleteReward($uid, $pid){
+        $u = User::find($uid);
+        $p = Periode::find($pid);
+        $u->periode()->detach($p);
+        return redirect()->route('rewardUser');
+    }
+
 }

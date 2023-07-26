@@ -17,7 +17,7 @@
           <div class="mb-3 row">
             <label for="Deskripsi" class="col-md-2 col-form-label">Edit Deskripsi</label>
             <div class="col-md-10">
-              <textarea class="form-control" type="text" value="{{ $budaya->deskripsi }}" name="deskripsi" id="deskripsi" required></textarea>
+              <textarea class="form-control" type="text" name="deskripsi" id="deskripsi" required>{{ $budaya->deskripsi }}</textarea>
             </div>
           </div>
           <div class="mb-3 row">
