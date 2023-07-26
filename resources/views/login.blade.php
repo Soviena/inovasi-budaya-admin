@@ -128,7 +128,8 @@
               <h4 class="mb-2">Admin Panel Aplikasi Budaya</h4>
               <p class="mb-4">Silahkan Sign in untuk melanjutkan</p>
 
-              <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-3" action="{{route('login')}}" method="POST">
+                @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
                   <input
@@ -143,9 +144,6 @@
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Password</label>
-                    <a href="auth-forgot-password-basic.html">
-                      <small>Lupa Password?</small>
-                    </a>
                   </div>
                   <div class="input-group input-group-merge">
                     <input
@@ -161,7 +159,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-me" />
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember-me" />
                     <label class="form-check-label" for="remember-me">Ingat Saya</label>
                   </div>
                 </div>
