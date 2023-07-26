@@ -44,4 +44,29 @@ class UserController extends Controller
         return view('kinerja',compact('array'));
     }
 
+    public function editUser(Request $request, $id)
+{
+    $users = User::findOrFail($id);
+    $users->name = $request->input('name');
+    $users->email = $request->input('email');
+    $users->tanggal_lahir = $request->input('tanggal_lahir');
+
+    if ($request->password != '') {
+            $users->password = $request->password;
+    }
+    
+    $users->save();
+
+    return redirect()->route('manageUser',$request->id);
+}
+
+    public function ubahAdmin($id)
+{
+        $users = User::findOrFail($id);
+        $users->admin = "TRUE"; 
+        $users->save();
+
+        return redirect()->route('manageUser')->with('');
+}
+
 }

@@ -50,6 +50,8 @@ Route::get('/budaya/edit/{idBudaya}', [BudayaController::class, 'editBudaya'])->
 Route::post('/budaya/update/{idBudaya}', [BudayaController::class, 'updateBudaya'])->name('updateBudaya');
 
 Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
+Route::post('/manage/edit/{idUser}', [UserController::class, 'editUser'])->name('editUser');
+Route::post('/manage/ubahA/{idUser}', [UserController::class, 'ubahAdmin'])->name('ubahAdmin');
 
 Route::get('/reward',[UserController::class, 'reward'])->name("rewardUser");
 
