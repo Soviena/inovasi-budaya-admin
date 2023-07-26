@@ -39,6 +39,26 @@ class AktivitasController extends Controller
         return redirect()->route('indexAktivitas');
     }
 
+    public function editAktivitas(Request $request, $id)
+{
+    $aktivitas = Aktivitas::findOrFail($id);
+    $aktivitas->judul = $request->input('judul');
+    $aktivitas->deskripsi = $request->input('deskripsi');
+
+    if ($request->hasFile('img')) {
+        Storage::delete('public/uploaded/aktivitas/'.$aktivitas->fileName);
+        $img = $request->file('img');
+        $img->storeAs('public/uploaded/aktivitas/',$img->hashName());
+        $aktivitas->filename = $img->hashName();
+        $aktivitas->save();        
+        return redirect()->route('indexAktivitas');
+    }
+    
+    $aktivitas->save();
+
+    return redirect()->route('indexAktivitas')->with('success');
+}
+
 
     public function deleteAktivitas(Request $request, $id){
         $aktivitas = Aktivitas::find($id);

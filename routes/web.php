@@ -68,6 +68,7 @@ Route::get('/aktivitas/{idBudaya}',[AktivitasController::class, 'aktivitas'])->n
 Route::get('/budaya/{idBudaya}/aktivitas/add',[AktivitasController::class, 'addAktivitas'])->name("addAktivitas");
 Route::post('/aktivitas/new', [AktivitasController::class, 'newAktivitas'])->name('newAktivitas');
 Route::get('/aktivitas/delete/{idAktivitas}', [AktivitasController::class, 'deleteAktivitas'])->name('deleteAktivitas');
+Route::post('/aktivitas/edit/{idAktivitas}', [AktivitasController::class, 'editAktivitas'])->name('editAktivitas');
 
 
 
