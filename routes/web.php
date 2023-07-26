@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AktivitasController;
+use App\Http\Controllers\RewardsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\NotificationController;
@@ -49,7 +50,10 @@ Route::post('/budaya/update/{idBudaya}', [BudayaController::class, 'updateBudaya
 
 Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
 
-Route::get('/reward',[UserController::class, 'reward'])->name("rewardUser");
+Route::get('/reward',[RewardsController::class, 'index'])->name("rewardUser");
+Route::post('/reward/add/{uid}/{pid}',[RewardsController::class, 'addReward'])->name("addReward");
+Route::post('/periode/add/',[RewardsController::class, 'addPeriode'])->name("addPeriode");
+
 
 Route::get('/safety', [SafetyController::class, 'index'])->name('safety');
 Route::post('/safety/add', [SafetyController::class, 'addSafety'])->name('addSafety');
