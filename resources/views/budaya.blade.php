@@ -31,10 +31,11 @@
         <p class="card-text">
           {{$deskripsi}}
         </p>
-        <a href="{{route('addAktivitas',$idbudaya)}}" class="btn btn-primary 
         @if (!$blnIni)
-          disabled
-        @endif">Tambah Aktivitas</a>
+        <a href="{{route('addBudaya')}}" class="btn btn-primary">Tambah Budaya</a>
+        @else
+        <a href="{{route('addAktivitas',$idbudaya)}}" class="btn btn-primary">Tambah Aktivitas</a>
+        @endif
       </div>
     </div>
     <div class="nav-align-top mb-4">

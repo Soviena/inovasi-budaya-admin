@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class Rewards extends Model
+use Illuminate\Database\Eloquent\Relations\Pivot;
+class Rewards extends Pivot
 {
     use HasFactory;
+
 }

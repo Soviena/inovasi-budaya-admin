@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use App\Models\Rewards;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
 
 
 class UserController extends Controller
@@ -13,13 +12,22 @@ class UserController extends Controller
     public function index(){
         return view('index');
     }
-    public function login(){
+    public function loginView(){
         return view('login');
     }
-    public function reward(){
-        $reward = Rewards::all();
-        $users = User::all();
-        return view('reward',compact('reward','users'));
+
+    public function login(Request $request){
+        $credentials = $request->only('email', 'password');
+        $remember = $request->has('remember'); // Check if the "Remember Me" checkbox is checked
+        if (Auth::attempt($credentials, $remember)) {
+            return redirect()->route("index"); // Redirect to your desired authenticated route
+        }
+        return back()->withErrors(['email' => 'Invalid credentials'])->withInput();
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/login')->with('success', 'You have been logged out.');
     }
 
     public function manage()
