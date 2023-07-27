@@ -18,7 +18,8 @@ Route::post('/register', [ApiController::class, 'register']);
 Route::post('/login', [ApiController::class, 'login']);
 Route::post('/user/{idUser}/edit', [ApiController::class, 'editUser']);
 
-Route::post('/feedback/new', [ApiController::class, 'feedback']);
+Route::post('/feedback/new', [ApiController::class, 'newFeedback']);
+
 Route::get('/budaya/all', [ApiController::class, 'budayaAll']);
 Route::get('/budaya/now', [ApiController::class, 'getBudayaNow']);
 Route::get('/budaya/year/now', [ApiController::class, 'getBudayaYearNow']);
@@ -26,6 +27,9 @@ Route::get('/budaya/year/now', [ApiController::class, 'getBudayaYearNow']);
 
 Route::get('/aktivitas/{idBudaya}',[ApiController::class, 'aktivitasBudaya']);
 Route::get('/safety',[ApiController::class, 'safetyMoment']);
+
+Route::get('/visit/{id}/increment',[ApiController::class, 'incrementVisit']);
+
 
 
 
