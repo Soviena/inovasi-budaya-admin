@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -62,10 +63,39 @@ class UserController extends Controller
     if ($request->password != '') {
             $users->password = $request->password;
     }
-    
+
+    if ($request->hasFile('file_profile')) {
+        Storage::delete('public/uploaded/profile/'.$users->profilepic);
+        $file_profile = $request->file('file_profile');
+        $file_profile->storeAs('public/uploaded/profile/',$file_profile->hashName());
+        $users->profilepic = $file_profile->hashName();
+        $users->save();        
+        return redirect()->route('manageUser');
+    }
+  
     $users->save();
 
-    return redirect()->route('manageUser',$request->id);
+    return redirect()->route('manageUser');
+}
+
+public function tambahUser(Request $request){
+    $users = new User;
+    $users->name = $request->name;
+    $users->email = $request->email;
+    $users->tanggal_lahir = $request->tanggal_lahir;
+    $users->password = $request->password;
+    $file_profile = $request->file('file_profile');
+        $file_profile->storeAs('public/uploaded/profile/',$file_profile->hashName());
+        $users->profilepic = $file_profile->hashName();
+        $users->save();        
+        return redirect()->route('manageUser');
+}
+
+public function hapusUser(Request $request, $id){
+    $users = User::find($id);
+    Storage::delete('public/uploaded/profile/'.$users->profilepic);
+    $users->delete();
+    return redirect()->route('manageUser');
 }
 
     public function ubahAdmin($id)

@@ -3,13 +3,10 @@
 <div class="content-wrapper">
 
     <div class="container-xxl flex-grow-1 container-p-y">
+      <h3 class="fw-bold py-3 mb-4 text-center">Data User</h3>
     <div class="nav-align-top mb-4">
       <ul class="nav nav-tabs nav-fill" role="tablist">
         <li class="nav-item">
-          <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-justified-home" aria-controls="navs-justified-home" aria-selected="true">
-            <i class="tf-icons bx bx-user"></i> Data User
-            <span class="badge rounded-pill badge-center h-px-20 w-px-20 bg-label-danger">3</span>
-          </button>
         </li>
         
       </ul>
@@ -46,7 +43,7 @@
                    ><i class="bx bx-edit-alt me-1"></i> Edit</a>
                       <a class="dropdown-item" href="javascript:void(0);"
                           data-bs-toggle="modal"
-                          data-bs-target="#deleteUser"
+                          data-bs-target="#hapusUser-{{$m->id}}"
                         ><i class="bx bx-trash me-1"></i> Delete</a                      
                       >
                       <a class="dropdown-item" href="javascript:void(0);"
@@ -70,7 +67,7 @@
                   type="button"
                   class="btn btn-primary"
                   data-bs-toggle="modal"
-                  data-bs-target="#editUser"
+                  data-bs-target="#tambahUser"
                   >
                   Tambah
                 </button>
@@ -116,7 +113,7 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="html5-date-input" class="form-label">Ubah Tanggal Lahir</label>
-                  <input class="form-control" value="{{ $m->tanggal_lahir }}" name="tanggal_lahir" name="tanggal_lahir" type="date" id="html5-date-input" required  >
+                  <input class="form-control" value="{{ $m->tanggal_lahir }}" name="tanggal_lahir" name="tanggal_lahir" type="date" id="html5-date-input">
                 </div>
               </div>
 
@@ -127,6 +124,14 @@
                 </div>
               </div>
 
+              <div class="row g-2">
+                <div class="mb-3">
+                  <label for="file_profile" class="form-label">ubah profile</label>
+                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/profile/'.$m->profilepic)}}" alt="@isset($m) <{{$m->name}} @endisset" style="max-height:240px;width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
+                  <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg" required />
+                </div>
+              </div>
+
             </div>
 
             <div class="modal-footer">
@@ -134,6 +139,70 @@
                 Batal
               </button>
               <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+
+        </form>
+    </div>    
+  </div>
+</div>
+@endforeach
+
+@foreach($manage as $m)
+<div class="modal fade" id="tambahUser" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">tambah User</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+      </div>
+        <form action="{{route('tambahUser')}}" method="POST" enctype="multipart/form-data">
+          @csrf
+            <div class="modal-body">
+              <div class="row">
+                <div class="col mb-3">
+                  <label for="name" class="form-label">input nama user</label>
+                  <input type="text" value="" name="name" id="name" class="form-control" required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col mb-3">
+                  <label for="email" class="form-label">input Email user</label>
+                  <input type="text" value="" name="email" id="email" class="form-control" required />
+                </div>
+              </div>
+
+              <div class="row g-2">
+                <div class="mb-3">
+                  <label for="html5-date-input" class="form-label">input Tanggal Lahir User</label>
+                  <input class="form-control" value="" name="tanggal_lahir" name="tanggal_lahir" type="date" id="html5-date-input" required  >
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col mb-3">
+                  <label for="password" class="form-label">input Password</label>
+                  <input type="text" value="" name="password" id="password" class="form-control" required />
+                </div>
+              </div>
+
+              <div class="row g-2">
+                <div class="mb-3">
+                  <label for="file_profile" class="form-label">input gambar profile</label>
+                  <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg" required />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                Batal
+              </button>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
 
         </form>
@@ -167,6 +236,37 @@
   </div>
 </div>
 </div>
+
+@foreach($manage as $m)
+<div class="modal fade" id="hapusUser-{{$m->id}}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Hapus User</h5>
+        <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        ></button>
+      </div>
+      <form action="{{ route('hapusUser', $m->id) }}" method="GET" enctype="multipart/form-data">
+        @csrf
+      <div class="modal-body">
+        <p>Apakah anda yakin ingin menghapus data user ini?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color: #1A4980;">
+          Tidak
+        </button>
+      </button>
+      <input type="submit" class="btn btn-danger">
+    </div>
+      </form>
+  </div>
+</div>
+</div>
+@endforeach
 
 @foreach($manage as $m)
 <div class="modal fade" id="ubahAdmin-{{$m->id}}" tabindex="-1" aria-hidden="true">
