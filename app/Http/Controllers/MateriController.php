@@ -16,58 +16,45 @@ class MateriController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'file_pdf' => 'required|file|mimes:pdf|max:10240', // Limit PDF file size to 10MB (10 * 1024 KB)
-        ]);
-
-        // Upload the PDF file and store its path in the database
-        $filePdfPath = $request->file('file_pdf')->store('uploaded/materi', 'public');
-
-        $materi = new Materi([
-            'title' => $request->input('title'),
-            'fileName' => $filePdfPath,
-        ]);
-
-        $materi->save();
-
-        return redirect()->back()->with('');
+        $materi = new Materi;
+        $materi->title = $request->title;
+        $file_pdf = $request->file('file_pdf');
+        $file_pdf->storeAs('public/uploaded/materi/',$file_pdf->hashName());
+        $materi->fileName = $file_pdf->hashName();
+        $materi->save();        
+        return redirect()->route('materi');
     }
+    
     public function deleteMateri(Request $request, $id){
         $materi = Materi::find($id);
-        Storage::delete('public/'.$materi->fileName);
+        Storage::delete('public/uploaded/materi/'.$materi->fileName);
         $materi->delete();
-        
         return redirect()->route('materi');
     } 
-    
-    public function editMateri($id)
-{
-    $materi = Materi::findOrFail($id);
-    return view('editMateri', compact('materi'));
-}
 
-    public function updateMateri(Request $request, $id)
+    public function editMateri(Request $request, $id)
 {
     $materi = Materi::findOrFail($id);
     $materi->title = $request->input('title');
 
     if ($request->hasFile('file_pdf')) {
-        Storage::delete('public/'.$materi->fileName);
-        $filePdf = $request->file('file_pdf');
-        $path = $filePdf->store('uploaded/materi', 'public');
-        $materi->fileName = $path;
+        Storage::delete('public/uploaded/materi/'.$materi->fileName);
+        $file_pdf = $request->file('file_pdf');
+        $file_pdf->storeAs('public/uploaded/materi/',$file_pdf->hashName());
+        $materi->fileName = $file_pdf->hashName();
+        $materi->save();        
+        return redirect()->route('materi');
     }
     
     $materi->save();
 
-    return redirect()->route('materi')->with('');
+    return redirect()->route('materi');
 }
 
 
     public function downloadMateri($id)
     {
         $materi = Materi::findOrFail($id);
-        return Storage::download("public/".$materi->fileName, $materi->title . '.pdf');
+        return Storage::download("public/uploaded/materi/".$materi->fileName, $materi->title . '.pdf');
     }
 }

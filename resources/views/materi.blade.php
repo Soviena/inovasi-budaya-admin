@@ -23,15 +23,20 @@
               <!-- Loop through the list of PDF files from the database -->
               @foreach ($materis as $materi)
               <tr>
-                <td>{{ $materi->title }}</td>
-                <td>
+                <td style='width:100vw;'>{{ $materi->title }}</td>
+                <td style='width:5vw;'>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                       <i class="bx bx-dots-vertical-rounded"></i>
                     </button>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="{{ route('downloadMateri', $materi->id) }}"><i class="bx bx-download me-1"></i> Download</a>
-                      <a class="dropdown-item" href="{{ route('editMateri', $materi->id) }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0);"
+                      data-bs-toggle="modal"
+                      data-bs-target="#editMateri-{{$materi->id}}"
+                      data-materi-title="{{ $materi->title }}"
+                      data-materi-fileName="{{ $materi->fileName }}"
+                   ><i class="bx bx-edit-alt me-1"></i> Edit</a>
                       <a class="dropdown-item" href="{{ route('deleteMateri', $materi->id) }}"><i class="bx bx-trash me-1"></i> Delete</a>
                     </div>
                   </div>
@@ -41,9 +46,7 @@
             </tbody>
             <tfoot>
               <tr>
-                <td></td>
-                <td></td>      
-                <td></td>          
+                <td></td>         
                 <td>
                   <button
                   type="button"
@@ -82,7 +85,7 @@
         <div class="modal-body">
           <div class="row">
             <div class="col mb-3">
-              <label for="title" class="form-label">Judul</label>
+              <label for="title" class="form-label">Judul Materi</label>
               <input type="text" name="title" id="title" class="form-control" placeholder="Masukan Judul Materi" required />
             </div>
           </div>
@@ -110,5 +113,47 @@
 
   </div>
 </div>
-  
+
+@foreach ($materis as $materi)
+<div class="modal fade" id="editMateri-{{$materi->id}}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Edit Materi</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form action="{{ route('editMateri', $materi->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="modal-body">
+          <div class="row">
+            <div class="col mb-3">
+              <label for="title" class="form-label">Judul Materi</label>
+              <input type="text" value="{{ $materi->title }}" name="title" id="title" class="form-control"/>
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="mb-3">
+              <label for="file_pdf" class="form-label">Update file PDF</label>
+              <input class="form-control" type="file" name="file_pdf" id="file_pdf" accept=".pdf" required />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+            Batal
+          </button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+@endforeach
+
 @endsection
