@@ -78,7 +78,8 @@
               <tr>
               <td></td>
               <td></td>
-              <td></td>              
+              <td></td>       
+              <td></td>        
               <td>
                   <button
                   type="button"
