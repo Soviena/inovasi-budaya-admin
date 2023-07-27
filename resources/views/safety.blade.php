@@ -143,9 +143,3 @@
 </div>
 @endforeach
 @endsection
-
-user <- stats
-        id
-        uid
-        visits
-        
