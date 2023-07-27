@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Budaya;
+use App\Models\Bulan;
 use App\Models\SafetyMoment;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
@@ -132,8 +133,7 @@ class ApiController extends Controller
     }
 
 
-    public function feedback(Request $request)
-{
+    public function newFeedback(Request $request){
     $feedback = new Feedback;
     $feedback->user_id= $request->user_id;
     $feedback->judul= $request->judul;
@@ -142,6 +142,51 @@ class ApiController extends Controller
     $feedback->save();
 
     return response()->json(['message' => 'Feedback added successfully'], 200);
-}
+    }
+
+    public function incrementVisit($id){
+        $user = User::find($id);
+        $bulan = Bulan::where('bulan',date('Y').'-'.date('m'))->with('users')->first();
+        if($bulan == ''){
+            $bulan = new Bulan;
+            $bulan->bulan = date('Y').'-'.date('m');
+            $bulan->save();
+            $user->bulan()->attach($bulan, [
+                'visit' => 1,
+                'updated_at' => now(),
+                'created_at' => now(),
+                ]);
+            return response()->json(["msg" => "Sucessfully incremented because it new"]);
+        }
+        if ($bulan->users->contains('id', $user->id)) {
+            if($user->bulan->first()->pivot->updated_at == ""){
+                $user->bulan->first()->pivot->increment('visit');
+                $user->bulan->first()->pivot->updated_at = now();
+                return response()->json(["msg" => "Sucessfully incremented because it null"]);
+            }
+            // Convert the 'edited_at' timestamp into a DateTime instance.
+            $editedTimestamp = new \DateTime($user->bulan->first()->pivot->updated_at);
+            // Get the current time as a DateTime instance.
+            $currentTime = new \DateTime();
+            // Calculate the difference between the current time and the 'edited_at' timestamp.
+            $timeDifference = $currentTime->diff($editedTimestamp);
+    
+            if ($timeDifference->y >= 1 || $timeDifference->m >= 1 || $timeDifference->d >= 1 || $timeDifference->h >=1 || $timeDifference->i >= 30) {
+                // Perform your actions here (e.g., notify the user, log the event, etc.).
+                // For example: return a response indicating that the edit is more than 30 minutes ago.
+                $user->bulan->first()->pivot->increment('visit');
+                $user->bulan->first()->pivot->updated_at = now();
+                return response()->json(["msg" => "Sucessfully incremented","timeDifference"=>$timeDifference]);
+            }
+        }else{
+            $user->bulan()->attach($bulan, [
+                'visit' => 1,
+                'updated_at' => now(),
+                'created_at' => now(),
+                ]);
+            return response()->json(["msg" => "Sucessfully incremented because it new"]);
+        }
+        return response()->json(["msg" => "Already incremented","timeDifference"=>$timeDifference]);
+    }
 
 }
