@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('budayas', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('deskripsi');
+            $table->longText('deskripsi');
             $table->string('tanggal');
             $table->timestamps();
         });
