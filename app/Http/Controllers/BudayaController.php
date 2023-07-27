@@ -8,8 +8,9 @@ use App\Models\Budaya;
 class BudayaController extends Controller
 {
     public function index(){
+        $page = ["title" => "Budaya"];
         $budaya = Budaya::orderBy('tanggal','DESC')->get();
-        return view('budaya',compact('budaya'));
+        return view('budaya',compact('budaya','page'));
     }
     public function addBudaya(){
         return view('addBudaya');

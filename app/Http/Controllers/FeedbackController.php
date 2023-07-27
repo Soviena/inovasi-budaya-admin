@@ -10,8 +10,14 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        $feedback = Feedback::all(); 
-        return view('feedback', compact('feedback'));
+        $page = ["title" => "Feedback"];
+        $feedbacks = Feedback::with('user')->orderBy('created_at','DESC')->get();
+        foreach ($feedbacks as $fb) {
+            if ($fb->status == 'unread') {
+                $fb->update(['status' => 'read']);
+            }
+        }
+        return view('feedback', compact('feedbacks','page'));
     }
 
     public function previewFeedback($id)

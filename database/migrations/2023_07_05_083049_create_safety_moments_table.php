@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('safety_moments', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('deskripsi')->nullable()->default('');
+            $table->longText('deskripsi')->nullable()->default('');
             $table->string('fileName');
             $table->timestamps();
         });
