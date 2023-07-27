@@ -55,14 +55,14 @@ Route::group(['middleware' => 'admin'],function () {
     
     Route::get('/manage',[UserController::class, 'manage'])->name("manageUser");
     Route::post('/manage/edit/{idUser}', [UserController::class, 'editUser'])->name('editUser');
+    Route::post('/manage/tambah', [UserController::class, 'tambahUser'])->name('tambahUser');
     Route::post('/manage/ubahA/{idUser}', [UserController::class, 'ubahAdmin'])->name('ubahAdmin');
+    Route::get('/manage/delete/{idUser}',[UserController::class, 'hapusUser'])->name("hapusUser");
 
     Route::get('/reward',[RewardsController::class, 'index'])->name("rewardUser");
     Route::post('/reward/add/{uid}/{pid}',[RewardsController::class, 'addReward'])->name("addReward");
     Route::post('/periode/add/',[RewardsController::class, 'addPeriode'])->name("addPeriode");
     Route::get('/reward/delete/{uid}/{pid}',[RewardsController::class, 'deleteReward'])->name("deleteReward");
-    
-    
     
     Route::get('/safety', [SafetyController::class, 'index'])->name('safety');
     Route::post('/safety/add', [SafetyController::class, 'addSafety'])->name('addSafety');
