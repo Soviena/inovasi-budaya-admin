@@ -110,11 +110,12 @@
 <script>
     function getGreeting() {
         const currentHour = new Date().getHours();
+        console.log(currentHour);
         if (currentHour >= 5 && currentHour < 11) {
             return 'Pagi';
-        } else if (currentHour >= 11 && currentHour < 3) {
+        }else if (currentHour >= 11 && currentHour < 15) {
             return 'Siang';
-        }else if (currentHour >= 3 <= 6) {
+        }else if (currentHour >= 15 <= 18) {
             return 'Sore'
         } else {
             return 'Malam';

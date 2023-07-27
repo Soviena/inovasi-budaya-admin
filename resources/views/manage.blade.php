@@ -21,6 +21,7 @@
                 <th>Nama Panjang</th>
                 <th>Email</th>
                 <th>Tanggal Lahir</th>
+                <th>Tipe user</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -31,29 +32,45 @@
                 <td>{{$m->email}}</td>
                 <td>{{$m->tanggal_lahir}}</td>
                 <td>
+                  @if($m->admin == "TRUE")
+                  <span class="badge bg-label-primary me-1">Admin</span>
+                  @else
+                  <span class="badge bg-label-warning me-1">Pengguna</span>
+                  @endif
+                </td>
+                <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                       <i class="bx bx-dots-vertical-rounded"></i>
                     </button>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="javascript:void(0);"
-                      data-bs-toggle="modal"
-                      data-bs-target="#editUser-{{$m->id}}"
-                      data-user-name="{{ $m->name }}"
-                      data-user-email="{{ $m->email }}"
-                      data-user-tanggal-lahir="{{ $m->tanggal_lahir }}"
-                      data-user-password="{{ $m->password }}"
-                   ><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                        data-bs-toggle="modal"
+                        data-bs-target="#editUser-{{$m->id}}"
+                        data-user-name="{{ $m->name }}"
+                        data-user-email="{{ $m->email }}"
+                        data-user-tanggal-lahir="{{ $m->tanggal_lahir }}"
+                        data-user-password="{{ $m->password }}">
+                        <i class="bx bx-edit-alt me-1"></i> Edit
+                      </a>
                       <a class="dropdown-item" href="javascript:void(0);"
                           data-bs-toggle="modal"
-                          data-bs-target="#deleteUser"
-                        ><i class="bx bx-trash me-1"></i> Delete</a                      
-                      >
+                          data-bs-target="#deleteUser">
+                          <i class="bx bx-trash me-1"></i> Delete
+                      </a>
+                      @if($m->admin == "TRUE")
+                      <a class="dropdown-item" href="javascript:void(0);"
+                        data-bs-toggle="modal"
+                        data-bs-target="#ubahAdmin-{{$m->id}}">
+                        <i class="tf-icons bx bx-user me-1"></i> Jadikan Pengguna
+                      </a>
+                      @else
                       <a class="dropdown-item" href="javascript:void(0);"
                           data-bs-toggle="modal"
-                          data-bs-target="#ubahAdmin-{{$m->id}}"
-                        ><i class="tf-icons bx bx-user me-1"></i> Jadikan Admin</a                      
-                      >
+                          data-bs-target="#ubahAdmin-{{$m->id}}">
+                          <i class="tf-icons bx bx-user me-1"></i> Jadikan Admin
+                      </a>
+                      @endif
                     </div>
                   </div>
                 </td>

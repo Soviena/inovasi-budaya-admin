@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Http;
 class NotificationController extends Controller
 {
     public function index(){
-        return view('notification');
+        $page = ["title" => "Notifikasi"];
+        return view('notification',compact('page'));
     }
 
     public function send(Request $request){

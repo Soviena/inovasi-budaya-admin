@@ -9,6 +9,7 @@ class KinerjaBulController extends Controller
 {   
 
     public function kinerjaBulanan(){
+        $page = ["title" => "Kinerja Bulanan"];
         $filePath = storage_path('temp/csv.csv');
         // $content = File::get($filePath);
         // $updatedContent = str_replace(',', '.', $content);
@@ -22,6 +23,6 @@ class KinerjaBulController extends Controller
          
             fclose($open);
         }
-        return view('kinerjaBulanan',compact('array'));
+        return view('kinerjaBulanan',compact('array','page'));
     }
 }

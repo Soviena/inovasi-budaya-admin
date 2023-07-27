@@ -7,7 +7,7 @@
     <div class="alert alert-success mt-4" role="alert">
       {{ session('success') }}
     </div>
-      @endif      
+    @endif
     @foreach($budaya as $b)
       @php
         $dataYearMonth = date('Y-m', strtotime($b->tanggal));
@@ -48,6 +48,7 @@
   </div>
   <div class="content-backdrop fade"></div>
 </div>
+@isset($b)
 @foreach($b->aktivitas as $a)
 <div class="modal fade" id="editAktivitas-{{$a->id}}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -99,4 +100,5 @@
   </div>
 </div>
 @endforeach
+@endisset
 @endsection

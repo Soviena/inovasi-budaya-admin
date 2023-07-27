@@ -11,9 +11,10 @@ class RewardsController extends Controller
 {
 
     public function index(){
+        $page = ["title" => "Rewards"];
         $periodeReward = Periode::with('users')->get();
         $user = User::all();
-        return view('reward',compact('periodeReward','user'));
+        return view('reward',compact('periodeReward','user','page'));
         // return response()->json($periodeReward);
     }
 

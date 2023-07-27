@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Storage;
 class AktivitasController extends Controller
 {
     public function index(){
+        $page = ["title" => "Aktivitas"];
         $budaya = Budaya::with('aktivitas')->orderBy('tanggal','DESC')->get();
-        return view('aktivitas',compact('budaya'));
+        return view('aktivitas',compact('budaya','page'));
     }
     public function aktivitas($id){
         $b = Budaya::with('aktivitas')->find($id);
@@ -34,7 +35,7 @@ class AktivitasController extends Controller
         // Storage::delete('public/uploaded/Course/'.$course->image);
         $img = $request->file('img');
         $img->storeAs('public/uploaded/aktivitas/',$img->hashName());
-        $aktivitas->filename = $img->hashName();
+        $aktivitas->fileName = $img->hashName();
         $aktivitas->save();        
         return redirect()->route('indexAktivitas');
     }
@@ -49,7 +50,7 @@ class AktivitasController extends Controller
         Storage::delete('public/uploaded/aktivitas/'.$aktivitas->fileName);
         $img = $request->file('img');
         $img->storeAs('public/uploaded/aktivitas/',$img->hashName());
-        $aktivitas->filename = $img->hashName();
+        $aktivitas->fileName = $img->hashName();
         $aktivitas->save();        
         return redirect()->route('indexAktivitas');
     }

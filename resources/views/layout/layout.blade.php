@@ -15,7 +15,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>@isset($page) {{$page['title']}} @endisset</title>
 
     <meta name="description" content="" />
 
@@ -133,7 +133,7 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item active">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Dashboard') active @endif @endisset">
               <a href="{{route('index')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
@@ -143,19 +143,19 @@
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Program Budaya</span>
             </li>
-            <li class="menu-item">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Budaya') active @endif @endisset">
               <a href="{{route('budayaIndex')}}" class="menu-link">
               <i class='menu-icon tf-icons bx bxs-book-content'></i>
                 <div data-i18n="Boxicons">Daftar Budaya</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Aktivitas') active @endif @endisset">
               <a href="{{route('indexAktivitas')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-photo-album"></i>
                 <div data-i18n="Boxicons">Aktivitas</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Rewards') active @endif @endisset">
               <a href="{{route('rewardUser')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Boxicons">Rewards</div>
@@ -166,21 +166,21 @@
               <span class="menu-header-text">Pengguna</span>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Manajemen Pengguna') active @endif @endisset">
               <a href="{{route('manageUser')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Analytics">Managemen Pengguna</div>
+                <div data-i18n="Analytics">Manajemen Pengguna</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Feedback') active @endif @endisset">
               <a href="{{route('feedback')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-envelope"></i>
-                <div data-i18n="Boxicons">Feedback</div>
+                <div data-i18n="Boxicons">Feedback @if(session('unreadFeedbacks',0)>0) <span class="mx-2 badge badge-center rounded-pill bg-warning">{{session('unreadFeedbacks',0)}}</span>@endif</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Notifikasi') active @endif @endisset">
               <a href="{{route('notification')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-bell"></i>
                 <div data-i18n="Boxicons">Notifikasi</div>
@@ -191,21 +191,21 @@
               <span class="menu-header-text">File</span>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Materi') active @endif @endisset">
               <a href="{{route('materi')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-book"></i>
                 <div data-i18n="Analytics">Materi</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Safety Moments') active @endif @endisset">
               <a href="{{route('safety')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-shield"></i>
                 <div data-i18n="Boxicons">Safety Moment</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item @isset($page) @if($page['title'] == 'Kinerja Bulanan') active @endif @endisset">
               <a href="{{route('kinerjaBulan')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-bar-chart-alt-2"></i>
                 <div data-i18n="Boxicons">Kinerja Bulanan</div>

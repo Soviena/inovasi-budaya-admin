@@ -10,8 +10,9 @@ class MateriController extends Controller
 {
     public function index()
     {
+        $page = ["title" => "Materi"];
         $materis = Materi::all(); 
-        return view('materi', compact('materis'));
+        return view('materi', compact('materis','page'));
     }
 
     public function store(Request $request)

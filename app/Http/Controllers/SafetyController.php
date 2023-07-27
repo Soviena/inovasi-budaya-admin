@@ -10,8 +10,9 @@ class SafetyController extends Controller
 {
     public function index()
     {
+        $page = ["title" => "Safety Moments"];
         $safety_moments = SafetyMoment::all(); 
-        return view('safety', compact('safety_moments'));
+        return view('safety', compact('safety_moments','page'));
     }
 
     public function addSafety(Request $request)
