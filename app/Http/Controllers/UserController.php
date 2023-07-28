@@ -46,25 +46,27 @@ class UserController extends Controller
     }
 
     public function editUser(Request $request, $id){
-    $users = User::findOrFail($id);
-    $users->name = $request->input('name');
-    $users->email = $request->input('email');
-    $users->tanggal_lahir = $request->input('tanggal_lahir');
+    $user = User::findOrFail($id);
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
+    $user->tanggal_lahir = $request->input('tanggal_lahir');
 
     if ($request->password != '') {
-            $users->password = $request->password;
+            $user->password = $request->password;
     }
 
     if ($request->hasFile('file_profile')) {
-        Storage::delete('public/uploaded/profile/'.$users->profilepic);
+        if ($user->profilepic != "default.png") {
+            Storage::delete('public/uploaded/user/'.$user->profilepic);
+        }
         $file_profile = $request->file('file_profile');
-        $file_profile->storeAs('public/uploaded/profile/',$file_profile->hashName());
-        $users->profilepic = $file_profile->hashName();
+        $file_profile->storeAs('public/uploaded/user/',$file_profile->hashName());
+        $user->profilepic = $file_profile->hashName();
     }
   
-    $users->save();
+    $user->save();
 
-    return redirect()->route('manageUser');
+    return redirect()->back()->with(["EditSuccess" => "Data diri berhasil diubah"]);
 }
 
 public function tambahUser(Request $request){
@@ -74,7 +76,7 @@ public function tambahUser(Request $request){
     $users->tanggal_lahir = $request->tanggal_lahir;
     $users->password = $request->password;
     $file_profile = $request->file('file_profile');
-        $file_profile->storeAs('public/uploaded/profile/',$file_profile->hashName());
+        $file_profile->storeAs('public/uploaded/user/',$file_profile->hashName());
         $users->profilepic = $file_profile->hashName();
         $users->save();        
         return redirect()->route('manageUser');
@@ -101,7 +103,11 @@ public function hapusUser(Request $request, $id){
         $users->save();
     
         return redirect()->route('manageUser')->with('');
-        }
+    }
+
+    public function profile(){
+        return view('profil');
+    }
     
 
 }

@@ -29,6 +29,8 @@ Route::group(['middleware' => 'admin'],function () {
     // Routes that require authentication go here
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('/', [UserController::class, 'index'])->name('index');
+    Route::get('/profile/', [UserController::class, 'profile'])->name('profile');
+
     
     Route::get('/notification', [NotificationController::class, 'index'])->name('notification');
     Route::post('/notification/send', [NotificationController::class, 'send'])->name('sendNotif');
