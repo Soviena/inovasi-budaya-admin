@@ -61,6 +61,12 @@
           <!-- Register -->
           <div class="card">
             <div class="card-body">
+              @error('email')
+              <div class="alert alert-danger alert-dismissible" role="alert">
+                Salah Email atau password, coba lagi..
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              @enderror
               <!-- Logo -->
               <div class="app-brand justify-content-center">
                 <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 827 367" width="881" height="100">
@@ -138,6 +144,7 @@
                     id="email"
                     name="email"
                     placeholder="Email"
+                    value="{{old('email')}}"
                     autofocus
                   />
                 </div>
