@@ -15,7 +15,7 @@
           <table class="table">
             <thead>
               <tr>
-                <th>Judul File</th>
+                <th style='width:90vw;'>Judul</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -23,8 +23,8 @@
               <!-- Loop through the list of PDF files from the database -->
               @foreach ($materis as $materi)
               <tr>
-                <td style='width:100vw;'>{{ $materi->title }}</td>
-                <td style='width:5vw;'>
+                <td style='width:90vw;'>{{ $materi->title }}</td>
+                <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                       <i class="bx bx-dots-vertical-rounded"></i>

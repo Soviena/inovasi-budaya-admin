@@ -40,8 +40,7 @@ class AktivitasController extends Controller
         return redirect()->route('indexAktivitas');
     }
 
-    public function editAktivitas(Request $request, $id)
-{
+    public function editAktivitas(Request $request, $id){
     $aktivitas = Aktivitas::findOrFail($id);
     $aktivitas->judul = $request->input('judul');
     $aktivitas->deskripsi = $request->input('deskripsi');
@@ -65,7 +64,7 @@ class AktivitasController extends Controller
         $aktivitas = Aktivitas::find($id);
         Storage::delete('public/uploaded/aktivitas/'.$aktivitas->fileName);
         $aktivitas->delete();
-        return redirect()->route('indexAktivitas');
+        return redirect()->back();
     }
 
     

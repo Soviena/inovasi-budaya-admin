@@ -30,8 +30,6 @@ Route::group(['middleware' => 'admin'],function () {
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('/', [UserController::class, 'index'])->name('index');
     
-    Route::get('/csv', [UserController::class, 'csv'])->name('csv');
-    
     Route::get('/notification', [NotificationController::class, 'index'])->name('notification');
     Route::post('/notification/send', [NotificationController::class, 'send'])->name('sendNotif');
     
@@ -70,7 +68,13 @@ Route::group(['middleware' => 'admin'],function () {
     Route::get('/safety/edit/{id}', [SafetyController::class, 'editSafety'])->name('editSafety');
     Route::post('/safety/update/{id}', [SafetyController::class, 'updateSafety'])->name('updateSafety');
     
-    Route::get('/kinerjaBulanan',[KinerjaBulController::class, 'kinerjaBulanan'])->name("kinerjaBulan");
+    Route::get('/kinerja',[KinerjaBulController::class, 'kinerjaBulanan'])->name("kinerjaBulan");
+    Route::get('/kinerja/view/{id}', [KinerjaBulController::class, 'kinerja'])->name('kinerja');
+    Route::post('/kinerja/add',[KinerjaBulController::class, 'addKinerja'])->name("addKinerja");
+    Route::post('/kinerja/edit/{id}',[KinerjaBulController::class, 'editKinerja'])->name("editKinerja");
+    Route::get('/kinerja/delete/{id}',[KinerjaBulController::class, 'deleteKinerja'])->name("deleteKinerja");
+
+
     
     Route::get('/aktivitas',[AktivitasController::class, 'index'])->name("indexAktivitas");
     Route::get('/aktivitas/{idBudaya}',[AktivitasController::class, 'aktivitas'])->name("aktivitas");

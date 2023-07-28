@@ -44,22 +44,6 @@ class UserController extends Controller
         $manage = User::all(); 
         return view('manage', compact('manage','page'));
     }
-    public function csv(){
-        $filePath = storage_path('temp/csv.csv');
-        // $content = File::get($filePath);
-        // $updatedContent = str_replace(',', '.', $content);
-        // $updatedContent = str_replace(';', ',', $updatedContent);
-        // File::put($filePath, $updatedContent);
-
-        if (($open = fopen($filePath, "r")) !== false) {
-            while (($data = fgetcsv($open, 1000, ",")) !== false) {
-                $array[] = $data;
-            }
-         
-            fclose($open);
-        }
-        return view('kinerja',compact('array'));
-    }
 
     public function editUser(Request $request, $id){
     $users = User::findOrFail($id);

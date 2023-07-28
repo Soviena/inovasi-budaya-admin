@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('kinerjas', function (Blueprint $table) {
             $table->id();
             $table->string('filename');
-            $table->date('tanggal');
+            $table->string('tanggal');
             $table->timestamps();
         });
     }

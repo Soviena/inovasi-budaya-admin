@@ -48,57 +48,57 @@
   </div>
   <div class="content-backdrop fade"></div>
 </div>
-@isset($b)
-@foreach($b->aktivitas as $a)
-<div class="modal fade" id="editAktivitas-{{$a->id}}" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Edit Aktivitas Budaya</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-      </div>
-        <form action="{{ route('editAktivitas', $a->id) }}" method="POST" enctype="multipart/form-data">
-          @csrf
-            <div class="modal-body">
-              <div class="row">
-                <div class="col mb-3">
-                  <label for="judul" class="form-label">Edit Nama Aktivitas</label>
-                  <input type="text" value="{{ $a->judul }}" name="judul" id="judul" class="form-control" placeholder="Nama Aktivitas" required />
+@foreach($budaya as $b)
+  @foreach($b->aktivitas as $a)
+  <div class="modal fade" id="editAktivitas-{{$a->id}}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Edit Aktivitas Budaya</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+        </div>
+          <form action="{{ route('editAktivitas', $a->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col mb-3">
+                    <label for="judul" class="form-label">Edit Nama Aktivitas</label>
+                    <input type="text" value="{{ $a->judul }}" name="judul" id="judul" class="form-control" placeholder="Nama Aktivitas" required />
+                  </div>
                 </div>
+
+                <div class="row">
+                  <div class="col mb-3">
+                    <label for="deskripsi" class="form-label">Deskripsi</label>
+                    <input type="text" value="{{ $a->deskripsi }}" name="deskripsi" id="Deskripsi" class="form-control" placeholder="Deskripsi Aktivitas" required />
+                  </div>
+                </div>
+
+                <div class="row g-2">
+                  <div class="mb-3">
+                    <label for="file_safety" class="form-label">Dokumentasi gambar</label>
+                    <input class="form-control" type="file" name="img" id="formFile" accept=".jpg,.png,.jpeg" required />
+                  </div>
+                </div>
+
               </div>
 
-              <div class="row">
-                <div class="col mb-3">
-                  <label for="deskripsi" class="form-label">Deskripsi</label>
-                  <input type="text" value="{{ $a->deskripsi }}" name="deskripsi" id="Deskripsi" class="form-control" placeholder="Deskripsi Aktivitas" required />
-                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                  Batal
+                </button>
+                <button type="submit" class="btn btn-primary">Update</button>
               </div>
 
-              <div class="row g-2">
-                <div class="mb-3">
-                  <label for="file_safety" class="form-label">Dokumentasi gambar</label>
-                  <input class="form-control" type="file" name="img" id="formFile" accept=".jpg,.png,.jpeg" required />
-                </div>
-              </div>
-
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                Batal
-              </button>
-              <button type="submit" class="btn btn-primary">Update</button>
-            </div>
-
-        </form>
-    </div>    
+          </form>
+      </div>    
+    </div>
   </div>
-</div>
+  @endforeach
 @endforeach
-@endisset
 @endsection

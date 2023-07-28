@@ -11,127 +11,47 @@
                   <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th>Nama file</th>
-                        <th>tanggal</th>
+                        <th  style="width:90vw;">tanggal</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
+                      @foreach($kinerja as $k)
                       <tr>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
-                        <td>Ini testing tanggal</td>
+                        <td>{{$k->tanggal}}</td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                              data-bs-toggle="modal"
-                              data-bs-target="#lihatCSV"
-                                ><i class='bx bx-book-open'></i> Preview</a
-                              >
+                              <a class="dropdown-item" href="{{route('kinerja',$k->id)}}">
+                                <i class='bx bx-book-open'></i> Preview
+                              </a>
                               <a class="dropdown-item" href="javascript:void(0);"
                                   data-bs-toggle="modal"
-                                  data-bs-target="#editPoster"
+                                  data-bs-target="#editKinerja-{{$k->id}}"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
                               <a class="dropdown-item" href="javascript:void(0);"
                                   data-bs-toggle="modal"
-                                  data-bs-target="#deletePoster"
+                                  data-bs-target="#deleteKinerja-{{$k->id}}"
                                 ><i class="bx bx-trash me-1"></i> Delete</a
                               >
                             </div>
                           </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>React Project</strong></td>
-                        <td>Ini testing tanggal</td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                              data-bs-toggle="modal"
-                              data-bs-target="#lihatCSV"
-                                ><i class='bx bx-book-open'></i> Preview</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#editPoster"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#deletePoster"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>VueJs Project</strong></td>
-                        <td>Ini testing tanggal</td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                              data-bs-toggle="modal"
-                              data-bs-target="#lihatCSV"
-                                ><i class='bx bx-book-open'></i> Preview</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#editPoster"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#deletePoster"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Bootstrap Project</strong>
-                        </td>
-                        <td>Ini testing tanggal</td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#lihatCSV"
-                                ><i class='bx bx-book-open'></i> Preview</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#editPoster"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#deletePoster"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
+                      @endforeach
                     </tbody>
+                    <tfoot>
+                      <tr>
+                        <td></td>              
+                        <td>
+                          <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#addKinerja" class="btn btn-outline-primary">Tambah</a>
+                        </td>
+                      </tr>
+                    </tfoot>
                   </table>
                 </div>
               </div>
@@ -139,61 +59,44 @@
     </div>
 </div>
 
-<div class="modal fade" id="lihatCSV" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Tabel Kinerja</h5>
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                    ></button>
-            </div>
-            <div class="modal-body">
-            <table class="table table-striped">
-                    <tbody class="table-border-bottom-0">
-                    @foreach ($array as $i => $a)
-            <tr>
-                @foreach ($a as $j => $b)
-                    @if ($i > 2 && $j > 7)
-                        <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-                    @elseif ($i == 5 && $j > 2)
-                        <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-                    @elseif ($i == 7 && $j > 2)
-                        <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-                    @elseif ($i == 10 && $j > 2)
-                        <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-                    @elseif ($i == 12 && $j > 2)
-                        <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-                    @elseif ($i == 14 && $j > 2)
-                        <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-                    @elseif ($i == 18 && $j > 2)
-                        <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-                    @elseif ($i == 22 && $j > 2)
-                        <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-                    @elseif ($i > 2 && $j > 2)
-                        <td>{{number_format(ceil(floatval($b)))}}</td>
-                    @else
-                        <td>{{$b}}</td>
-                    @endif
-                @endforeach
-            </tr>
-            @endforeach
-                    </tbody>
-                  </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                Tutup
-                </button>
-            </div>
+<div class="modal fade" id="addKinerja" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Taambah Kinerja Bulanan</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form action="{{route('addKinerja')}}" method="post"  enctype="multipart/form-data">
+        @csrf
+        <div class="modal-body">
+          <div class="mb-3 row">
+              <label for="html5-month-input" class="col-md-2 col-form-label">Month</label>
+                  <div class="col-md-10">
+                      <input class="form-control" name="tanggal" type="month" value="" id="html5-month-input" required>
+                  </div>
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Pilih file</label>
+            <input class="form-control" name="csv" type="file" id="formFile" accept=".csv" required>
+          </div>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
+            Tutup
+          </button>
+          <input type="submit" class="btn btn-primary" value="Simpan">
+        </div>
+      </form>
     </div>
+  </div>
 </div>
-
-<div class="modal fade" id="editPoster" tabindex="-1" aria-hidden="true">
+@foreach($kinerja as $k)
+<div class="modal fade" id="editKinerja-{{$k->id}}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -205,31 +108,33 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="modal-body">
-        <div class="mb-3 row">
-            <label for="html5-month-input" class="col-md-2 col-form-label">Month</label>
-                <div class="col-md-10">
-                    <input class="form-control" type="month" value="2021-06" id="html5-month-input">
-                    </input>
-                </div>
+      <form action="{{route('editKinerja',$k->id)}}" method="post"  enctype="multipart/form-data">
+        @csrf
+        <div class="modal-body">
+          <div class="mb-3 row">
+              <label for="html5-month-input" class="col-md-2 col-form-label">Month</label>
+                  <div class="col-md-10">
+                      <input class="form-control" name="tanggal" type="month" value="{{$k->tanggal}}" id="html5-month-input">
+                      </input>
+                  </div>
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Pilih file</label>
+            <input class="form-control" type="file" id="formFile">
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="formFile" class="form-label">Pilih file</label>
-          <input class="form-control" type="file" id="formFile">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
+            Tutup
+          </button>
+          <input type="submit" class="btn btn-primary" name="csv" value="Simpan">
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
-          Tutup
-        </button>
-      </button>
-      <button type="button" class="btn btn-primary">Simpan</button>
-      </div>
+      </form>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="deletePoster" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="deleteKinerja-{{$k->id}}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -249,12 +154,12 @@
           Tidak
         </button>
       </button>
-      <button type="button" class="btn btn-danger">Ya</button>
+      <a href="{{route('deleteKinerja',$k->id)}}" class="btn btn-danger">Ya</a>
       </div>
     </div>
   </div>
 </div>
-
+@endforeach
 <div class="content-backdrop fade"></div>
 @endsection
 
