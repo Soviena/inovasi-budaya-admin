@@ -63,7 +63,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Taambah Kinerja Bulanan</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Tambah Kinerja Bulanan</h5>
         <button
           type="button"
           class="btn-close"
@@ -115,7 +115,6 @@
               <label for="html5-month-input" class="col-md-2 col-form-label">Month</label>
                   <div class="col-md-10">
                       <input class="form-control" name="tanggal" type="month" value="{{$k->tanggal}}" id="html5-month-input">
-                      </input>
                   </div>
           </div>
           <div class="mb-3">
