@@ -10,9 +10,9 @@
     <div class="card mb-5">
       <div class="card-header">Halaman Safety Moment</div>
       <div class="card-body">
-        <h5 class="card-title">Saasdasdasd</h5>
+        <h5 class="card-title">Tambahkan poster baru</h5>
         <p class="card-text">
-          Tambahkan Reward baru
+          Poster mengenai K3LH untuk meningkatkan keamanan dan kenyamanan di area kerja
         </p>
         <a href="javascript:void(0);" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahSafety">Tambah Safety Moment</a>
       </div>

@@ -110,7 +110,6 @@
 <script>
     function getGreeting() {
         const currentHour = new Date().getHours();
-        console.log(currentHour);
         if (currentHour >= 5 && currentHour < 11) {
             return 'Pagi';
         }else if (currentHour >= 11 && currentHour < 15) {

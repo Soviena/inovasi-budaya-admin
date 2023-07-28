@@ -6,9 +6,9 @@
     <div class="card mb-5">
       <div class="card-header">Daftar Reward</div>
       <div class="card-body">
-        <h5 class="card-title">deskripsi deksipsa</h5>
+        <h5 class="card-title">Siapa saja yang akan mendapatkan reward ?</h5>
         <p class="card-text">
-          aaaaaaaaaaaaaaaaaaa
+          Tambahkan reward per-periode, per-tahun dll..
         </p>
         <a href="javascript:void(0);" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahPeriode">Tambah Reward</a>
       </div>

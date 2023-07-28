@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('aktivitas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('budaya_id')->constrained('budayas')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('judul');
+            $table->string('judul')->nullable()->default('');
             $table->longText('deskripsi')->nullable()->default('');
             $table->string('fileName');
             $table->timestamps();

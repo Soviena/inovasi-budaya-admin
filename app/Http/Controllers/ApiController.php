@@ -87,7 +87,6 @@ class ApiController extends Controller
         if($request->hasfile('picture')){
             if ($User->profilepic != "default.png") {
                 Storage::delete('public/uploaded/user/'.$User->profilepic);
-                $here = "public/uploaded/user/".$User->profilepic;
             }
             $profilepic = $request->file('picture');
             $profilepic->storeAs('public/uploaded/user/',$profilepic->hashName());
