@@ -54,6 +54,7 @@ Route::group(['middleware' => 'admin'],function () {
     Route::post('/manage/edit/{idUser}', [UserController::class, 'editUser'])->name('editUser');
     Route::post('/manage/tambah', [UserController::class, 'tambahUser'])->name('tambahUser');
     Route::post('/manage/ubahA/{idUser}', [UserController::class, 'ubahAdmin'])->name('ubahAdmin');
+    Route::post('/manage/ubahU/{idUser}', [UserController::class, 'ubahUser'])->name('ubahUser');
     Route::get('/manage/delete/{idUser}',[UserController::class, 'hapusUser'])->name("hapusUser");
 
     Route::get('/reward',[RewardsController::class, 'index'])->name("rewardUser");

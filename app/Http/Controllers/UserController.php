@@ -60,8 +60,6 @@ class UserController extends Controller
         $file_profile = $request->file('file_profile');
         $file_profile->storeAs('public/uploaded/profile/',$file_profile->hashName());
         $users->profilepic = $file_profile->hashName();
-        $users->save();        
-        return redirect()->route('manageUser');
     }
   
     $users->save();
@@ -96,5 +94,14 @@ public function hapusUser(Request $request, $id){
 
     return redirect()->route('manageUser')->with('');
     }
+
+    public function ubahUser($id){
+        $users = User::findOrFail($id);
+        $users->admin = "FALSE"; 
+        $users->save();
+    
+        return redirect()->route('manageUser')->with('');
+        }
+    
 
 }
