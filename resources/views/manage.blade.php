@@ -58,7 +58,7 @@
                       @if($m->admin == "TRUE")
                       <a class="dropdown-item" href="javascript:void(0);"
                         data-bs-toggle="modal"
-                        data-bs-target="#ubahAdmin-{{$m->id}}">
+                        data-bs-target="#ubahUser-{{$m->id}}">
                         <i class="tf-icons bx bx-user me-1"></i> Jadikan Pengguna
                       </a>
                       @else
@@ -146,7 +146,7 @@
                 <div class="mb-3">
                   <label for="file_profile" class="form-label">ubah profile</label>
                   <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/profile/'.$m->profilepic)}}" alt="@isset($m) <{{$m->name}} @endisset" style="max-height:240px;width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
-                  <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg" required />
+                  <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg"/>
                 </div>
               </div>
 
@@ -291,7 +291,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Ubah User</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Ubah User menjadi admin</h5>
         <button
         type="button"
         class="btn-close"
@@ -303,6 +303,37 @@
         @csrf
       <div class="modal-body">
         <p>Apakah anda yakin ingin mengubah user ini menjadi admin?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color: #1A4980;">
+          Tidak
+        </button>
+      </button>
+      <input type="submit" class="btn btn-danger">
+    </div>
+      </form>
+  </div>
+</div>
+</div>
+@endforeach
+
+@foreach($manage as $m)
+<div class="modal fade" id="ubahUser-{{$m->id}}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Ubah Admin menjadi User</h5>
+        <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        ></button>
+      </div>
+      <form action="{{ route('ubahUser', $m->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+      <div class="modal-body">
+        <p>Apakah anda yakin ingin mengubah admin ini menjadi pengguna?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color: #1A4980;">
