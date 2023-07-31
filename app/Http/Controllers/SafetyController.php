@@ -35,7 +35,7 @@ class SafetyController extends Controller
 
     public function deleteSafety(Request $request, $id){
         $safety = SafetyMoment::find($id);
-        Storage::delete('public/'.$safety->fileName);
+        Storage::delete('public/uploaded/safety/'.$safety->fileName);
         $safety->delete();
         
         return redirect()->route('safety');
