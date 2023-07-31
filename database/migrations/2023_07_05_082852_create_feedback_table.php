@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('judul');
             $table->longText('deskripsi');
-            $table->string('status');
+            $table->string('status')->nullable()->default('unread');
             $table->timestamps();
         });
     }
