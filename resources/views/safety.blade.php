@@ -22,7 +22,7 @@
         @foreach ($safety_moments as $safety)
           <div class="col-sm-6 col-lg-4 mb-4">
             <div class="card">
-              <img class="card-img-top" src="{{ asset('storage/' . $safety->fileName) }}" alt="Card image cap" />
+              <img class="card-img-top" src="{{ asset('storage/uploaded/safety/' . $safety->fileName) }}" alt="Card image cap" />
               <div class="card-body">
                 <h5 class="card-title">{{$safety->judul}}</h5>
                 <p class="card-text">
@@ -30,7 +30,7 @@
                 </p>
                 <a href="javascript:void(0);" class="card-link edit-aktivitas-btn"
                   data-bs-toggle="modal"
-                  data-bs-target="#editSafety-{{$safety->id}}"
+                  data-bs-target="#updateSafety-{{$safety->id}}"
                   data-id="{{ $safety->id }}"
                   data-judul="{{ $safety->judul }}"
                   data-deskripsi="{{ $safety->deskripsi }}"
@@ -92,11 +92,11 @@
 <div class="content-backdrop fade"></div>
 
 @foreach($safety_moments as $safety)
-<div class="modal fade" id="editSafety-{{$safety->id}}" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="updateSafety-{{$safety->id}}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Edit Aktivitas Budaya</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Edit Safety Moment</h5>
           <button
             type="button"
             class="btn-close"
@@ -104,12 +104,12 @@
             aria-label="Close"
           ></button>
       </div>
-        <form action="{{ route('editAktivitas', $safety->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('updateSafety', $safety->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
             <div class="modal-body">
               <div class="row">
                 <div class="col mb-3">
-                  <label for="judul" class="form-label">Edit Nama Aktivitas</label>
+                  <label for="judul" class="form-label">Edit Safety Moment</label>
                   <input type="text" value="{{ $safety->judul }}" name="judul" id="judul" class="form-control" placeholder="Nama Aktivitas" required />
                 </div>
               </div>
@@ -124,7 +124,7 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="file_safety" class="form-label">Dokumentasi gambar</label>
-                  <input class="form-control" type="file" name="img" id="formFile" accept=".jpg,.png,.jpeg" required />
+                  <input class="form-control" type="file" name="img" id="formFile" accept=".jpg,.png,.jpeg"/>
                 </div>
               </div>
 

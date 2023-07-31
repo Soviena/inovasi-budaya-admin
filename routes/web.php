@@ -68,7 +68,6 @@ Route::group(['middleware' => 'admin'],function () {
     Route::post('/safety/add', [SafetyController::class, 'addSafety'])->name('addSafety');
     Route::get('/safety/preview/{id}', [SafetyController::class, 'previewSafety'])->name('previewSafety');
     Route::get('/safety/delete/{id}',[SafetyController::class, 'deleteSafety'])->name("deleteSafety");
-    Route::get('/safety/edit/{id}', [SafetyController::class, 'editSafety'])->name('editSafety');
     Route::post('/safety/update/{id}', [SafetyController::class, 'updateSafety'])->name('updateSafety');
     
     Route::get('/kinerja',[KinerjaBulController::class, 'kinerjaBulanan'])->name("kinerjaBulan");

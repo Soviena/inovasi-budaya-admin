@@ -17,22 +17,14 @@ class SafetyController extends Controller
 
     public function addSafety(Request $request)
 {
-    // Validate the form data
-    $request->validate([
-        'judul' => 'required|string|max:255',
-        'deskripsi' => 'required|string',
-        'file_safety' => 'required|file|mimes:jpg,jpeg,png|max:10240',
-    ]);
-
-    $filesafetyPath = $request->file('file_safety')->store('uploaded/safety', 'public');
-
-    $safety = new SafetyMoment([
-        'judul' => $request->input('judul'),
-        'deskripsi' => $request->input('deskripsi'),
-        'fileName' => $filesafetyPath,
-    ]);
-    $safety->save();
-    return redirect()->back()->with('');
+    $safety = new SafetyMoment;
+    $safety->judul = $request->judul;
+    $safety->deskripsi = $request->deskripsi;
+    $file_safety = $request->file('file_safety');
+        $file_safety->storeAs('public/uploaded/safety/',$file_safety->hashName());
+        $safety->fileName = $file_safety->hashName();
+        $safety->save();        
+        return redirect()->route('safety');
 }
 
         public function previewSafety($id)
@@ -49,28 +41,20 @@ class SafetyController extends Controller
         return redirect()->route('safety');
     } 
 
-    public function editSafety($id)
-{
-    $safety = SafetyMoment::findOrFail($id);
-    return view('editSafety', compact('safety'));
-}
-
     public function updateSafety(Request $request, $id)
 {
     $safety = SafetyMoment::findOrFail($id);
     $safety->judul = $request->input('judul');
     $safety->deskripsi = $request->input('deskripsi');
 
-    if ($request->hasFile('file_safety')) {
-        Storage::delete('public/'.$safety->fileName);
-        $fileSafety = $request->file('file_safety');
-        $path = $fileSafety->store('uploaded/safety', 'public');
-        $safety->fileName = $path;
+    if ($request->hasFile('img')) {
+        Storage::delete('public/uploaded/safety/'.$safety->fileName);
+        $img = $request->file('img');
+        $img->storeAs('public/uploaded/safety/',$img->hashName());
+        $safety->fileName = $img->hashName();
     }
-    
-    $safety->save();
-
-    return redirect()->route('safety')->with('');
+    $safety->save();        
+    return redirect()->route('safety');
 }
 
 }
