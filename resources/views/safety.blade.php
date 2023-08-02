@@ -63,13 +63,14 @@
           <div class="row">
             <div class="col mb-3">
               <label for="judul" class="form-label">Judul</label>
-              <input type="text" name="judul" id="judul" class="form-control" placeholder="Judul Safety" required />
+              <input type="text" name="judul" id="judul" class="form-control" placeholder="Masukan Judul Safety" required />
             </div>
           </div>
           <div class="row">
             <div class="col mb-3">
               <label for="deskripsi" class="form-label">Deskripsi</label>
-              <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsi Safety" required />
+              <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Masukan 
+              Deskripsi Safety" required />
             </div>
           </div>
           <div class="row g-2">
