@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('admin',['TRUE','FALSE'])->default('FALSE');
+            $table->enum('tim_internalisasi',['TRUE','FALSE'])->default('FALSE');
             $table->string('profilepic')->nullable()->default('default.png');
             $table->date('tanggal_lahir');
             $table->rememberToken();

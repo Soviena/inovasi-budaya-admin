@@ -30,7 +30,6 @@ Route::group(['middleware' => 'admin'],function () {
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('/', [UserController::class, 'index'])->name('index');
     Route::get('/profile/', [UserController::class, 'profile'])->name('profile');
-
     
     Route::get('/notification', [NotificationController::class, 'index'])->name('notification');
     Route::post('/notification/send', [NotificationController::class, 'send'])->name('sendNotif');
@@ -76,8 +75,6 @@ Route::group(['middleware' => 'admin'],function () {
     Route::post('/kinerja/edit/{id}',[KinerjaBulController::class, 'editKinerja'])->name("editKinerja");
     Route::get('/kinerja/delete/{id}',[KinerjaBulController::class, 'deleteKinerja'])->name("deleteKinerja");
 
-
-    
     Route::get('/aktivitas',[AktivitasController::class, 'index'])->name("indexAktivitas");
     Route::get('/aktivitas/{idBudaya}',[AktivitasController::class, 'aktivitas'])->name("aktivitas");
     
@@ -85,6 +82,11 @@ Route::group(['middleware' => 'admin'],function () {
     Route::post('/aktivitas/new', [AktivitasController::class, 'newAktivitas'])->name('newAktivitas');
     Route::get('/aktivitas/delete/{idAktivitas}', [AktivitasController::class, 'deleteAktivitas'])->name('deleteAktivitas');
     Route::post('/aktivitas/edit/{idAktivitas}', [AktivitasController::class, 'editAktivitas'])->name('editAktivitas');
+
+    Route::get('/internalisasi',[UserController::class, 'internalisasi'])->name("internalisasi");
+    Route::get('/internalisasi/add/{id}',[UserController::class, 'addTimInternal'])->name("addTimInternal");
+    Route::get('/internalisasi/delete/{id}',[UserController::class, 'deleteTimInternal'])->name("deleteTimInternal");
+
 
     
     // Add more authenticated routes here

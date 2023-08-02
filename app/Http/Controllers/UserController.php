@@ -75,11 +75,13 @@ public function tambahUser(Request $request){
     $users->email = $request->email;
     $users->tanggal_lahir = $request->tanggal_lahir;
     $users->password = $request->password;
-    $file_profile = $request->file('file_profile');
+    if ($request->hasFile('file_profile')) {
+        $file_profile = $request->file('file_profile');
         $file_profile->storeAs('public/uploaded/user/',$file_profile->hashName());
         $users->profilepic = $file_profile->hashName();
-        $users->save();        
-        return redirect()->route('manageUser');
+    }
+    $users->save();        
+    return redirect()->route('manageUser');
 }
 
 public function hapusUser(Request $request, $id){
@@ -109,5 +111,26 @@ public function hapusUser(Request $request, $id){
         return view('profil');
     }
     
+    public function internalisasi(){
+        $page = ["title" => "Tim Internalisasi"];
+        $usersInternal = User::where('tim_internalisasi','TRUE')->get();
+        $users = User::where('tim_internalisasi','FALSE')->get();
+        return view('internalisasi',compact('usersInternal','users','page'));
+    }
+    public function addTimInternal($id){
+        $users = User::findOrFail($id);
+        $users->tim_internalisasi = "TRUE"; 
+        $users->save();
+    
+        return redirect()->route('internalisasi')->with('');
+    }
+
+    public function deleteTimInternal($id){
+        $users = User::findOrFail($id);
+        $users->tim_internalisasi = "FALSE"; 
+        $users->save();
+    
+        return redirect()->route('internalisasi')->with('');
+    }
 
 }
