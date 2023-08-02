@@ -212,7 +212,7 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="file_profile" class="form-label">input gambar profile</label>
-                  <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg" required />
+                  <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg" />
                 </div>
               </div>
             </div>
