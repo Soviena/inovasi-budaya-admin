@@ -122,7 +122,11 @@ class ApiController extends Controller
     public function getBudayaNow(){
         $today = new \DateTime();
         $b= DB::table('budayas')->where('tanggal',$today->format('Y-m'))->first();
-        return response()->json($b);
+        if($b){
+            return response()->json($b);
+        }else{
+            return response("not found",404);
+        }
     }
 
     public function getBudayaYearNow(){
