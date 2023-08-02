@@ -33,6 +33,9 @@
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="{{asset('vendor/fonts/boxicons.css')}}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.11/cropper.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+
 
 
     <!-- Core CSS -->
@@ -216,6 +219,24 @@
                 <div data-i18n="Boxicons">Kinerja Bulanan</div>
               </a>
             </li>
+
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Tentang Website</span>
+            </li>
+
+            <li class="menu-item @isset($page) @if($page['title'] == 'Tim Internalisasi') active @endif @endisset">
+              <a href="{{route('internalisasi')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-sitemap"></i>
+                <div data-i18n="Boxicons">Tim Internalisasi</div>
+              </a>
+            </li>
+
+            <li class="menu-item @isset($page) @if($page['title'] == 'Developer') active @endif @endisset">
+              <a href="{{route('kinerjaBulan')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-bar-chart-alt-2"></i>
+                <div data-i18n="Boxicons">Tentang developer</div>
+              </a>
+            </li>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -238,13 +259,7 @@
               <!-- Search -->
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input
-                    type="text"
-                    class="form-control border-0 shadow-none"
-                    placeholder="Search..."
-                    aria-label="Search..."
-                  />
+                  Website admin sucofindo
                 </div>
               </div>
               <!-- /Search -->

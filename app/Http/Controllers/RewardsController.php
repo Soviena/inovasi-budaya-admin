@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bulan;
 use App\Models\Periode;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,8 +14,9 @@ class RewardsController extends Controller
     public function index(){
         $page = ["title" => "Rewards"];
         $periodeReward = Periode::with('users')->get();
-        $user = User::all();
-        return view('reward',compact('periodeReward','user','page'));
+        $user = base64_encode(json_encode(User::with('bulan')->get()));
+        $bulan = Bulan::all();
+        return view('reward',compact('periodeReward','user','page','bulan'));
         // return response()->json($periodeReward);
     }
 

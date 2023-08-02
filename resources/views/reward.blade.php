@@ -1,5 +1,38 @@
 @extends('layout.layout')
 @section('content')
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script>
+  var users = JSON.parse(atob(`{{$user}}`));
+  function addTable(periodeId, tableID){
+    users.forEach(user => {
+      user['totalVisit'] = 0;
+      user['bulan'].forEach(bulan => {
+        user['totalVisit'] += bulan['pivot']['visit'];
+      });
+      form = `
+      <form action="/reward/add/${user['id']}/${periodeId}" id="formInput-${user['id']}-${periodeId}" method="post">
+        @csrf
+        <input type="hidden" name="rewardsName" class="rewardsName-form">
+        <input type="hidden" name="deskripsi" class="deskripsi-form">
+      </form>      
+      `
+      $(`#hiddenInput-${periodeId}`).append(form);
+      table=`
+      <tr> 
+          <td>${user['name']}</td>
+          <td>${user['email']}</td>
+          <td>${user['totalVisit']}</td>
+          <td>
+            <button class="btn btn-primary" onclick="submitForm('formInput-${user['id']}-${periodeId}',${periodeId})">
+              <i class="fas fa-plus"></i>Tambah
+            </button>
+          </td>
+        </tr>
+      `
+      $(tableID).append(table);
+    });
+  }
+</script>
 <div class="content-wrapper">
   <div class="container-xxl flex-grow-1 container-p-y">
 
@@ -113,33 +146,45 @@
                 <input class="form-control" type="text" value="" name="deskripsi" id="deskripsiRewards-{{$pr->id}}"  onchange="changeInput(this,'deskripsi-form')" required >
               </div>
             </div>
-            <table class="table">
+            <label for="html5-month-input" class="col-md-6 col-form-label">Dari bulan sampai bulan ..</label>
+            <div class="mb-3 row">
+              <div class="col-md-5">
+                <select id="awalBulan-{{$pr->id}}" class="form-select">
+                  <option>Dari Bulan</option>
+                  @foreach($bulan as $b)
+                    <option value="{{$b->bulan}}">{{$b->bulan}}</option>
+                  @endforeach
+                </select>              
+              </div>
+              <div class="col-md-5">
+                <select id="akhirBulan-{{$pr->id}}" class="form-select">
+                  <option>Sampai Bulan</option>
+                  @foreach($bulan as $b)
+                    <option value="{{$b->bulan}}">{{$b->bulan}}</option>
+                  @endforeach
+                </select>              
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-outline-primary" onclick="recountVisit(document.getElementById('awalBulan-{{$pr->id}}').value,document.getElementById('akhirBulan-{{$pr->id}}').value,'#tableUser-{{$pr->id}}','{{$pr->id}}')">Hitung</button>
+              </div>
+            </div>
+            <div id="hiddenInput-{{$pr->id}}">
+
+            </div>
+            <table class="table" id="tableUser-{{$pr->id}}">
               <thead>
                 <tr>
                   <th>Nama Panjang</th>
                   <th>Email</th>
-                  <th>Tanggal Lahir</th>
+                  <th>Banyak membuka aplikasi</th>
                   <th>Actions</th>
                 </tr>
               </thead>
-              <tbody class="table-border-bottom-0">
-                @foreach($user as $u)
-                <form action="{{route('addReward',[$u->id,$pr->id])}}" id="formInput-{{$u->id}}-{{$pr->id}}" method="post">
-                  @csrf
-                  <input type="hidden" name="rewardsName" class="rewardsName-form">
-                  <input type="hidden" name="deskripsi" class="deskripsi-form">
-                  <tr> 
-                    <td>{{$u->name}}</td>
-                    <td>{{$u->email}}</td>
-                    <td>{{$u->tanggal_lahir}}</td>
-                    <td>
-                      <button class="btn btn-primary" onclick="submitForm('formInput-{{$u->id}}-{{$pr->id}}','{{$pr->id}}')">
-                        <i class="fas fa-plus"></i>Tambah
-                      </button>
-                    </td>
-                  </tr>
-                </form>
-                @endforeach
+              <tbody class="table-border-bottom-0" id="tableTambahUser-{{$pr->id}}">
+                <script>
+                  addTable('{{$pr->id}}', '#tableTambahUser-{{$pr->id}}')
+                  var table_{{$pr->id}} = new DataTable("#tableUser-{{$pr->id}}",{order:[2,'desc']})
+                </script>
               </tbody>
             </table>
           </div>
@@ -245,6 +290,44 @@
     const month = date.toLocaleString('default', { month: 'long' });
     return `${month} ${year}`;
   }
+
+  function recountVisit(bulanAwal, bulanAkhir, tableId, periodeId, dataTable) {
+    const startDate = new Date(bulanAwal);
+    const endDate = new Date(bulanAkhir);
+
+    // Clear the table body, but keep the form row intact
+    $(tableId).find('tbody').empty();
+    $(tableId).dataTable().api().clear()
+    users.forEach(user => {
+      user.totalVisit = 0;
+      user.bulan.forEach(bulan => {
+        const tanggal = new Date(bulan.bulan);
+        if (tanggal >= startDate && tanggal <= endDate) {
+          user.totalVisit += bulan.pivot.visit;
+        }
+      });
+
+      // Create the data row for the table
+      const tableRow = `
+        <tr> 
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.totalVisit}</td>
+          <td>
+            <button class="btn btn-primary" onclick="submitForm('formInput-${user.id}-${periodeId}', ${periodeId})">
+              <i class="fas fa-plus"></i>Tambah
+            </button>
+          </td>
+        </tr>
+      `;
+
+      // Append the form and data rows to the table body
+      $(tableId).find('tbody').append(tableRow);
+      $(tableId).DataTable().row.add([user.name,user.email,user.totalVisit,`<button class="btn btn-primary" onclick="submitForm('formInput-${user.id}-${periodeId}', ${periodeId})"><i class="fas fa-plus"></i>Tambah</button>`]);
+    });
+    $(tableId).dataTable().api().draw();
+  }
+
 </script>
 @endsection
 
