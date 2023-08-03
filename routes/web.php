@@ -24,6 +24,7 @@ use App\Http\Controllers\MateriController;
 
 Route::get('/login', [UserController::class, 'loginView'])->name('loginView');
 Route::post('/login/func', [UserController::class, 'login'])->name('login');
+Route::get('/kinerja/view/{id}', [KinerjaBulController::class, 'kinerja'])->name('kinerja');
 
 Route::group(['middleware' => 'admin'],function () {
     // Routes that require authentication go here
@@ -70,7 +71,6 @@ Route::group(['middleware' => 'admin'],function () {
     Route::post('/safety/update/{id}', [SafetyController::class, 'updateSafety'])->name('updateSafety');
     
     Route::get('/kinerja',[KinerjaBulController::class, 'kinerjaBulanan'])->name("kinerjaBulan");
-    Route::get('/kinerja/view/{id}', [KinerjaBulController::class, 'kinerja'])->name('kinerja');
     Route::post('/kinerja/add',[KinerjaBulController::class, 'addKinerja'])->name("addKinerja");
     Route::post('/kinerja/edit/{id}',[KinerjaBulController::class, 'editKinerja'])->name("editKinerja");
     Route::get('/kinerja/delete/{id}',[KinerjaBulController::class, 'deleteKinerja'])->name("deleteKinerja");

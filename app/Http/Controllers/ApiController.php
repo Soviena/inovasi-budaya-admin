@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Budaya;
 use App\Models\Bulan;
+use App\Models\Kinerja;
+use App\Models\Materi;
+use App\Models\Periode;
 use App\Models\SafetyMoment;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
@@ -18,7 +21,7 @@ use Illuminate\Support\Facades\Storage;
 class ApiController extends Controller
 {
     public function register(Request $request) {
-        $email = $request->email;
+        $email = strtolower($request->email);
         $pw = $request->password;
         $u = DB::table('users')->where('email',$email)->first();
         if($u){
@@ -51,7 +54,7 @@ class ApiController extends Controller
     }
 
     public function login(Request $request){
-        $u = DB::table('users')->where('email',$request->email)->first();
+        $u = DB::table('users')->where('email',strtolower($request->email))->first();
         if(!$u){
             $data = [
                 'msg' => "Email tidak terdaftar",
@@ -82,7 +85,7 @@ class ApiController extends Controller
     public function editUser(Request $request, $id){
         $User = User::find($id);
         $User->name=$request->name;
-        $User->email=$request->email;
+        $User->email=strtolower($request->email);
         $User->tanggal_lahir=$request->tanggal_lahir;
         if($request->hasfile('picture')){
             if ($User->profilepic != "default.png") {
@@ -190,6 +193,35 @@ class ApiController extends Controller
             return response()->json(["msg" => "Sucessfully incremented because it new"]);
         }
         return response()->json(["msg" => "Already incremented","timeDifference"=>$timeDifference]);
+    }
+
+    public function getTimInternal(){
+        $tim = User::where('tim_internalisasi','TRUE')->get();
+        return response()->json($tim);
+    }
+
+    public function getLatestReward(){
+        $periode = Periode::latest()->with('users')->first();
+        return response()->json($periode);
+    }
+
+    public function getUser($uid){
+        $user = User::find($uid);
+        return response()->json($user);
+    }
+
+    public function getMateri(){
+        $materi = Materi::latest()->get();
+        return response()->json($materi);
+    }
+    public function getKinerja(){
+        $materi = Kinerja::latest()->get();
+        return response()->json($materi);
+    }
+
+    public function getRewards(){
+        $periode = Periode::latest()->with('users')->get();
+        return response()->json($periode);
     }
 
 }

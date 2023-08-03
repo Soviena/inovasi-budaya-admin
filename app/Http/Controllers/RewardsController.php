@@ -13,7 +13,7 @@ class RewardsController extends Controller
 
     public function index(){
         $page = ["title" => "Rewards"];
-        $periodeReward = Periode::with('users')->get();
+        $periodeReward = Periode::latest()->with('users')->get();
         $user = base64_encode(json_encode(User::with('bulan')->get()));
         $bulan = Bulan::all();
         return view('reward',compact('periodeReward','user','page','bulan'));

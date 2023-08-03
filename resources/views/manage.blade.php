@@ -145,7 +145,7 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="file_profile" class="form-label">ubah profile</label>
-                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/'.$m->profilepic)}}" alt="@isset($m) <{{$m->name}} @endisset" style="max-height:240px;width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
+                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/'.$m->profilepic)}}" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
                   <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg"/>
                 </div>
               </div>
@@ -212,6 +212,7 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="file_profile" class="form-label">input gambar profile</label>
+                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/default.png')}}" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
                   <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg" />
                 </div>
               </div>
@@ -350,5 +351,6 @@
 
 <div class="content-backdrop fade"></div>
 </div>
+
 
 @endsection

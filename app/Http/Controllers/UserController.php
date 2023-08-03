@@ -48,7 +48,7 @@ class UserController extends Controller
     public function editUser(Request $request, $id){
     $user = User::findOrFail($id);
     $user->name = $request->input('name');
-    $user->email = $request->input('email');
+    $user->email = strtolower($request->input('email'));
     $user->tanggal_lahir = $request->input('tanggal_lahir');
 
     if ($request->password != '') {
@@ -72,7 +72,7 @@ class UserController extends Controller
 public function tambahUser(Request $request){
     $users = new User;
     $users->name = $request->name;
-    $users->email = $request->email;
+    $users->email = strtolower($request->email);
     $users->tanggal_lahir = $request->tanggal_lahir;
     $users->password = $request->password;
     if ($request->hasFile('file_profile')) {
