@@ -87,7 +87,7 @@ Route::group(['middleware' => 'admin'],function () {
     Route::get('/internalisasi/add/{id}',[UserController::class, 'addTimInternal'])->name("addTimInternal");
     Route::get('/internalisasi/delete/{id}',[UserController::class, 'deleteTimInternal'])->name("deleteTimInternal");
 
-
+    Route::get('/aboutUs',[UserController::class, 'aboutUs'])->name("aboutUs");
     
     // Add more authenticated routes here
 });
