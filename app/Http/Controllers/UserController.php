@@ -133,4 +133,8 @@ public function hapusUser(Request $request, $id){
         return redirect()->route('internalisasi')->with('');
     }
 
+    public function aboutUs(){
+        return view('aboutUs');
+    }
+
 }

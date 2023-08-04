@@ -232,7 +232,7 @@
             </li>
 
             <li class="menu-item @isset($page) @if($page['title'] == 'Developer') active @endif @endisset">
-              <a href="{{route('kinerjaBulan')}}" class="menu-link">
+              <a href="{{route('aboutUs')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-bar-chart-alt-2"></i>
                 <div data-i18n="Boxicons">Tentang developer</div>
               </a>
