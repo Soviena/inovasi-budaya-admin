@@ -6,9 +6,10 @@
     
     <div class="card">
       <div class="table">
-        <table class="table">
+        <table class="table" id="tableFeedback">
           <thead>
             <tr>
+              <th >Timestamp</th>
               <th >Nama User</th>
               <th >Judul Feedback</th>
               <th >Deskripsi Feedback</th>
@@ -28,6 +29,7 @@
             }
             @endphp
             <tr class="@if($new) table-primary @endif">  
+              <td>{{ $feedback->created_at }}</td>
               <td>{{ $feedback->user->name }}</td>
               <td>{{ $feedback->judul }}</td>
               <td style="max-width: 20vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><a class="text-muted"  data-bs-toggle="modal" data-bs-target="#previewForm{{ $feedback->id }}" href="#">{{ $feedback->deskripsi }}</a></td>
@@ -75,5 +77,11 @@
   @endforeach
 
   <div class="content-backdrop fade"></div>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var table = new DataTable("#tableFeedback",{order: [0,'desc']})
+    });
+  </script>
 
 @endsection

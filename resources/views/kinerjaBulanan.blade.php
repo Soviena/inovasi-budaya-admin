@@ -8,7 +8,7 @@
             <div class="card">
                 <h5 class="card-header">Kinerja Bulanan</h5>
                 <div class="table">
-                  <table class="table table-hover">
+                  <table class="table table-hover" id="tableKinerja">
                     <thead>
                       <tr>
                         <th  style="width:90vw;">tanggal</th>
@@ -160,5 +160,11 @@
 </div>
 @endforeach
 <div class="content-backdrop fade"></div>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var table = new DataTable("#tableKinerja",{order: [0,'desc']})
+    });
+  </script>
 @endsection
 

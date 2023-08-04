@@ -27,6 +27,14 @@ class RewardsController extends Controller
         return redirect()->route('rewardUser');
     }
 
+    public function editReward(Request $request, $uid, $pid){
+        $user = User::find($uid);
+        $periode = Periode::find($pid);
+        $user->periode()->detach($periode);
+        $user->periode()->attach($periode,["rewardsName" => $request->rewardsName,"deskripsi" => $request->deskripsi]);
+        return redirect()->route('rewardUser');
+    }
+
     public function addPeriode(Request $request){
         $periode = new Periode;
         $periode->periode = $request->periode;

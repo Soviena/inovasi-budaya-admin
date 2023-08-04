@@ -84,7 +84,8 @@
                       aria-label="Close"
                     ></button>
                   </div>
-                  <form action="" method="post">
+                  <form action="{{route('editReward',[$u->id,$pr->id])}}" method="post">
+                  @csrf
                   <div class="modal-body">
                     <div class="mb-3">
                       <label for="defaultInput" class="form-label">Ubah Judul Reward</label>
@@ -99,7 +100,7 @@
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
                       Tutup
                     </button>
-                    <button type="button" class="btn btn-primary">Simpan</button>
+                    <input type="submit" class="btn btn-primary" value="Simpan">
                   </div>
                 </form>
                 </div>

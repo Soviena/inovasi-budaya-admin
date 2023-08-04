@@ -101,7 +101,7 @@ class ApiController extends Controller
             'uid' => $User->id,
             'email' => $User->email,
             'name' => $User->name,
-            'profilePic' => $profilepic->hashName(),
+            'profilePic' => $User->profilepic,
             'dob' => $User->tanggal_lahir
         ];
         return response()->json($data);

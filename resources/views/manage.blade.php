@@ -12,9 +12,10 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
-          <table class="table">
+          <table class="table" id="tableUser">
             <thead>
               <tr>
+                <th style='width:1vw;'>Avatar</th>
                 <th>Nama Panjang</th>
                 <th>Email</th>
                 <th>Tanggal Lahir</th>
@@ -25,6 +26,9 @@
             <tbody class="table-border-bottom-0">
               @foreach($manage as $m)
               <tr>
+                <td>
+                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/'.$m->profilepic)}}" alt="{{$m->name}}" style="object-fit: cover; object-position: 25% 25%;">
+                </td>
                 <td>{{$m->name}}</td>
                 <td>{{$m->email}}</td>
                 <td>{{$m->tanggal_lahir}}</td>
@@ -76,19 +80,20 @@
             </tbody>
             <tfoot>
               <tr>
-              <td></td>
-              <td></td>
-              <td></td>       
-              <td></td>        
-              <td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>       
+                <td></td>        
+                <td>
                   <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#tambahUser"
-                  >
-                  Tambah
-                </button>
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#tambahUser"
+                    >
+                    Tambah
+                  </button>
                 </td>
               </tr>
         </tfoot>
@@ -145,8 +150,8 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="file_profile" class="form-label">ubah profile</label>
-                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/'.$m->profilepic)}}" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
-                  <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg"/>
+                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/'.$m->profilepic)}}" id="previeImage-{{$m->id}}" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
+                  <input class="form-control" type="file" name="file_profile" id="file_profile" onchange="openModal(this,'previeImage-{{$m->id}}')" accept=".jpg,.png,.jpeg"/>
                 </div>
               </div>
 
@@ -165,7 +170,6 @@
 </div>
 @endforeach
 
-@foreach($manage as $m)
 <div class="modal fade" id="tambahUser" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -212,8 +216,8 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="file_profile" class="form-label">input gambar profile</label>
-                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/default.png')}}" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
-                  <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg" />
+                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/default.png')}}" id="previewTambahUser" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
+                  <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg" onchange="openModal(this, 'previewTambahUser')" />
                 </div>
               </div>
             </div>
@@ -228,7 +232,6 @@
     </div>    
   </div>
 </div>
-@endforeach
 
 <div class="modal fade" id="deleteUser" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -351,6 +354,133 @@
 
 <div class="content-backdrop fade"></div>
 </div>
+
+<div class="modal fade" id="CropperModal" tabindex="-1" aria-hidden="true" data-backdrop="static" data-bs-backdrop="static">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Crop Gambar</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            onclick="closeModal()"
+          ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-2">
+          <div class="mb-3">
+            <img id="cropperImage" class="" src="{{asset('storage/uploaded/user/'.Auth::user()->profilepic)}}" style="max-width: 100%; display: block;">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" onclick="closeModal()" data-bs-dismiss="modal">
+          Batal
+        </button>
+        <button type="submit" id="okButton" class="btn btn-primary">Update</button>
+      </div>
+    </div>    
+  </div>
+</div>
+
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.11/cropper.min.js"></script>
+<script>
+  const cropperImage = document.getElementById('cropperImage');
+  const okButton = document.getElementById('okButton');
+  const options = {
+    backdrop: 'static',   // Set backdrop option to 'static' to prevent closing on backdrop click
+    keyboard: false       // Set keyboard option to false to prevent closing on Escape key press
+  };
+  const modal = new bootstrap.Modal(document.getElementById('CropperModal'),options);
+  let cropper;
+  function openModal(fileInput,preview){
+    document.getElementById("okButton").onclick = function() {
+      updatePreview(preview,fileInput);
+    };
+    modal.show();
+    const file = fileInput.files[0];
+
+    // Ensure that a file was selected
+    if (file) {
+      // Create a FileReader to read the image file
+      const reader = new FileReader();
+
+      // Set up the FileReader onload event to display the image and initialize the cropper
+      reader.onload = function (e) {
+        const imageUrl = e.target.result;
+        cropperImage.src = imageUrl;
+
+        // Initialize Cropper.js with the image
+        cropper = new Cropper(cropperImage, {
+          aspectRatio: 1, // Change this value to set the aspect ratio (e.g., 16/9, 4/3, 1, etc.)
+          viewMode: 2,
+          minContainerWidth: 500,
+          minContainerHeight: 500,
+          minCanvasWidth: 100,
+          minCanvasHeight: 100,    // Set the crop box to be within the container
+        });
+      };
+
+      // Read the image file as a data URL
+      reader.readAsDataURL(file);
+    } else {
+      // If no file was selected, reset the cropper and image source
+      cropperImage.src = "{{asset('storage/uploaded/user/default.png";
+      if (cropper) {
+        cropper.destroy();
+      }
+    }
+  }
+
+  function updatePreview(previewImage, input) {
+    if (cropper) {
+      modal.hide();
+      // Get the cropped image as a data URL
+      const croppedImageDataURL = cropper.getCroppedCanvas().toDataURL();
+
+      // Display the cropped image or do something else with the data URL
+      // For example, you can set it as the source of another image element:
+      document.getElementById(previewImage).src = croppedImageDataURL;
+      loadURLToInputFiled(croppedImageDataURL, input);
+
+      // Destroy the cropper instance
+      cropper.destroy();
+    }
+  }
+
+  function loadURLToInputFiled(url,inputFile) {
+  getImgURL(url, (imgBlob) => {
+    // Load img blob to input
+    // WIP: UTF8 character error
+    let fileName = 'pic';
+    let file = new File([imgBlob], fileName, { type: "image/jpeg", lastModified: new Date().getTime() }, 'utf-8');
+    let container = new DataTransfer();
+    container.items.add(file);
+    inputFile.files = container.files;
+  });
+  }
+  function getImgURL(url, callback){
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        callback(xhr.response);
+    };
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+    xhr.send();
+  } 
+
+  function closeModal() {
+    modal.hide();
+    cropper.destroy();
+  }
+  $(document).ready(function () {
+    var table = new DataTable("#tableUser",{order:[[4,'asc'],[1,'asc']]})
+  });
+</script>
 
 
 @endsection
