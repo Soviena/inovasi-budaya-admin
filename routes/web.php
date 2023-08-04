@@ -61,6 +61,7 @@ Route::group(['middleware' => 'admin'],function () {
 
     Route::get('/reward',[RewardsController::class, 'index'])->name("rewardUser");
     Route::post('/reward/add/{uid}/{pid}',[RewardsController::class, 'addReward'])->name("addReward");
+    Route::post('/reward/edit/{uid}/{pid}',[RewardsController::class, 'editReward'])->name("editReward");
     Route::post('/periode/add/',[RewardsController::class, 'addPeriode'])->name("addPeriode");
     Route::get('/reward/delete/{uid}/{pid}',[RewardsController::class, 'deleteReward'])->name("deleteReward");
     

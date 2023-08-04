@@ -69,8 +69,7 @@
           <div class="row">
             <div class="col mb-3">
               <label for="deskripsi" class="form-label">Deskripsi</label>
-              <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Masukan 
-              Deskripsi Safety" required />
+              <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Masukan Deskripsi Safety" required />
             </div>
           </div>
           <div class="row g-2">

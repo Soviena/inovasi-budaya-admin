@@ -12,7 +12,7 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
-          <table class="table">
+          <table class="table" id="tableMateri">
             <thead>
               <tr>
                 <th style='width:90vw;'>Judul</th>
@@ -155,5 +155,12 @@
 </div>
 
 @endforeach
+
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var table = new DataTable("#tableMateri",{order: [0,'desc']})
+    });
+  </script>
 
 @endsection
