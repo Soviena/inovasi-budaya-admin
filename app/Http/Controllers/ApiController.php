@@ -89,6 +89,7 @@ class ApiController extends Controller
         $User->name=$request->name;
         if ($User->email != strtolower($request->email)) {
             $User->email = strtolower($request->email);
+            $User->email_verified_at = null;
             $User->sendEmailVerificationNotification();
         }
         $User->email=strtolower($request->email);

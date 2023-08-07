@@ -50,6 +50,7 @@ class UserController extends Controller
         $user->name = $request->input('name');
         if ($user->email != strtolower($request->input('email'))) {
             $user->email = strtolower($request->input('email'));
+            $user->email_verified_at = null;
             $user->sendEmailVerificationNotification();
         }
         $user->tanggal_lahir = $request->input('tanggal_lahir');
