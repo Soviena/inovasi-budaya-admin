@@ -38,7 +38,10 @@
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="email" class="form-label">E-mail</label>
-                  <input class="form-control inputControll" readonly type="text" id="email" name="email" value="{{Auth::user()->email}}" placeholder="john.doe@example.com">
+                  <input class="form-control inputControll" readonly type="email" id="email" name="email" value="{{Auth::user()->email}}" placeholder="john.doe@example.com">
+                  @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
                 <div class="mb-3 col-md-6">
                   <label for="lastName" class="form-label">Tanggal Lahir</label>
@@ -236,6 +239,7 @@ function getImgURL(url, callback){
 }
 
   function closeModal() {
+    imageInput.value = "";
     modal.hide();
     cropper.destroy();
   }

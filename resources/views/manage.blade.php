@@ -20,6 +20,7 @@
                 <th>Email</th>
                 <th>Tanggal Lahir</th>
                 <th>Tipe user</th>
+                <th>Email Terverifikasi</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -37,6 +38,13 @@
                   <span class="badge bg-label-primary me-1">Admin</span>
                   @else
                   <span class="badge bg-label-warning me-1">Pengguna</span>
+                  @endif
+                </td>
+                <td>
+                  @if($m->email_verified_at != "")
+                    <span class="badge bg-label-success me-1">TERVERIFIKASI</span>
+                  @else
+                    <span class="badge bg-label-danger me-1">BELUM VERIFIKASI</span>
                   @endif
                 </td>
                 <td>
@@ -84,6 +92,7 @@
                 <td></td>
                 <td></td>
                 <td></td>       
+                <td></td>       
                 <td></td>        
                 <td>
                   <button
@@ -129,7 +138,7 @@
               <div class="row">
                 <div class="col mb-3">
                   <label for="email" class="form-label">Ubah Email</label>
-                  <input type="text" value="{{ $m->email }}" name="email" id="email" class="form-control"/>
+                  <input type="email" value="{{ $m->email }}" name="email" id="email" class="form-control"/>
                 </div>
               </div>
 
@@ -195,7 +204,7 @@
               <div class="row">
                 <div class="col mb-3">
                   <label for="email" class="form-label">input Email user</label>
-                  <input type="text" value="" name="email" id="email" class="form-control" required />
+                  <input type="email" value="" name="email" id="email" class="form-control" required />
                 </div>
               </div>
 
@@ -351,7 +360,23 @@
 </div>
 </div>
 @endforeach
-
+<div
+class="bs-toast toast fade bg-primary bottom-0 end-0 position-absolute m-5"
+role="alert"
+aria-live="assertive"
+aria-atomic="true"
+id="editSuccessToast"
+>
+  <div class="toast-header">
+    <i class="bx bx-bell me-2"></i>
+    <div class="me-auto fw-semibold">Edit berhasil</div>
+    <small></small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Data telah di update
+  </div>
+</div>
 <div class="content-backdrop fade"></div>
 </div>
 
@@ -479,6 +504,10 @@
   }
   $(document).ready(function () {
     var table = new DataTable("#tableUser",{order:[[4,'asc'],[1,'asc']]})
+    @error('email')
+      FailedSuccess = new bootstrap.Toast(document.getElementById('editFailedSuccess'));
+      FailedSuccess.show();
+    @enderror
   });
 </script>
 

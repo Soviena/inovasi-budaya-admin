@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Storage;
 class ApiController extends Controller
 {
     public function register(Request $request) {
+        $request->validate([
+            'email' => 'required|email',
+        ]);    
         $email = strtolower($request->email);
         $pw = $request->password;
         $u = DB::table('users')->where('email',$email)->first();
@@ -85,6 +88,10 @@ class ApiController extends Controller
     }
 
     public function editUser(Request $request, $id){
+        $request->validate([
+            'email' => 'required|email',
+        ]);
+    
         $User = User::find($id);
         $User->name=$request->name;
         if ($User->email != strtolower($request->email)) {

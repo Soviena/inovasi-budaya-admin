@@ -5,6 +5,7 @@ use App\Models\Feedback;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
@@ -46,6 +47,9 @@ class UserController extends Controller
     }
 
     public function editUser(Request $request, $id){
+        $request->validate([
+            'email' => 'required|email',
+        ]);    
         $user = User::findOrFail($id);
         $user->name = $request->input('name');
         if ($user->email != strtolower($request->input('email'))) {
@@ -74,6 +78,13 @@ class UserController extends Controller
     }
 
     public function tambahUser(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+        ]);    
+        $u = DB::table('users')->where('email',$request->email)->first();
+        if($u){
+            return back()->withErrors("Maaf, Alamat Email sudah terdaftar, coba alamat email lain!.");
+        }  
         $users = new User;
         $users->name = $request->name;
         $users->email = strtolower($request->email);
