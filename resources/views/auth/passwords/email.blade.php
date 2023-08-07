@@ -77,6 +77,11 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+                            @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                            @endif
                         </div>
                     </div>
     
@@ -87,9 +92,9 @@
                             </button>
                         </div>
                     </div>
-                </form>
+                  </form>
                   <div class="text-center">
-                    <a href="{{ route('loginView') }}" class="d-flex align-items-center justify-content-center">
+                    <a href="{{ route('loginView') }}" class="d-flex">
                       <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
                       Kembali
                     </a>
