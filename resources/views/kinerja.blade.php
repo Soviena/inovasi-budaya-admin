@@ -1,33 +1,123 @@
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</head>
+@extends('layout.blank')
+@section('content')
 <table class="table table-light">
     @foreach ($array as $i => $a)
-    <tr>
+    <tr class="
+        @if($i<2)
+            table-primary
+        @elseif($i==2)
+            table-dark
+        @elseif($i<6)
+            table-success
+        @elseif($i<8)
+            table-danger
+        @elseif($i==8)
+            table-success
+        @elseif($i<11)
+            table-danger
+        @elseif($i<13)
+            table-success
+        @elseif($i<15)
+            table-danger
+        @elseif($i<17)
+            table-success
+        @elseif($i<19)
+            table-danger
+        @elseif($i<21)
+            table-success
+        @else
+            table-danger
+        @endif
+    ">
         @foreach ($a as $j => $b)
-            @if ($i > 2 && $j > 7)
-                <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-            @elseif ($i == 5 && $j > 2)
-                <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-            @elseif ($i == 7 && $j > 2)
-                <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-            @elseif ($i == 10 && $j > 2)
-                <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-            @elseif ($i == 12 && $j > 2)
-                <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-            @elseif ($i == 14 && $j > 2)
-                <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-            @elseif ($i == 18 && $j > 2)
-                <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-            @elseif ($i == 22 && $j > 2)
-                <td>{{ number_format(floatval($b)*100,2).'%'}}</td>
-            @elseif ($i > 2 && $j > 2)
-                <td>{{number_format(ceil(floatval($b)))}}</td>
-            @else
-                <td>{{$b}}</td>
-            @endif
+            <td>
+                @if($i>2 && $i < 5)
+                    @if($j > 0 && $j < 6)
+                        {{number_format(ceil(floatval($b)))}}
+                    @elseif($j>0)
+                        {{ number_format(floatval($b)*100,2).'%'}}
+                    @else
+                        {{$b}}
+                    @endif
+                @elseif($i==5 && $j>0)
+                    {{ number_format(floatval($b)*100,2).'%'}}
+                @elseif($i == 6)
+                    @if($j > 0 && $j < 6)
+                        {{number_format(ceil(floatval($b)))}}
+                    @elseif($j>0)
+                        {{ number_format(floatval($b)*100,2).'%'}}
+                    @else
+                        {{$b}}
+                    @endif
+                @elseif($i==7 && $j>0)
+                    {{ number_format(floatval($b)*100,2).'%'}}
+                @elseif($i>7 && $i< 10)
+                    @if($j > 0 && $j < 6)
+                        {{number_format(ceil(floatval($b)))}}
+                    @elseif($j>0)
+                        {{ number_format(floatval($b)*100,2).'%'}}
+                    @else
+                        {{$b}}
+                    @endif
+                @elseif($i==10 && $j>0)
+                    {{ number_format(floatval($b)*100,2).'%'}}
+                @elseif($i == 11)
+                    @if($j > 0 && $j < 6)
+                        {{number_format(ceil(floatval($b)))}}
+                    @elseif($j>0)
+                        {{ number_format(floatval($b)*100,2).'%'}}
+                    @else
+                        {{$b}}
+                    @endif
+                @elseif($i==12 && $j>0)
+                    {{ number_format(floatval($b)*100,2).'%'}}
+                @elseif($i == 13)
+                    @if($j > 0 && $j < 6)
+                        {{number_format(ceil(floatval($b)))}}
+                    @elseif($j>0)
+                        {{ number_format(floatval($b)*100,2).'%'}}
+                    @else
+                        {{$b}}
+                    @endif
+                @elseif($i==14 && $j>0)
+                    {{ number_format(floatval($b)*100,2).'%'}}
+                @elseif($i>14 && $i < 17 && $j>0)
+                    {{ number_format(floor(floatval($b)))}}
+                @elseif($i == 17)
+                    @if($j > 0 && $j < 6)
+                        {{number_format(ceil(floatval($b)))}}
+                    @elseif($j>0)
+                        {{ number_format(floatval($b)*100,2).'%'}}
+                    @else
+                        {{$b}}
+                    @endif
+                @elseif($i==18 && $j>0)
+                    {{ number_format(floatval($b)*100,2).'%'}}
+                @elseif($i>18 && $i < 21)
+                    @if($j > 0 && $j < 6)
+                        {{number_format(ceil(floatval($b)))}}
+                    @elseif($j>0)
+                        {{ number_format(floatval($b)*100,2).'%'}}
+                    @else
+                        {{$b}}
+                    @endif
+                 @elseif($i == 21)
+                    @if($j > 0 && $j < 6)
+                        {{number_format(ceil(floatval($b)))}}
+                    @elseif($j>0)
+                        {{ number_format(floatval($b)*100,2).'%'}}
+                    @else
+                        {{$b}}
+                    @endif
+                @elseif($i==22 && $j>0)
+                    {{ number_format(floatval($b)*100,2).'%'}}
+                @else
+                    {{$b}}
+                @endif
+            </td>
         @endforeach
     </tr>
     @endforeach
 </table>
+@endsection
+
