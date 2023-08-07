@@ -50,7 +50,9 @@ class ApiController extends Controller
             'pic' => $user->profilepic,
             'dob' => $user->tanggal_lahir
         ];
+        $user->sendEmailVerificationNotification();
         return response()->json($data);
+
     }
 
     public function login(Request $request){
@@ -85,6 +87,10 @@ class ApiController extends Controller
     public function editUser(Request $request, $id){
         $User = User::find($id);
         $User->name=$request->name;
+        if ($User->email != strtolower($request->email)) {
+            $User->email = strtolower($request->email);
+            $User->sendEmailVerificationNotification();
+        }
         $User->email=strtolower($request->email);
         $User->tanggal_lahir=$request->tanggal_lahir;
         if($request->hasfile('picture')){
@@ -222,6 +228,11 @@ class ApiController extends Controller
     public function getRewards(){
         $periode = Periode::latest()->with('users')->get();
         return response()->json($periode);
+    }
+
+    public function test(){
+
+        return response()->json(['msg'=>'Success']);
     }
 
 }

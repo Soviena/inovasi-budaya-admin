@@ -46,50 +46,56 @@ class UserController extends Controller
     }
 
     public function editUser(Request $request, $id){
-    $user = User::findOrFail($id);
-    $user->name = $request->input('name');
-    $user->email = strtolower($request->input('email'));
-    $user->tanggal_lahir = $request->input('tanggal_lahir');
-
-    if ($request->password != '') {
-            $user->password = $request->password;
-    }
-
-    if ($request->hasFile('file_profile')) {
-        if ($user->profilepic != "default.png") {
-            Storage::delete('public/uploaded/user/'.$user->profilepic);
+        $user = User::findOrFail($id);
+        $user->name = $request->input('name');
+        if ($user->email != strtolower($request->input('email'))) {
+            $user->email = strtolower($request->input('email'));
+            $user->sendEmailVerificationNotification();
         }
-        $file_profile = $request->file('file_profile');
-        $file_profile->storeAs('public/uploaded/user/',$file_profile->hashName());
-        $user->profilepic = $file_profile->hashName();
+        $user->tanggal_lahir = $request->input('tanggal_lahir');
+
+        if ($request->password != '') {
+                $user->password = $request->password;
+        }
+
+        if ($request->hasFile('file_profile')) {
+            if ($user->profilepic != "default.png") {
+                Storage::delete('public/uploaded/user/'.$user->profilepic);
+            }
+            $file_profile = $request->file('file_profile');
+            $file_profile->storeAs('public/uploaded/user/',$file_profile->hashName());
+            $user->profilepic = $file_profile->hashName();
+        }
+    
+        $user->save();
+
+        return redirect()->back()->with(["EditSuccess" => "Data diri berhasil diubah"]);
     }
-  
-    $user->save();
 
-    return redirect()->back()->with(["EditSuccess" => "Data diri berhasil diubah"]);
-}
-
-public function tambahUser(Request $request){
-    $users = new User;
-    $users->name = $request->name;
-    $users->email = strtolower($request->email);
-    $users->tanggal_lahir = $request->tanggal_lahir;
-    $users->password = $request->password;
-    if ($request->hasFile('file_profile')) {
-        $file_profile = $request->file('file_profile');
-        $file_profile->storeAs('public/uploaded/user/',$file_profile->hashName());
-        $users->profilepic = $file_profile->hashName();
+    public function tambahUser(Request $request){
+        $users = new User;
+        $users->name = $request->name;
+        $users->email = strtolower($request->email);
+        $users->tanggal_lahir = $request->tanggal_lahir;
+        $users->password = $request->password;
+        if ($request->hasFile('file_profile')) {
+            $file_profile = $request->file('file_profile');
+            $file_profile->storeAs('public/uploaded/user/',$file_profile->hashName());
+            $users->profilepic = $file_profile->hashName();
+        }
+        $users->save();
+        $users->sendEmailVerificationNotification();
+        return redirect()->route('manageUser');
     }
-    $users->save();        
-    return redirect()->route('manageUser');
-}
 
-public function hapusUser(Request $request, $id){
-    $users = User::find($id);
-    Storage::delete('public/uploaded/profile/'.$users->profilepic);
-    $users->delete();
-    return redirect()->route('manageUser');
-}
+    public function hapusUser(Request $request, $id){
+        $users = User::find($id);
+        if ($users->profilepic != "default.png") {
+            Storage::delete('public/uploaded/profile/'.$users->profilepic);
+        }
+        $users->delete();
+        return redirect()->route('manageUser');
+    }
 
     public function ubahAdmin($id){
     $users = User::findOrFail($id);

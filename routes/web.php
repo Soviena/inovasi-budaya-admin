@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AktivitasController;
 use App\Http\Controllers\RewardsController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\NotificationController;
@@ -10,6 +11,8 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\SafetyController;
 use App\Http\Controllers\KinerjaBulController;
 use App\Http\Controllers\MateriController;
+use App\Http\Controllers\EmailVerificationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +28,17 @@ use App\Http\Controllers\MateriController;
 Route::get('/login', [UserController::class, 'loginView'])->name('loginView');
 Route::post('/login/func', [UserController::class, 'login'])->name('login');
 Route::get('/kinerja/view/{id}', [KinerjaBulController::class, 'kinerja'])->name('kinerja');
+
+
+// Show email verification notice
+Route::get('/email/verify/notice', [EmailVerificationController::class, 'showNotice'])->name('verification.notice');
+
+// Email verification confirmation
+Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->name('verification.verify');
+
+// Resend email verification link
+Route::post('/email/verify/resend', [EmailVerificationController::class, 'resend'])->middleware(['auth'])->name('verification.send');
+
 
 Route::group(['middleware' => 'admin'],function () {
     // Routes that require authentication go here
