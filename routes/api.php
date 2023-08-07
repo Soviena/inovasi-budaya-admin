@@ -39,6 +39,7 @@ Route::get('/reward',[ApiController::class,'getRewards']);
 Route::get('/materi',[ApiController::class,'getMateri']);
 
 Route::get('/kinerja',[ApiController::class,'getKinerja']);
+Route::post('/password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmailApi')->name('password.email');
 
 
 
