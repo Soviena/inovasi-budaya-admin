@@ -12,10 +12,10 @@
               </div>
             </div>
         
-            <div class="row text-center">
+            <div class="row text-center" style="justify-content: center">
               <!-- Team item-->
-              <div class="col-xl-3 col-sm-6 mb-5" style="height: 50vh">
-                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 55vh"><img src="https://i.pinimg.com/originals/b9/13/11/b91311fb98b7ef9f97f8b2732e1c0fd3.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="min-height: 13vh">
+              <div class="col-xl-3 col-sm-6 mb-5 " style="height: 50vh">
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 55vh"><img src="{{asset('storage/assets/profilKemal.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
                   <h5 class="mb-0">Alwan Kemal</h5><span class="small text-uppercase text-muted fst-italic">"Hifumi Daisuki"</span>
                   <ul class="social mb-3 list-inline">
                     <a href="mailto:alwankemal128@gmail.com">
@@ -37,8 +37,8 @@
         
               <!-- Team item-->
               <div class="col-xl-3 col-sm-6 mb-5" style="height: 50vh">
-                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 55vh"><img src="https://static-cdn.jtvnw.net/jtv_user_pictures/b5787c43-eeb1-4e0d-bb28-39fa0fa1fe79-profile_image-300x300.png" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="min-height: 13vh">
-                  <h5 class="mb-0">Muhammad Rovino Sanjaya</h5><span class="small text-uppercase text-muted fst-italic">"Hidup memang tidak adil, jadi biasakan dirimu"</span>
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 55vh"><img src="{{asset('storage/assets/profilRovino.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
+                  <h5 class="mb-0">Muhammad Rovino Sanjaya</h5><span class="small text-uppercase text-muted fst-italic">"Jika ada yang simpel, kenapa tidak?"</span>
                   <ul class="social mb-0 list-inline">
                     <a href="https://twitter.com/Rovino_rs" target="_blank">
                         <i class='bx bxl-twitter' ></i>
@@ -59,8 +59,8 @@
         
               <!-- Team item-->
               <div class="col-xl-3 col-sm-6 mb-5" style="height: 50vh">
-                <div class="bg-white rounded shadow-sm py-5 px-4"style="height: 55vh"><img src="https://i.ytimg.com/vi/IbtriodAJCk/hqdefault.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="min-height: 13vh">
-                  <h5 class="mb-0">Rizal Rafif Setiawan</h5><span class="small text-uppercase text-muted fst-italic">"Lu punya duit, gua minjem seratus"</span>
+                <div class="bg-white rounded shadow-sm py-5 px-4"style="height: 55vh"><img src="{{asset('storage/assets/profilRafif.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
+                  <h5 class="mb-0">Rizal Rafif Setiawan</h5><span class="small text-uppercase text-muted fst-italic">"Hidup memang tidak adil, jadi biasakan dirimu"</span>
                   <ul class="social mb-0 list-inline">
                     <a href="https://www.facebook.com/shinjie.kagamine?mibextid=ZbWKwL" target="_blank">
                         <i class='bx bxl-facebook'></i>
