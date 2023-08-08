@@ -31,16 +31,16 @@ class EmailVerificationController extends Controller
     }
 
     // Resend the email verification link
-    public function resend(Request $request)
+    public function resend($uid)
     {
-        $user = $request->user();
+        $user = User::find($uid);
 
-        if ($user->hasVerifiedEmail()) {
-            return redirect('/home')->with('status', 'Your email is already verified.');
+        if ($user->email_verified_at != "") {
+            return response()->json(['error' => 'Your email is already verified.'],400);
         }
 
         $user->sendEmailVerificationNotification();
 
-        return back()->with('status', 'A fresh verification link has been sent to your email address.');
+        return response()->json(['success' => 'A fresh verification link has been sent to your email address.']);
     }
 }

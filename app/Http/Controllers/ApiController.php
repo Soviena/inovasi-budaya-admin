@@ -75,7 +75,8 @@ class ApiController extends Controller
                 'email' => $u->email,
                 'name' => $u->name,
                 'profilePic' => $u->profilepic,
-                'dob' => $u->tanggal_lahir
+                'dob' => $u->tanggal_lahir,
+                'email_verified_at' => $u->email_verified_at
             ];
             return response()->json($data);
         }else{
@@ -116,7 +117,8 @@ class ApiController extends Controller
             'email' => $User->email,
             'name' => $User->name,
             'profilePic' => $User->profilepic,
-            'dob' => $User->tanggal_lahir
+            'dob' => $User->tanggal_lahir,
+            'email_verified_at' => $User->email_verified_at
         ];
         return response()->json($data);
     }

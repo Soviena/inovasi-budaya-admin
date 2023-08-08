@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmailVerificationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 
@@ -40,6 +41,7 @@ Route::get('/materi',[ApiController::class,'getMateri']);
 
 Route::get('/kinerja',[ApiController::class,'getKinerja']);
 
+Route::get('/email/verify/resend/{uid}', [EmailVerificationController::class, 'resend']);
 
 
 
