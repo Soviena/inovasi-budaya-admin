@@ -93,12 +93,6 @@
                         </div>
                     </div>
                   </form>
-                  <div class="text-center">
-                    <a href="{{ route('loginView') }}" class="d-flex">
-                      <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
-                      Kembali
-                    </a>
-                  </div>
                 </div>
               </div>
               <!-- /Forgot Password -->
