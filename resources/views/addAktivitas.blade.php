@@ -23,7 +23,7 @@
           <div class="mb-3 row">
             <label for="Deskripsi" class="col-md-2 col-form-label">Dokumentasi gambar</label>
             <div class="col-md-10">
-              <input class="form-control" name="img" type="file" id="formFile"  accept=".jpg,.png,.jpeg">
+              <input class="form-control" name="img" type="file" id="formFile"  accept=".jpg,.png,.jpeg" onchange="checkFileSize(this)">
             </div>
           </div>
           <div class="row justify-content-end">
@@ -39,4 +39,16 @@
 
   <div class="content-backdrop fade"></div>
 </div>
+    <script>
+        function checkFileSize(input) {
+            const maxFileSize = 7 * 1024 * 1024; // 10MB in bytes
+            if (input.files.length > 0) {
+                const fileSize = input.files[0].size;
+                if (fileSize > maxFileSize) {
+                    alert("File size exceeds the maximum allowed limit of 7MB.");
+                    input.value = ''; // Clear the input
+                }
+            }
+        }
+    </script>
 @endsection

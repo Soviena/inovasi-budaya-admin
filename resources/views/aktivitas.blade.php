@@ -62,7 +62,7 @@
               aria-label="Close"
             ></button>
         </div>
-          <form action="{{ route('editAktivitas', $a->id) }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('editAktivitas', $a->id) }}" method="POST" enctype="multipart/form-data" onchange="checkFileSize(this)">
             @csrf
               <div class="modal-body">
                 <div class="row">
@@ -101,4 +101,16 @@
   </div>
   @endforeach
 @endforeach
+<script>
+  function checkFileSize(input) {
+      const maxFileSize = 7 * 1024 * 1024; // 10MB in bytes
+      if (input.files.length > 0) {
+          const fileSize = input.files[0].size;
+          if (fileSize > maxFileSize) {
+              alert("File size exceeds the maximum allowed limit of 7MB.");
+              input.value = ''; // Clear the input
+          }
+      }
+  }
+</script>
 @endsection

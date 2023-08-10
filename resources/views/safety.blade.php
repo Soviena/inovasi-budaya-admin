@@ -124,7 +124,7 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="file_safety" class="form-label">Dokumentasi gambar</label>
-                  <input class="form-control" type="file" name="img" id="formFile" accept=".jpg,.png,.jpeg"/>
+                  <input class="form-control" type="file" name="img" id="formFile" accept=".jpg,.png,.jpeg" onchange="checkFileSize(this)"/>
                 </div>
               </div>
 
@@ -142,4 +142,16 @@
   </div>
 </div>
 @endforeach
+<script>
+        function checkFileSize(input) {
+          const maxFileSize = 7 * 1024 * 1024; // 10MB in bytes
+          if (input.files.length > 0) {
+              const fileSize = input.files[0].size;
+              if (fileSize > maxFileSize) {
+                  alert("File size exceeds the maximum allowed limit of 7MB.");
+                  input.value = ''; // Clear the input
+              }
+          }
+      }
+</script>
 @endsection

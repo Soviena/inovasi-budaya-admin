@@ -161,9 +161,24 @@
   };
   const modal = new bootstrap.Modal(document.getElementById('CropperModal'),options);
   let cropper;
-
+  function checkFileSize(input) {
+      const maxFileSize = 7 * 1024 * 1024; // 10MB in bytes
+      if (input.files.length > 0) {
+          const fileSize = input.files[0].size;
+          if (fileSize > maxFileSize) {
+              alert("File size exceeds the maximum allowed limit of 7MB.");
+              input.value = ''; // Clear the input
+              return true;
+          }else{
+            return false;
+          }
+      }
+  }
   // Add an event listener to the input element to handle file selection
   imageInput.addEventListener('change', function (event) {
+    if (checkFileSize(imageInput)) {
+      return;
+    }
     modal.show();
     const file = event.target.files[0];
 

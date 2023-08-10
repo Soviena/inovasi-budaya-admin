@@ -82,7 +82,7 @@
           </div>
           <div class="mb-3">
             <label for="formFile" class="form-label">Pilih file</label>
-            <input class="form-control" name="csv" type="file" id="formFile" accept=".csv" required>
+            <input class="form-control" name="csv" type="file" id="formFile" accept=".csv" onchange="checkFileSize(this)" required>
           </div>
         </div>
         <div class="modal-footer">
@@ -119,7 +119,7 @@
           </div>
           <div class="mb-3">
             <label for="formFile" class="form-label">Pilih file</label>
-            <input class="form-control" type="file" id="formFile">
+            <input class="form-control" type="file" id="formFile" onchange="checkFileSize(this)">
           </div>
         </div>
         <div class="modal-footer">
@@ -162,6 +162,16 @@
 <div class="content-backdrop fade"></div>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script>
+      function checkFileSize(input) {
+          const maxFileSize = 7 * 1024 * 1024; // 10MB in bytes
+          if (input.files.length > 0) {
+              const fileSize = input.files[0].size;
+              if (fileSize > maxFileSize) {
+                  alert("File size exceeds the maximum allowed limit of 7MB.");
+                  input.value = ''; // Clear the input
+              }
+          }
+      }
     $(document).ready(function () {
       var table = new DataTable("#tableKinerja",{order: [0,'desc']})
     });
