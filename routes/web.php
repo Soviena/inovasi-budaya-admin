@@ -77,6 +77,8 @@ Route::group(['middleware' => 'admin'],function () {
     Route::post('/reward/add/{uid}/{pid}',[RewardsController::class, 'addReward'])->name("addReward");
     Route::post('/reward/edit/{uid}/{pid}',[RewardsController::class, 'editReward'])->name("editReward");
     Route::post('/periode/add/',[RewardsController::class, 'addPeriode'])->name("addPeriode");
+    Route::post('/periode/edit/{id}',[RewardsController::class, 'editPeriode'])->name("editPeriode");
+    Route::get('/periode/delete/{id}',[RewardsController::class, 'deletePeriode'])->name("deletePeriode");
     Route::get('/reward/delete/{uid}/{pid}',[RewardsController::class, 'deleteReward'])->name("deleteReward");
     
     Route::get('/safety', [SafetyController::class, 'index'])->name('safety');

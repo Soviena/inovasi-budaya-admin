@@ -53,6 +53,12 @@
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-{{$pr->id}}" aria-expanded="false" aria-controls="accordionOne">
           {{$pr->periode}}
         </button>
+        <button class="btn btn-outline-primary my-3" data-bs-toggle="modal" data-bs-target="#editPeriode-{{$pr->id}}">
+          <i class="bx bx-pencil"></i>
+        </button>
+        <button class="btn btn-outline-danger my-3" onclick="if (confirm('Yakin ingin menghapus data tersebut ?')) {window.location.href = '{{ route("deletePeriode", $pr->id)}}';}">
+          <i class="bx bx-trash"></i>
+        </button>
       </h2>
       <div id="accordion-{{$pr->id}}" class="accordion-collapse collapse" data-bs-parent="#accordion-{{$pr->id}}">
         <div class="accordion-body">
@@ -241,6 +247,48 @@
     </div>
   </div>
 </div>
+@foreach($periodeReward as $pr)
+<div class="modal fade" id="editPeriode-{{$pr->id}}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form action="{{route('editPeriode',$pr->id)}}" method="post">
+        @csrf
+      <div class="modal-header">
+        <h5 class="modal-title" id="newPeiode">Edit periode Reward</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <label for="html5-month-input" class="col-md-6 col-form-label">Dari bulan sampai bulan ..</label>
+        <div class="mb-3 row">
+          <div class="col-md-6">
+            <input class="form-control" type="month" placeholder="Dari bulan .." id="awalBulan" onchange="changePeiodeAwal(this, document.getElementById('periodeText-{{$pr->id}}'))">
+          </div>
+          <div class="col-md-6">
+            <input class="form-control" type="month" placeholder="Sampai bulan .." id="akhirBulan" onchange="changePeiodeAkhir(this,document.getElementById('periodeText-{{$pr->id}}'))">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="defaultInput" class="form-label">Periode</label>
+          <input id="periodeText-{{$pr->id}}" name="periode" class="form-control" type="text" value="{{$pr->periode}}">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="color:#1A4980;">
+          Tutup
+        </button>
+        <input type="submit" class="btn btn-primary" value="Tambahkan">
+        </button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+@endforeach
 
 <script>
   function changeInput(thisText,destinationId) {

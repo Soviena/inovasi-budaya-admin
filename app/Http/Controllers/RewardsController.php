@@ -41,6 +41,17 @@ class RewardsController extends Controller
         $periode->save();
         return redirect()->route('rewardUser');
     }
+    public function editPeriode(Request $request,$id){
+        $periode = Periode::find($id);
+        $periode->periode = $request->periode;
+        $periode->save();
+        return redirect()->route('rewardUser');
+    }
+    public function deletePeriode(Request $request,$id){
+        $periode = Periode::find($id);
+        $periode->delete();
+        return redirect()->route('rewardUser');
+    }
 
     public function deleteReward($uid, $pid){
         $u = User::find($uid);
