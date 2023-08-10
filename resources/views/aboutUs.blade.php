@@ -16,7 +16,7 @@
               <!-- Team item-->
               <div class="col-xl-3 col-sm-6 mb-5 " style="height: 50vh">
                 <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 55vh"><img src="{{asset('storage/assets/profilKemal.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
-                  <h5 class="mb-0">Alwan Kemal</h5><span class="small text-uppercase text-muted fst-italic">"Hifumi Daisuki"</span>
+                  <h5 class="mb-0">Alwan Kemal</h5><span class="small text-uppercase text-muted fst-italic">"peluang itu tidak akan pernah terjadi jika bukan kita sendiri yang membuatnya"</span>
                   <ul class="social mb-3 list-inline">
                     <a href="mailto:alwankemal128@gmail.com">
                         <i class='bx bxs-envelope' ></i>
