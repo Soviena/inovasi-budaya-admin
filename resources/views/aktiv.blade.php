@@ -24,7 +24,7 @@
                 data-id="{{ $a->id }}"
                 data-judul="{{ $a->judul }}"
                 data-deskripsi="{{ $a->deskripsi }}"
-                data-file="{{ asset('storage/uploaded/aktivitas/'.$a->fileName) }}"
+                data-file="{{ asset('public/storage/uploaded/aktivitas/'.$a->fileName) }}"
               >Edit</a>
               <a href="{{route('deleteAktivitas',$a->id)}}" class="card-link">Hapus</a>
             </div>
