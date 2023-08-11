@@ -28,7 +28,7 @@
               @foreach($manage as $m)
               <tr>
                 <td>
-                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/'.$m->profilepic)}}" alt="{{$m->name}}" style="object-fit: cover; object-position: 25% 25%;">
+                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('public/storage/uploaded/user/'.$m->profilepic)}}" alt="{{$m->name}}" style="object-fit: cover; object-position: 25% 25%;">
                 </td>
                 <td>{{$m->name}}</td>
                 <td>{{$m->email}}</td>
@@ -159,7 +159,7 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="file_profile" class="form-label">ubah profile</label>
-                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/'.$m->profilepic)}}" id="previeImage-{{$m->id}}" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
+                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('public/storage/uploaded/user/'.$m->profilepic)}}" id="previeImage-{{$m->id}}" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
                   <input class="form-control" type="file" name="file_profile" id="file_profile" onchange="openModal(this,'previeImage-{{$m->id}}')" accept=".jpg,.png,.jpeg"/>
                 </div>
               </div>
@@ -225,7 +225,7 @@
               <div class="row g-2">
                 <div class="mb-3">
                   <label for="file_profile" class="form-label">input gambar profile</label>
-                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('storage/uploaded/user/default.png')}}" id="previewTambahUser" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
+                  <img class="rounded-3 mb-2 mx-auto shadow img-thumbnail" src="{{asset('public/storage/uploaded/user/default.png')}}" id="previewTambahUser" alt="@isset($m) <{{$m->name}} @endisset" style="width:100%;max-width:100%; object-fit: cover; object-position: 25% 25%;">
                   <input class="form-control" type="file" name="file_profile" id="file_profile" accept=".jpg,.png,.jpeg" onchange="openModal(this, 'previewTambahUser')" />
                 </div>
               </div>
@@ -396,7 +396,7 @@ id="editSuccessToast"
       <div class="modal-body">
         <div class="row g-2">
           <div class="mb-3">
-            <img id="cropperImage" class="" src="{{asset('storage/uploaded/user/'.Auth::user()->profilepic)}}" style="max-width: 100%; display: block;">
+            <img id="cropperImage" class="" src="{{asset('public/storage/uploaded/user/'.Auth::user()->profilepic)}}" style="max-width: 100%; display: block;">
           </div>
         </div>
       </div>
@@ -470,7 +470,7 @@ id="editSuccessToast"
       reader.readAsDataURL(file);
     } else {
       // If no file was selected, reset the cropper and image source
-      cropperImage.src = "{{asset('storage/uploaded/user/default.png";
+      cropperImage.src = "{{asset('public/storage/uploaded/user/default.png";
       if (cropper) {
         cropper.destroy();
       }

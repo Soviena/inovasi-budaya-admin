@@ -23,7 +23,7 @@
           @foreach ($b->aktivitas as $a)
             <div class="col-sm-6 col-lg-4 mb-4">
               <div class="card">
-                <img class="card-img-top" src="{{asset('storage/uploaded/aktivitas/'.$a->fileName)}}" alt="Card image cap" />
+                <img class="card-img-top" src="{{asset('public/storage/uploaded/aktivitas/'.$a->fileName)}}" alt="Card image cap" />
                 <div class="card-body">
                   <h5 class="card-title">{{$a->judul}}</h5>
                   <p class="card-text">

@@ -13,7 +13,7 @@
             @csrf
             <div class="card-body">
               <div class="d-flex align-items-start align-items-sm-center gap-4">
-                <img src="{{asset('storage/uploaded/user/'.Auth::user()->profilepic)}}" id="profilePic" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar">
+                <img src="{{asset('public/storage/uploaded/user/'.Auth::user()->profilepic)}}" id="profilePic" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar">
                 <div class="button-wrapper">
                   <label for="upload" class="btn btn-primary me-2 mb-4 disabled" id="btnUpload" tabindex="0">
                     <span class="d-none d-sm-block">Upload new photo</span>
@@ -94,7 +94,7 @@
       <div class="modal-body">
         <div class="row g-2">
           <div class="mb-3">
-            <img id="cropperImage" class="" src="{{asset('storage/uploaded/user/'.Auth::user()->profilepic)}}" style="max-width: 100%; display: block;">
+            <img id="cropperImage" class="" src="{{asset('public/storage/uploaded/user/'.Auth::user()->profilepic)}}" style="max-width: 100%; display: block;">
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@
   // Add an event listener to the input element to handle file selection
 
   function resetImage() {
-    previewImage.src = '{{asset("storage/uploaded/user/".Auth::user()->profilepic)}}';
+    previewImage.src = "{{asset('public/storage/uploaded/user/'.Auth::user()->profilepic)}}";
     imageInput.value = "";
     document.getElementById('resetPicButton').classList.add('disabled');
   }
@@ -207,7 +207,7 @@
       reader.readAsDataURL(file);
     } else {
       // If no file was selected, reset the cropper and image source
-      cropperImage.src = "{{asset('storage/uploaded/user/'.Auth::user()->profilepic)}}";
+      cropperImage.src = "{{asset('public/storage/uploaded/user/'.Auth::user()->profilepic)}}";
       if (cropper) {
         cropper.destroy();
       }
