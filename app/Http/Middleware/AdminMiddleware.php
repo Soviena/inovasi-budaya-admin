@@ -17,7 +17,7 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->admin) {
+        if (Auth::check() && Auth::user()->admin == "TRUE") {
             return $next($request);
         }
 
