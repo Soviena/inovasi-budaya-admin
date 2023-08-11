@@ -24,7 +24,7 @@
                     <a href="https://instagram.com/alwankemal?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank">
                         <i class='bx bxl-instagram' ></i>
                     </a>
-                    <a href="https://t.me/AlwanKemal" target="_blank">
+                    <a href="https://t.me/Alwan_Kemal" target="_blank">
                         <i class='bx bxl-telegram' ></i>
                     </a>
                     <a href="https://wa.me/+6283897558055?text=Website%20perlu%20diperbaiki" target="_blank">
