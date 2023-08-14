@@ -233,7 +233,7 @@
         </div>
         <div class="mb-3">
           <label for="defaultInput" class="form-label">Periode</label>
-          <input id="periodeText" name="periode" class="form-control" type="text">
+          <input id="periodeText" name="periode" class="form-control" type="text" required >
         </div>
       </div>
       <div class="modal-footer">
