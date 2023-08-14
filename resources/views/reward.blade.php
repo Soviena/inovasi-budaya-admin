@@ -225,15 +225,15 @@
         <label for="html5-month-input" class="col-md-6 col-form-label">Dari bulan sampai bulan ..</label>
         <div class="mb-3 row">
           <div class="col-md-6">
-            <input class="form-control" type="month" placeholder="Dari bulan .." id="awalBulan" onchange="changePeiodeAwal(this, document.getElementById('periodeText'))">
+            <input class="form-control" type="month" placeholder="Dari bulan .." id="awalBulan" onchange="changePeiodeAwal(this, document.getElementById('periodeText'))" required >
           </div>
           <div class="col-md-6">
-            <input class="form-control" type="month" placeholder="Sampai bulan .." id="akhirBulan" onchange="changePeiodeAkhir(this,document.getElementById('periodeText'))">
+            <input class="form-control" type="month" placeholder="Sampai bulan .." id="akhirBulan" onchange="changePeiodeAkhir(this,document.getElementById('periodeText'))" required >
           </div>
         </div>
         <div class="mb-3">
           <label for="defaultInput" class="form-label">Periode</label>
-          <input id="periodeText" name="periode" class="form-control" type="text">
+          <input id="periodeText" name="periode" class="form-control" type="text" required >
         </div>
       </div>
       <div class="modal-footer">

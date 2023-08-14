@@ -11,19 +11,19 @@
           <div class="mb-3 row">
             <label for="text-input" class="col-md-2 col-form-label">Nama Aktivitas</label>
             <div class="col-md-10">
-              <input class="form-control" type="text" value="" name="judul" id="text-input">
+              <input class="form-control" type="text" value="" name="judul" id="text-input" required >
             </div>
           </div>
           <div class="mb-3 row">
             <label for="Deskripsi" class="col-md-2 col-form-label">Deskripsi</label>
             <div class="col-md-10">
-              <textarea class="form-control" name="deskripsi" id="Deskripsi"></textarea>
+              <textarea class="form-control" name="deskripsi" id="Deskripsi" required ></textarea>
             </div>
           </div>
           <div class="mb-3 row">
             <label for="Deskripsi" class="col-md-2 col-form-label">Dokumentasi gambar</label>
             <div class="col-md-10">
-              <input class="form-control" name="img" type="file" id="formFile"  accept=".jpg,.png,.jpeg" onchange="checkFileSize(this)">
+              <input class="form-control" name="img" type="file" id="formFile"  accept=".jpg,.png,.jpeg" onchange="checkFileSize(this)" required >
             </div>
           </div>
           <div class="row justify-content-end">
