@@ -15,7 +15,7 @@
             <div class="row text-center" style="justify-content: center">
               <!-- Team item-->
               <div class="col-xl-3 col-sm-6 mb-5 " style="height: 50vh">
-                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 55vh"><img src="{{asset('storage/assets/profilKemal.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 55vh"><img src="{{asset('public/storage/assets/profilKemal.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
                   <h5 class="mb-0">Alwan Kemal</h5><span class="small text-uppercase text-muted fst-italic">"peluang itu tidak akan pernah terjadi jika bukan kita sendiri yang membuatnya"</span>
                   <ul class="social mb-3 list-inline">
                     <a href="mailto:alwankemal128@gmail.com">
@@ -24,7 +24,7 @@
                     <a href="https://instagram.com/alwankemal?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank">
                         <i class='bx bxl-instagram' ></i>
                     </a>
-                    <a href="https://t.me/AlwanKemal" target="_blank">
+                    <a href="https://t.me/Alwan_Kemal" target="_blank">
                         <i class='bx bxl-telegram' ></i>
                     </a>
                     <a href="https://wa.me/+6283897558055?text=Website%20perlu%20diperbaiki" target="_blank">
@@ -37,7 +37,7 @@
         
               <!-- Team item-->
               <div class="col-xl-3 col-sm-6 mb-5" style="height: 50vh">
-                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 55vh"><img src="{{asset('storage/assets/profilRovino.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 55vh"><img src="{{asset('public/storage/assets/profilRovino.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
                   <h5 class="mb-0">Muhammad Rovino Sanjaya</h5><span class="small text-uppercase text-muted fst-italic">"Jika ada yang simpel, kenapa tidak?"</span>
                   <ul class="social mb-0 list-inline">
                     <a href="https://twitter.com/Rovino_rs" target="_blank">
@@ -59,7 +59,7 @@
         
               <!-- Team item-->
               <div class="col-xl-3 col-sm-6 mb-5" style="height: 50vh">
-                <div class="bg-white rounded shadow-sm py-5 px-4"style="height: 55vh"><img src="{{asset('storage/assets/profilRafif.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
+                <div class="bg-white rounded shadow-sm py-5 px-4"style="height: 55vh"><img src="{{asset('public/storage/assets/profilRafif.jpg/')}}" alt="" width="100" class="img-fluid rounded-circle mb-3 shadow-sm" style="height: 14vh; width: 14vh">
                   <h5 class="mb-0">Rizal Rafif Setiawan</h5><span class="small text-uppercase text-muted fst-italic">"Hidup memang tidak adil, jadi biasakan dirimu"</span>
                   <ul class="social mb-0 list-inline">
                     <a href="https://www.facebook.com/shinjie.kagamine?mibextid=ZbWKwL" target="_blank">

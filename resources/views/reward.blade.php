@@ -66,7 +66,7 @@
             @foreach($pr->users as $u)
             <div class="card border mx-3" style="height: 40vh; width:250px;">
               <div class="card-body text-center" style=" align-items: center; height: 20%; overflow-y: auto;">
-                <img src="{{asset('storage/uploaded/user/'.$u->profilepic)}}" class="img-fluid rounded-circle mx-5" alt="Circular Image" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; overflow: hidden;">
+                <img src="{{asset('public/storage/uploaded/user/'.$u->profilepic)}}" class="img-fluid rounded-circle mx-5" alt="Circular Image" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; overflow: hidden;">
                 <p class="mx-auto" style="font-weight: bold;">{{$u->name}}</p>
                 <p class="mx-auto" style="font-weight: bold;">{{$u->pivot->rewardsName}}</p>
                 <p class="card-text mb-3 w-100 mx-0" style="max-width: 120%; text-align: left;">
