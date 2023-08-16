@@ -27,7 +27,7 @@ class EmailVerificationController extends Controller
             $user->markEmailAsVerified();
         }
     
-        return response()->json(['msg'=>'email verified']);
+        return view('verified');
     }
 
     // Resend the email verification link
@@ -42,5 +42,17 @@ class EmailVerificationController extends Controller
         $user->sendEmailVerificationNotification();
 
         return response()->json(['success' => 'A fresh verification link has been sent to your email address.']);
+    }
+    public function resendW($uid)
+    {
+        $user = User::find($uid);
+
+        if ($user->email_verified_at != "") {
+            return back()->with(['errorVerify' => 'gagal mengirim verifikasi email']);
+        }
+
+        $user->sendEmailVerificationNotification();
+
+        return back()->with(['resendSuccess'=>'berhasil mengirim verifikasi email']);
     }
 }

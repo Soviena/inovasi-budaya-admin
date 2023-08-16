@@ -37,7 +37,7 @@ class ResetPasswordController extends Controller
             );
         
             return $response == Password::PASSWORD_RESET
-                ? response()->json(['msg'=>trans($response)])
+                ? view('verifReset')
                 : back()->withErrors(['email' => trans($response)]);
         }
         

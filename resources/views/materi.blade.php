@@ -139,7 +139,7 @@
           <div class="row g-2">
             <div class="mb-3">
               <label for="file_pdf" class="form-label">Update file PDF</label>
-              <input class="form-control" type="file" name="file_pdf" id="file_pdf" accept=".pdf" onchange="checkFileSize(this)" required />
+              <input class="form-control" type="file" name="file_pdf" id="file_pdf" accept=".pdf" onchange="checkFileSize(this)" />
             </div>
           </div>
         </div>
