@@ -49,6 +49,9 @@
                 </div>
               </div>
               <div class="mt-2">
+                @if(Auth::user()->email_verified_at == '')
+                  <a type="button" id="verifButton" class="btn btn-warning me-2" href="{{route('resendVerify',Auth::user()->id)}}" onclick="this.classlist.add('disabled')">Kirim Ulang verifikasi email</a>
+                @endif
                 <button type="button" id="editButton" class="btn btn-primary me-2" onclick="editProfil()">Edit</button>
                 <button type="reset" id="cancelButton" class="btn btn-outline-secondary disabled" onclick="cancelEdit()">Cancel</button>
               </div>
@@ -74,6 +77,40 @@
     </div>
     <div class="toast-body">
       Data telah di update
+    </div>
+  </div>
+  <div
+    class="bs-toast toast fade bg-danger bottom-0 end-0 position-absolute m-5"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+    id="errorVerify"
+  >
+    <div class="toast-header">
+      <i class="bx bx-bell me-2"></i>
+      <div class="me-auto fw-semibold">Email Sudah Diverifikasi</div>
+      <small></small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Email telah diverif
+    </div>
+  </div>
+  <div
+    class="bs-toast toast fade bg-success bottom-0 end-0 position-absolute m-5"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+    id="resendSuccess"
+  >
+    <div class="toast-header">
+      <i class="bx bx-bell me-2"></i>
+      <div class="me-auto fw-semibold">Berhasil</div>
+      <small></small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Cek email anda untuk link verifikasi terbaru
     </div>
   </div>
 </div>
@@ -262,6 +299,14 @@ function getImgURL(url, callback){
   $(document).ready(function () {
     @if(session('EditSuccess'))
       successToast = new bootstrap.Toast(document.getElementById('editSuccessToast'));
+      successToast.show();
+    @endif
+    @if(session('errorVerify'))
+      successToast = new bootstrap.Toast(document.getElementById('errorVerify'));
+      successToast.show();
+    @endif
+    @if(session('resendSuccess'))
+      successToast = new bootstrap.Toast(document.getElementById('resendSuccess'));
       successToast.show();
     @endif
   });

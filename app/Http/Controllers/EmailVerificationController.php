@@ -43,4 +43,16 @@ class EmailVerificationController extends Controller
 
         return response()->json(['success' => 'A fresh verification link has been sent to your email address.']);
     }
+    public function resendW($uid)
+    {
+        $user = User::find($uid);
+
+        if ($user->email_verified_at != "") {
+            return back()->with(['errorVerify' => 'gagal mengirim verifikasi email']);
+        }
+
+        $user->sendEmailVerificationNotification();
+
+        return back()->with(['resendSuccess'=>'berhasil mengirim verifikasi email']);
+    }
 }

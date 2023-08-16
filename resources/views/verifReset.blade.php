@@ -62,7 +62,7 @@
                 <div class="card-body">
                   
                   <h4 class="mb-2">Yeay! 😊</h4>
-                  <p class="mb-4">Emailmu telah berhasil kami verifikasi</p>
+                  <p class="mb-4">Passwordmu telah berubah, Jangan lupa lagi ya</p>
                 </div>
               </div>
               <!-- /Forgot Password -->
