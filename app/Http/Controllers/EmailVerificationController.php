@@ -27,7 +27,7 @@ class EmailVerificationController extends Controller
             $user->markEmailAsVerified();
         }
     
-        return response()->json(['msg'=>'email verified']);
+        return view('verified');
     }
 
     // Resend the email verification link
