@@ -82,7 +82,7 @@
                 <div class="row g-2">
                   <div class="mb-3">
                     <label for="file_safety" class="form-label">Dokumentasi gambar</label>
-                    <input class="form-control" type="file" name="img" id="formFile" accept=".jpg,.png,.jpeg" required />
+                    <input class="form-control" type="file" name="img" id="formFile" accept=".jpg,.png,.jpeg" />
                   </div>
                 </div>
 
