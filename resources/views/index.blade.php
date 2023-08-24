@@ -106,6 +106,18 @@
     </div>
 
     <div class="content-backdrop fade"></div>
+    <footer class="content-footer footer bg-footer-theme">
+        <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+            <div class="mb-2 mb-md-0">
+                ©
+                <script>
+                document.write(new Date().getFullYear());
+                </script>
+                , Dibuat oleh 
+                <a href="https://admin.sucofindobandung.com/public/storage/assets/manual.pdf" target="_blank" class="footer-link fw-bolder">Klik disini untuk membaca User Manual</a>
+            </div>
+        </div>
+    </footer>
 </div>
 <script>
     function getGreeting() {
