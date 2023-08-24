@@ -33,7 +33,7 @@
             <td>
                 @if($i>2 && $i < 5)
                     @if($j > 0 && $j < 6)
-                        {{number_format(ceil(floatval($b)))}}
+                        {{number_format((floatval($b),3))}}
                     @elseif($j>0)
                         {{ number_format(floatval($b)*100,2).'%'}}
                     @else
@@ -43,7 +43,7 @@
                     {{ number_format(floatval($b)*100,2).'%'}}
                 @elseif($i == 6)
                     @if($j > 0 && $j < 6)
-                        {{number_format(ceil(floatval($b)))}}
+                        {{number_format((floatval($b),3))}}
                     @elseif($j>0)
                         {{ number_format(floatval($b)*100,2).'%'}}
                     @else
@@ -53,7 +53,7 @@
                     {{ number_format(floatval($b)*100,2).'%'}}
                 @elseif($i>7 && $i< 10)
                     @if($j > 0 && $j < 6)
-                        {{number_format(ceil(floatval($b)))}}
+                        {{number_format((floatval($b),3))}}
                     @elseif($j>0)
                         {{ number_format(floatval($b)*100,2).'%'}}
                     @else
@@ -63,7 +63,7 @@
                     {{ number_format(floatval($b)*100,2).'%'}}
                 @elseif($i == 11)
                     @if($j > 0 && $j < 6)
-                        {{number_format(ceil(floatval($b)))}}
+                        {{number_format((floatval($b),3))}}
                     @elseif($j>0)
                         {{ number_format(floatval($b)*100,2).'%'}}
                     @else
@@ -73,7 +73,7 @@
                     {{ number_format(floatval($b)*100,2).'%'}}
                 @elseif($i == 13)
                     @if($j > 0 && $j < 6)
-                        {{number_format(ceil(floatval($b)))}}
+                        {{number_format((floatval($b),3))}}
                     @elseif($j>0)
                         {{ number_format(floatval($b)*100,2).'%'}}
                     @else
@@ -82,10 +82,10 @@
                 @elseif($i==14 && $j>0)
                     {{ number_format(floatval($b)*100,2).'%'}}
                 @elseif($i>14 && $i < 17 && $j>0)
-                    {{ number_format(floor(floatval($b)))}}
+                    {{ number_format(floor(floatval($b),3))}}
                 @elseif($i == 17)
                     @if($j > 0 && $j < 6)
-                        {{number_format(ceil(floatval($b)))}}
+                        {{number_format((floatval($b),3))}}
                     @elseif($j>0)
                         {{ number_format(floatval($b)*100,2).'%'}}
                     @else
@@ -95,7 +95,7 @@
                     {{ number_format(floatval($b)*100,2).'%'}}
                 @elseif($i>18 && $i < 21)
                     @if($j > 0 && $j < 6)
-                        {{number_format(ceil(floatval($b)))}}
+                        {{number_format((floatval($b),3))}}
                     @elseif($j>0)
                         {{ number_format(floatval($b)*100,2).'%'}}
                     @else
@@ -103,7 +103,7 @@
                     @endif
                  @elseif($i == 21)
                     @if($j > 0 && $j < 6)
-                        {{number_format(ceil(floatval($b)))}}
+                        {{number_format((floatval($b),3))}}
                     @elseif($j>0)
                         {{ number_format(floatval($b)*100,2).'%'}}
                     @else
