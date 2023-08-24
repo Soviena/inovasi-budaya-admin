@@ -82,7 +82,7 @@
                 @elseif($i==14 && $j>0)
                     {{ number_format(floatval($b)*100,2).'%'}}
                 @elseif($i>14 && $i < 17 && $j>0)
-                    {{ number_format(floor(floatval($b)))}}
+                    {{ number_format((floatval($b)))}} JT
                 @elseif($i == 17)
                     @if($j > 0 && $j < 6)
                         {{number_format((floatval($b)))}} JT
