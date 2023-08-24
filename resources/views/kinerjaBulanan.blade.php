@@ -119,7 +119,7 @@
           </div>
           <div class="mb-3">
             <label for="formFile" class="form-label">Pilih file</label>
-            <input class="form-control" type="file" id="formFile" onchange="checkFileSize(this)">
+            <input class="form-control" name="csv" type="file" accept=".csv"  id="formFile" onchange="checkFileSize(this)">
           </div>
         </div>
         <div class="modal-footer">
