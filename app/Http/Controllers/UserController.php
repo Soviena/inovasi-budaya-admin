@@ -23,13 +23,14 @@ class UserController extends Controller
 
     public function login(Request $request){
         $credentials = $request->only('email', 'password');
-        $remember = $request->has('remember'); // Check if the "Remember Me" checkbox is checked
+        $remember = $request->has('remember'); 
+        // mengecek apakah checkbox "Ingat Saya" sudah ter centang
         if (Auth::attempt($credentials, $remember)) {
             $unreadItems = Feedback::where('status', 'unread')->get();
 
-            // Save the unread items to the session
             Session::put('unreadFeedbacks', count($unreadItems));
-            return redirect()->route("index"); // Redirect to your desired authenticated route
+            return redirect()->route("index"); 
+            // Meneruskan ke route utama
         }
         return back()->withErrors(['email' => 'Invalid credentials'])->withInput();
     }
@@ -51,12 +52,14 @@ class UserController extends Controller
             'email' => 'required|email',
         ]);    
         $user = User::findOrFail($id);
+        //Mencari user dengan email yang valid
         $user->name = $request->input('name');
         if ($user->email != strtolower($request->input('email'))) {
             $user->email = strtolower($request->input('email'));
             $user->email_verified_at = null;
             $user->sendEmailVerificationNotification();
         }
+        // Mengirim email verifikasi
         $user->tanggal_lahir = $request->input('tanggal_lahir');
 
         if ($request->password != '') {
@@ -67,9 +70,11 @@ class UserController extends Controller
             if ($user->profilepic != "default.png") {
                 Storage::delete('public/uploaded/user/'.$user->profilepic);
             }
+            // Menambah foto profil
             $file_profile = $request->file('file_profile');
             $file_profile->storeAs('public/uploaded/user/',$file_profile->hashName());
             $user->profilepic = $file_profile->hashName();
+            // mengubah foto profil
         }
     
         $user->save();
@@ -98,6 +103,7 @@ class UserController extends Controller
         $users->save();
         $users->sendEmailVerificationNotification();
         return redirect()->route('manageUser');
+        //Mengirim ulang verifikasi email jika user belum menerima
     }
 
     public function hapusUser(Request $request, $id){
